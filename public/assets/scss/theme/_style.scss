@@ -777,7 +777,7 @@ button {
     2.Header CSS start
 ==========================*/
 header {
-  background-color: $white;
+  background-color: $black;
 }
 .onhover-dropdown {
   position: relative;
@@ -1387,9 +1387,9 @@ header {
       color: $dark-font;
     }
     h4 {
-      font-weight: 700;
+      font-weight: 701;
       letter-spacing: 0.4em;
-      color: $grey;
+      color: $white;
       margin-bottom: 0;
     }
     .btn-solid, .btn-outline {

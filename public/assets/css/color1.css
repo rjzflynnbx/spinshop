@@ -1540,12 +1540,12 @@ r
 .home-slider .slider-contain h1, .center-slider .slider-contain h1 {
   margin-bottom: 0;
   margin-top: 10px;
-  color: #222222;
+  color: #ffffff;
 }
 .home-slider .slider-contain h4, .center-slider .slider-contain h4 {
   font-weight: 700;
   letter-spacing: 0.4em;
-  color: #777777;
+  color: #ffffff;
   margin-bottom: 0;
 }
 .home-slider .slider-contain .btn-solid, .home-slider .slider-contain .btn-outline, .center-slider .slider-contain .btn-solid, .center-slider .slider-contain .btn-outline {

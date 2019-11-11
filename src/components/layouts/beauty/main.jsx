@@ -61,8 +61,8 @@ class Beauty extends Component {
                                         <div className="col">
                                             <div className="slider-contain">
                                                 <div>
-                                                    <h4>Nike Air Force 1 </h4>
-                                                    <h1>GORE-TEX</h1><a href="#" className="btn btn-solid">shop now</a></div>
+                                                    <h4>Nike Air Force 1 GORE-TEX</h4>
+                                                    <h1>waterproof technology</h1><a href="#" className="btn btn-solid">shop now</a></div>
                                             </div>
                                         </div>
                                     </div>
