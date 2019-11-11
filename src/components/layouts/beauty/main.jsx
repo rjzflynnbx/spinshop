@@ -1,0 +1,148 @@
+import React, { Component } from 'react';
+import { Helmet } from 'react-helmet'
+import '../../common/index.scss';
+import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
+import Modal from 'react-responsive-modal';
+import ThemeSettings from "../../common/theme-settings"
+
+// Import custom components
+import {
+    svgFreeShipping,
+    svgservice,
+    svgoffer,
+    svgpayment
+} from "../../../services/script"
+import TopCollection from "../common/collection"
+import NewProduct from "../../common/new-product"
+import Instagram from "../common/instagram"
+import HeaderOne from "../../common/headers/header-one"
+import FooterOne from "../../common/footers/footer-one"
+import BlogSection from "../common/blogsection";
+import MultiSlider from "./multiple-slider";
+
+class Beauty extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            open: false
+        }
+    }
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
+
+    componentDidMount() {
+        //console.log("pageview here", window.Boxever.getID());
+        document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
+    }
+
+    render() {
+
+        return (
+            <div>
+
+                <Helmet>
+                    <title>MultiKart | Beauty Store</title>
+                </Helmet>
+                <HeaderOne logoName={'logo/logo2.png'} />
+
+                {/*Slider Promo Area 1*/}
+                <section className="p-0">
+                    <Slider className="slide-1 home-slider">
+                        <div>
+                            <div className="home home1">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col">
+                                            <div className="slider-contain">
+                                                <div>
+                                                    <h4>Nike Air Force 1 </h4>
+                                                    <h1>GORE-TEX</h1><a href="#" className="btn btn-solid">shop now</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="home home2">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col">
+                                            <div className="slider-contain">
+                                                <div>
+                                                    <h4>Project Rock 2</h4>
+                                                    <h1>Built to break through</h1><a href="#" className="btn btn-solid">shop now</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Slider>
+                </section>
+
+                {/*Catagories Section*/}
+                <section className="catagories">
+                    <div className="container category-button">
+                        <section className="section-b-space">
+                            <div className="row partition1">
+                                <div className="col"><a href="#" className="btn btn-outline btn-block">Men's footwear</a></div>
+                                <div className="col"><a href="#" className="btn btn-outline btn-block">Women's footwear</a></div>
+                                <div className="col"><a href="#" className="btn btn-outline btn-block">Kids's footwear</a></div>
+                                <div className="col"><a href="#" className="btn btn-outline btn-block">Men's Clothing</a></div>
+                                <div className="col"><a href="#" className="btn btn-outline btn-block">Women's  Clothing</a></div>
+                                <div className="col"><a href="#" className="btn btn-outline btn-block">Kids'sClothing</a></div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+
+                {/*Trending Products Section*/}
+                <MultiSlider type={'men'} title={'Trending Products'}  />
+
+
+                {/*Promo Aera 2 Section*/}           
+                <section className=" ratio2_1">
+                    <div className="container">
+                        <div className="row partition4">
+                            <div className="col-lg-3 col-md-6">
+                                <a href="#">
+                                    <div className="collection-banner p-left">
+                                        <div className="img-part">
+                                            <img src={`${process.env.PUBLIC_URL}/assets/images/1.jpg`}
+                                                className="img-fluid blur-up lazyload bg-img" />
+                                        </div>
+                                        <div className="contain-banner banner-1">
+                                            <div>
+                                                <h4>ADIDAS</h4>
+                                                <h2>UEFA EURO2020™ collection</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                                                                            
+                        </div>
+                    </div>
+                </section>
+   
+                <MultiSlider type={'men'} title={'Shop The Collection'}  />
+
+
+                <FooterOne logoName={'logo/logo2.png'} />
+
+
+            </div>
+        )
+    }
+}
+
+
+export default Beauty;
