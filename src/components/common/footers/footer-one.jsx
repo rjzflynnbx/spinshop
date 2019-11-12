@@ -117,7 +117,7 @@ class FooterOne extends Component {
                             <div className="col">
                                 <div className="sub-title">
                                     <div className="footer-title">
-                                        <h4>store information</h4>
+                                        <h4>Contact Us</h4>
                                     </div>
                                     <div className="footer-contant">
                                         <ul className="contact-list">

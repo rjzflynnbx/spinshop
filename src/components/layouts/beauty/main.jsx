@@ -47,7 +47,7 @@ class Beauty extends Component {
             <div>
 
                 <Helmet>
-                    <title>MultiKart | Beauty Store</title>
+                    <title>SpinShop | A Boxever Demo</title>
                 </Helmet>
                 <HeaderOne logoName={'logo/logo2.png'} />
 
@@ -133,7 +133,7 @@ class Beauty extends Component {
                     </div>
                 </section>
    
-                <MultiSlider type={'men'} title={'Shop The Collection'}  />
+                <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} />
 
 
                 <FooterOne logoName={'logo/logo2.png'} />

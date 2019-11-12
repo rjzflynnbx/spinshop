@@ -130,6 +130,7 @@ export const getNewProducts = (products, type) => {
     return items.slice(0, 8)
 }
 
+
 // Get Related Items
 export const getRelatedItems = (products, type) => {
     const items = products.filter(product => {
@@ -183,6 +184,15 @@ export const getSingleItem = (products, id) => {
         return element.id === id;
     })
     return items;
+}
+
+
+// Get Products In Collection
+export const getCollectionProducts = (products, collectionId) => {
+    const items = products.filter(product => {
+        return product.collectionId === collectionId;
+    })
+    return items.slice(0, 8)
 }
 
 // Boxever services ********************************************************************************************************************************
