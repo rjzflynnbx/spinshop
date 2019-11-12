@@ -91,7 +91,7 @@ class NoSideBar extends Component {
                     </div>
                 </section>
 
-                <RelatedProduct />
+                <RelatedProduct itemId={item.id}/>
             </div>
         )
     }

@@ -195,6 +195,17 @@ export const getCollectionProducts = (products, collectionId) => {
     return items.slice(0, 8)
 }
 
+
+// Get Related Products
+export const getRelatedProducts = (products, productId) => {   
+    const items = products.filter(product => {
+        return product.relatedIds != null && product.relatedIds.includes(productId);
+    })
+    return items.slice(0, 8)
+}
+
+
+
 // Boxever services ********************************************************************************************************************************
 
 

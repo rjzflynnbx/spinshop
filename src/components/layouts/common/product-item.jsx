@@ -61,7 +61,7 @@ class ProductItem extends Component {
 
                         </div>
                         <div className="front">
-                            <Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${product.id}`} ><img
+                            <Link to={`${process.env.PUBLIC_URL}/no-sidebar/product/${product.id}`} ><img
                                 src={`${
                                     product.variants?
                                         this.state.image?this.state.image:product.variants[0].images

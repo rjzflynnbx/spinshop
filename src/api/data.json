@@ -1076,12 +1076,13 @@
   },
   {
     "id": 32,
-    "name": "Full Sleeve",
+    "name": "GERMANY TRAINING JERSEY",
+    "relatedIds": [42],
     "price": 390.00,
     "salePrice": 780.00,
     "discount": 50,
     "pictures": [
-      "/assets/images/fashion/product/47.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/9.jpg",
       "/assets/images/fashion/product/79.jpg",
       "/assets/images/fashion/product/70.jpg",
       "/assets/images/fashion/product/42.jpg"
@@ -1109,7 +1110,7 @@
     "variants": [
       {
         "color": "green",
-        "images": "/assets/images/fashion/product/47.jpg"
+        "images": "/assets/images/fashion/product/collection/ufea2020/9.jpg"
       },
       {
         "color": "yellow",
@@ -1119,14 +1120,15 @@
   },
   {
     "id": 33,
-    "name": "Full Sleeve",
-    "price": 600.00,
+    "name": "GERMANY HOME SHORTS",
+    "relatedIds": [42],
+    "price": 33.00,
     "salePrice": 1200.00,
-    "discount": 50,
+    "discount": 5,
     "pictures": [
-      "/assets/images/fashion/product/51.jpg",
-      "/assets/images/fashion/product/77.jpg",
-      "/assets/images/fashion/product/65.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/8.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/88.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/888.jpg",
       "/assets/images/fashion/product/74.jpg"
     ],
     "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
@@ -1153,26 +1155,27 @@
     "variants": [
       {
         "color": "yellow",
-        "images": "/assets/images/fashion/product/51.jpg"
+        "images": "/assets/images/fashion/product/collection/ufea2020/8.jpg"
       },
       {
         "color": "gray",
-        "images": "/assets/images/fashion/product/77.jpg"
+        "images": "/assets/images/fashion/product/collection/ufea2020/88.jpg"
       },
       {
         "color": "black",
-        "images": "/assets/images/fashion/product/65.jpg"
+        "images": "/assets/images/fashion/product/collection/ufea2020/888.jpg"
       }
     ]
   },
   {
     "id": 34,
-    "name": "Fitted Jeans",
+    "name": "GERMANY HOME SOCKS",
+    "relatedIds": [42],
     "price": 300.00,
     "salePrice": 600.00,
     "discount": 50,
     "pictures": [
-      "/assets/images/fashion/product/76.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/7.jpg",
       "/assets/images/fashion/product/60.jpg",
       "/assets/images/fashion/product/66.jpg",
       "/assets/images/fashion/product/67.jpg"
@@ -1200,7 +1203,7 @@
     "variants": [
       {
         "color": "black",
-        "images": "/assets/images/fashion/product/76.jpg"
+        "images": "/assets/images/fashion/product/collection/ufea2020/7.jpg"
       },
       {
         "color": "red",

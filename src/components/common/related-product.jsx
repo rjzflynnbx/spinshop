@@ -6,11 +6,12 @@ import {Link} from 'react-router-dom'
 import {getBestSeller} from "../../services";
 import {addToCart, addToWishlist, addToCompare} from "../../actions";
 import ProductItem from '../layouts/common/product-item';
+import { getCollectionProducts, getRelatedItems, getRelatedProducts } from '../../services/index';
 
 
 class RelatedProduct extends Component {
     render (){
-        const {items, symbol, addToCart, addToWishlist, addToCompare} = this.props;
+        const {items, symbol, addToCart, addToWishlist, addToCompare, itemId} = this.props;
 
 
         return (
@@ -38,8 +39,10 @@ class RelatedProduct extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
-        items: getBestSeller(state.data.products),
+         //items: getCollectionProducts(state.data.products,1),
+        items: getRelatedProducts(state.data.products,42),
         symbol: state.data.symbol
     }
 }
