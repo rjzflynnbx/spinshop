@@ -6,13 +6,15 @@ import { SlideToggle } from 'react-slide-toggle';
 
 
 import {getBrands, getColors, getMinMaxPrice} from '../../../services';
-import {filterBrand, filterColor, filterPrice} from '../../../actions'
+import {filterBrand, filterColor, filterPrice, filterCatagory} from '../../../actions'
 
 class Filter extends Component {
 
     constructor(props) {
         super(props);
-
+        console.log(props.init);
+        this.props.filterCatagory(props.init);
+        //this.props.filterColor("white");
         this.state = {
             openFilter: false
         }
@@ -125,5 +127,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { filterBrand, filterColor, filterPrice }
+    { filterBrand, filterColor, filterPrice, filterCatagory}
 )(Filter);

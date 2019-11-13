@@ -119,6 +119,10 @@ export const filterPrice = (value) => ({
     type: types.FILTER_PRICE,
     value
 });
+export const filterCatagory = (catagory) => ({
+    type: types.FILTER_CATAGORY,
+    catagory
+});
 export const filterSort = (sort_by) => ({
     type: types.SORT_BY,
     sort_by

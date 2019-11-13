@@ -82,7 +82,19 @@ class ProductListing extends Component {
 }
 const mapStateToProps = (state) => ({
     filters: state.filters,
-    products: getVisibleproducts(state.data, state.filters, "trainers"),
+    products: getVisibleproducts(state.data, {
+        "brand": [
+            "nike",
+            "caprese",
+            "lifestyle"
+        ],
+        "value": {
+            "min": 0,
+            "max": 1000
+        },
+        "sortBy": "",
+        "catagory": "trainers"
+    }),
     symbol: state.data.symbol,
 })
 

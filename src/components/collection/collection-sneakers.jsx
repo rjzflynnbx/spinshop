@@ -46,7 +46,7 @@ class CollectionSneakerSale extends Component {
 
                                     <StickyBox offsetTop={20} offsetBottom={20}>
                                         <div>
-                                            <Filter/>
+                                            <Filter init={"trainers"}/>
                                             <NewProduct/>
                                             <div className="collection-sidebar-banner">
                                                 <a href="#">

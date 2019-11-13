@@ -3,7 +3,7 @@ import * as types from '../constants/ActionTypes'
 
 const filtersReducerDefaultState = {
     brand: ["nike", "caprese", "lifestyle"],
-    value: { min: 250, max: 950 },
+    value: { min: 0, max: 1000 },
     sortBy: ""
 };
 
@@ -24,7 +24,12 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
         case types.FILTER_PRICE:
             return {
                 ...state,
-                value: {min: action.value.value.min, max: action.value.value.max }
+                value: { min: action.value.value.min, max: action.value.value.max }
+            };
+        case types.FILTER_CATAGORY:
+            return {
+                ...state,
+                catagory: action.catagory
             };
         case types.SORT_BY:
             return {
