@@ -54,7 +54,7 @@ class NoSideBar extends Component {
                 {/*TODO: component*/}
                 <div className="col-lg-6 rtl-text">
                     <div className="product-right">
-                        <h2> {item.name} </h2>
+                        <h3> {item.name} </h3>
                     </div>
                 </div>
 

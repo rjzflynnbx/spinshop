@@ -44,14 +44,26 @@ export const getMinMaxPrice = (products) => {
     return { 'min': min, 'max': max };
 }
 
-export const getVisibleproducts = (data, { brand, color, value, sortBy }) => {
+export const getVisibleproducts = (data, { brand, color, value, sortBy }, catagory) => {
+
     return data.products.filter(product => {
 
+        let catagoryMatch = true;
+        if (catagory) {
+            if (product.catagories) {
+                catagoryMatch = product.catagories.includes(catagory);
+            } else {
+                catagoryMatch = false;
+            }
+        }
+
+
         let brandMatch;
-        if (product.tags)
+        if (product.tags) {
             brandMatch = product.tags.some(tag => brand.includes(tag))
-        else
+        } else {
             brandMatch = true;
+        }
 
         let colorMatch;
         if (color && product.colors) {
@@ -63,7 +75,7 @@ export const getVisibleproducts = (data, { brand, color, value, sortBy }) => {
         const startPriceMatch = typeof value.min !== 'number' || value.min <= product.price;
         const endPriceMatch = typeof value.max !== 'number' || product.price <= value.max;
 
-        return brandMatch && colorMatch && startPriceMatch && endPriceMatch;
+        return brandMatch && colorMatch && startPriceMatch && endPriceMatch && catagoryMatch;
     }).sort((product1, product2) => {
         if (sortBy === 'HighToLow') {
             return product2.price < product1.price ? -1 : 1;
@@ -197,7 +209,7 @@ export const getCollectionProducts = (products, collectionId) => {
 
 
 // Get Related Products
-export const getRelatedProducts = (products, productId) => {   
+export const getRelatedProducts = (products, productId) => {
     const items = products.filter(product => {
         return product.relatedIds != null && product.relatedIds.includes(productId);
     })
@@ -230,11 +242,11 @@ export const bxAddProductToCart = (product) => {
             "quantity": 1
         }
     };
-    window.Boxever.eventCreate(event, function (data) { }, 'json');  
+    window.Boxever.eventCreate(event, function (data) { }, 'json');
 }
 
 
-export const bxView = ( page) => {
+export const bxView = (page) => {
     var viewEvent = {
         "browser_id": window.Boxever.getID(),
         "channel": "WEB",

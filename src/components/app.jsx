@@ -12,6 +12,7 @@ import FooterThree from "./common/footers/footer-three";
 
 // ThemeSettings
 import ThemeSettings from "./common/theme-settings"
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -24,8 +25,7 @@ class App extends Component {
                 {this.props.children}
                 <FooterOne logoName={'logo.png'}/>
 
-                <ThemeSettings />
-
+                <ToastContainer/>
             </div>
         );
     }

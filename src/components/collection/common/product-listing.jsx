@@ -13,12 +13,11 @@ class ProductListing extends Component {
 
     constructor (props) {
         super (props)
-
         this.state = { limit: 5, hasMoreItems: true };
-
     }
 
     componentWillMount(){
+        //console.log(this.props.filters);
         this.fetchMoreItems();
     }
 
@@ -33,8 +32,6 @@ class ProductListing extends Component {
                 limit: this.state.limit + 5
             });
         }, 3000);
-
-
     }
 
     render (){
@@ -84,7 +81,8 @@ class ProductListing extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    products: getVisibleproducts(state.data, state.filters),
+    filters: state.filters,
+    products: getVisibleproducts(state.data, state.filters, "trainers"),
     symbol: state.data.symbol,
 })
 

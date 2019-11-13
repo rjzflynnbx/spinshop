@@ -83,6 +83,7 @@ import ElementProductSlider from "./components/features/product/element-product-
 import ElementProductNoSlider from "./components/features/product/element-product-no-slider"
 import ElementMultipleSlider from "./components/features/product/element-multiple-slider"
 import ElementProductTab from "./components/features/product/element-product-tab"
+import CollectionSneakerSale from './components/collection/collection-sneakers';
 
 class Root extends React.Component {
 
@@ -114,6 +115,7 @@ class Root extends React.Component {
                                     <Route path={`${process.env.PUBLIC_URL}/right-sidebar/collection`} component={CollectionRightSidebar} />
                                     <Route path={`${process.env.PUBLIC_URL}/full-width/collection`} component={CollectionFullWidth} />
                                     <Route path={`${process.env.PUBLIC_URL}/metro/collection`} component={CollectionMetro} />
+                                    <Route path={`${process.env.PUBLIC_URL}/sneaker-sale/collection`} component={CollectionSneakerSale} />
 
                                     {/*Routes For Single Product*/}
                                     <Route path={`${process.env.PUBLIC_URL}/left-sidebar/product/:id`} component={LeftSideBar} />
