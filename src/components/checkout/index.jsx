@@ -7,7 +7,7 @@ import SimpleReactValidator from 'simple-react-validator';
 
 import Breadcrumb from "../common/breadcrumb";
 import {removeFromWishlist} from '../../actions'
-import {getCartTotal} from "../../services";
+import {getCartTotal, bxView, bxIdenfify} from "../../services";
 
 class checkOut extends Component {
 
@@ -30,7 +30,12 @@ class checkOut extends Component {
         this.validator = new SimpleReactValidator();
     }
 
+    componentDidMount(){
+        bxView('CHEKOUT');
+    }
+
     setStateFromInput = (event) => {
+        console.log('event');
         var obj = {};
         obj[event.target.name] = event.target.value;
         this.setState(obj);
@@ -92,7 +97,7 @@ class checkOut extends Component {
                 pathname: '/order-success',
                     state: { payment: payment, items: cartItems, orderTotal: total, symbol: symbol }
             })
-
+            bxIdenfify(this.state.email,this.state.first_name,this.state.last_name)
         }
 
         const onCancel = (data) => {
@@ -108,13 +113,17 @@ class checkOut extends Component {
             production: 'AZ4S98zFa01vym7NVeo_qthZyOnBhtNvQDsjhaZSMH-2_Y9IAJFbSD3HPueErYqN8Sa8WYRbjP7wWtd_',
         }
 
+        const bxIdentify = (email,fname,lname) => {
+            bxIdenfify(email,fname,lname);
+        }
+
 
         return (
             <div>
 
                 {/*SEO Support*/}
                 <Helmet>
-                    <title>MultiKart | CheckOut Page</title>
+                    <title> CheckOut</title>
                     <meta name="description" content="Multikart – Multipurpose eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites. Multikart Bootstrap 4 Template will help you run multiple businesses." />
                 </Helmet>
                 {/*SEO Support End */}
@@ -149,12 +158,13 @@ class checkOut extends Component {
                                                 </div>
                                                 <div className="form-group col-md-6 col-sm-6 col-xs-12">
                                                     <div className="field-label">Email Address</div>
-                                                    <input type="text" name="email" value={this.state.email} onChange={this.setStateFromInput} />
+                                                    <input type="text" name="email" value={this.state.email} onChange={this.setStateFromInput}/>
                                                     {this.validator.message('email', this.state.email, 'required|email')}
                                                 </div>
                                                 <div className="form-group col-md-12 col-sm-12 col-xs-12">
                                                     <div className="field-label">Country</div>
-                                                    <select name="country" value={this.state.country} onChange={this.setStateFromInput}>
+                                                    <select name="country" value={this.state.country} onChange={this.setStateFromInput} 
+                                                        onChange={bxIdentify(this.state.email, this.state.first_name, this.state.last_name)}>
                                                         <option>India</option>
                                                         <option>South Africa</option>
                                                         <option>United State</option>

@@ -20,6 +20,7 @@ import HeaderOne from "../../common/headers/header-one"
 import FooterOne from "../../common/footers/footer-one"
 import BlogSection from "../common/blogsection";
 import MultiSlider from "./multiple-slider";
+import { bxView } from '../../../services/index';
 
 class SpinShop extends Component {
     constructor(props) {
@@ -37,7 +38,7 @@ class SpinShop extends Component {
     };
 
     componentDidMount() {
-        //console.log("pageview here", window.Boxever.getID());
+        bxView('/');
         document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
     }
 

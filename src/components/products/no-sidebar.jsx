@@ -12,6 +12,7 @@ import DetailsTopTabs from "./common/details-top-tabs";
 import { addToCart, addToCartUnsafe, addToWishlist } from '../../actions'
 import ImageZoom from './common/product/image-zoom'
 import SmallImages from './common/product/small-image'
+import { bxView } from '../../services/index';
 
 
 
@@ -31,15 +32,14 @@ class NoSideBar extends Component {
             nav1: this.slider1,
             nav2: this.slider2
         });
-
     }
 
     render() {
         const { symbol, item, addToCart, addToCartUnsafe, addToWishlist } = this.props
+        bxView('' + item.name + "(" + item.id + ')')
         var products = {
             fade: true
         };
-
         var productsnav = {
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -47,8 +47,6 @@ class NoSideBar extends Component {
             draggable: true,
             focusOnSelect: true
         };
-
-
         return (
             <div>
                 {/*TODO: component*/}
@@ -98,6 +96,9 @@ class NoSideBar extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    //bxView('viewed product' + productId);
+    let item = state.data.products.find(el => el.id == productId);
+    console.log('ITEM ', productId)
     let productId = ownProps.match.params.id;
     return {
         item: state.data.products.find(el => el.id == productId),

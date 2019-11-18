@@ -5,13 +5,17 @@ import {Link} from 'react-router-dom'
 
 
 import Breadcrumb from "../common/breadcrumb";
-import {getCartTotal} from "../../services";
+import {getCartTotal, bxView} from "../../services";
 import {removeFromCart, incrementQty, decrementQty} from '../../actions'
 
 class cartComponent extends Component {
 
     constructor (props) {
         super (props)
+    }
+
+    componentDidMount(){
+        bxView('CART');
     }
 
     render (){

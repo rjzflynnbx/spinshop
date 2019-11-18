@@ -216,7 +216,7 @@ export const getRelatedProducts = (products, productId) => {
     return items.slice(0, 8)
 }
 
-// Get Related Products
+// Get Products By Catagory
 export const getProductsWithCatagory = (products, catagory) => {
     const items = products.filter(product => {
         return product.catagories != null && product.catagories.includes(catagory);
@@ -230,7 +230,8 @@ export const getProductsWithCatagory = (products, catagory) => {
 
 
 export const bxAddProductToCart = (product) => {
-    console.log("bxAddProductToCart", window.Boxever.getID());
+    console.log("bxAddProductToCart");
+    console.log(product);
     var event =
     {
         "channel": "WEB",
@@ -241,12 +242,12 @@ export const bxAddProductToCart = (product) => {
         "pos": "easyjet.com",
         "browser_id": window.Boxever.getID(),
         "product": {
-            "item_id": "id",
-            "type": "RETAIL_ORDER",
-            "name": "Asia Weekly",
+            "item_id": product.id,
+            "type": "product",
+            "name": product.name,
             "sku": "",
-            "currency": "EUR",
-            "price": 35.00,
+            "currency": "USD",
+            "price": product.price,
             "quantity": 1
         }
     };
@@ -255,6 +256,9 @@ export const bxAddProductToCart = (product) => {
 
 
 export const bxView = (page) => {
+    if(page == null){
+        page = window.location.pathname;
+    }
     var viewEvent = {
         "browser_id": window.Boxever.getID(),
         "channel": "WEB",
@@ -266,6 +270,25 @@ export const bxView = (page) => {
         "session_data": { "uri": page }
     };
     window.Boxever.eventCreate(viewEvent, function (data) { }, 'json');
+}
+
+export const bxIdenfify = (email,fname,lname) => {
+    window._boxeverq.push(function () {
+        var identifyEvent = {
+            "browser_id": window.Boxever.getID(),
+            "channel": "WEB",
+            "type": "IDENTITY",
+            "language": "EN",
+            "currency": "EUR",
+            "page": "CHEKOUT",
+            "pos": "easyjet.com",
+            "email": email,
+            "firstname": fname,
+            "lastname": lname
+        };
+
+        window.Boxever.eventCreate(identifyEvent, function (data) { }, 'json');
+    });
 }
 
 
