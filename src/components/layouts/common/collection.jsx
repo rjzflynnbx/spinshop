@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux'
 
-import { getTrendingCollection } from '../../../services/index'
+import { getTrendingCollection, getProductsWithCatagory } from '../../../services/index'
 import { Product4, Product5 } from '../../../services/script'
 import { addToCart, addToWishlist, addToCompare } from "../../../actions/index";
 import ProductItem from '../../features/product/common/product-style-five';
@@ -11,7 +11,7 @@ class TopCollection extends Component {
 
     render() {
 
-        const { items, symbol, addToCart, addToWishlist, addToCompare, type, title } = this.props;
+        const { items, symbol, addToCart, addToWishlist, addToCompare, type, title, subtitle} = this.props;
 
         var properties;
         if (type === 'kids') {
@@ -24,7 +24,7 @@ class TopCollection extends Component {
             <div>
                 {/*Paragraph*/}
                 <div className="title1  section-t-space">
-                    {/* <h4>special offer</h4> */}
+                    <h4>{subtitle}</h4>
                     <h2 className="title-inner1">{title}</h2>
                 </div>
                 {/*Paragraph End*/}
@@ -52,7 +52,8 @@ class TopCollection extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    items: getTrendingCollection(state.data.products, ownProps.type),
+    //items: getTrendingCollection(state.data.products, ownProps.type),
+    items: getProductsWithCatagory(state.data.products,'trainers'),
     symbol: state.data.symbol
 })
 

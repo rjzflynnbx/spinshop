@@ -554,12 +554,12 @@
   },
   {
     "id": 13,
-    "name": "Trench Dress",
-    "price": 660.00,
+    "name": "Nike Air Max 270",
+    "price": 100.00,
     "salePrice": 1320.00,
-    "discount": 50,
+    "discount": 5,
     "pictures": [
-      "/assets/images/fashion/product/31.jpg",
+      "/assets/images/fashion/product/nike/airmax/1.jpg",
       "/assets/images/fashion/product/18.jpg",
       "/assets/images/fashion/product/24.jpg",
       "/assets/images/fashion/product/28.jpg"
@@ -583,11 +583,14 @@
       "nike",
       "lifestyle"
     ],
+    "catagories": [
+      "trainers"
+    ],
     "rating": 4,
     "variants": [
       {
         "color": "green",
-        "images": "/assets/images/fashion/product/31.jpg"
+        "images": "/assets/images/fashion/product/nike/airmax/1.jpg"
       },
       {
         "color": "gray",
@@ -597,12 +600,12 @@
   },
   {
     "id": 14,
-    "name": "Striped Dress",
+    "name": "Nike Air Max 270 React Women's",
     "price": 950.00,
     "salePrice": 425.00,
     "discount": 50,
     "pictures": [
-      "/assets/images/fashion/product/13.jpg",
+      "/assets/images/fashion/product/nike/womens_airmax/2.jpg",
       "/assets/images/fashion/product/22.jpg",
       "/assets/images/fashion/product/10.jpg",
       "/assets/images/fashion/product/1.jpg"
@@ -628,10 +631,13 @@
       "lifestyle"
     ],
     "rating": 4,
+    "catagories": [
+      "trainers"
+    ],
     "variants": [
       {
         "color": "orange",
-        "images": "/assets/images/fashion/product/13.jpg"
+        "images": "/assets/images/fashion/product/nike/womens_airmax/2.jpg"
       },
       {
         "color": "black",
@@ -645,12 +651,12 @@
   },
   {
     "id": 15,
-    "name": "Cut Top Dress",
+    "name": "Nike Air Force 1 Low",
     "price": 350.00,
     "salePrice": 700.00,
     "discount": 50,
     "pictures": [
-      "/assets/images/fashion/product/17.jpg",
+      "/assets/images/fashion/product/nike/af1/2.jpg",
       "/assets/images/fashion/product/21.jpg",
       "/assets/images/fashion/product/15.jpg",
       "/assets/images/fashion/product/12.jpg"
@@ -676,10 +682,13 @@
       "lifestyle"
     ],
     "rating": 5,
+    "catagories": [
+      "trainers"
+    ],
     "variants": [
       {
         "color": "black",
-        "images": "/assets/images/fashion/product/17.jpg"
+        "images": "/assets/images/fashion/product/nike/af1/2.jpg"
       },
       {
         "color": "white",
@@ -697,12 +706,12 @@
   },
   {
     "id": 16,
-    "name": "Floral Dress",
-    "price": 556.00,
+    "name": "Nike Air VaporMax Flyknit 3",
+    "price": 300.00,
     "salePrice": 278.00,
-    "discount": 50,
+    "discount": 5,
     "pictures": [
-      "/assets/images/fashion/product/3.jpg",
+      "/assets/images/fashion/product/nike/vapormax/1.jpg",
       "/assets/images/fashion/product/10.jpg",
       "/assets/images/fashion/product/24.jpg",
       "/assets/images/fashion/product/22.jpg"
@@ -728,10 +737,13 @@
       "lifestyle"
     ],
     "rating": 4,
+    "catagories": [
+      "trainers"
+    ],
     "variants": [
       {
         "color": "pink",
-        "images": "/assets/images/fashion/product/3.jpg"
+        "images": "/assets/images/fashion/product/nike/vapormax/1.jpg"
       },
       {
         "color": "yellow",
@@ -745,12 +757,12 @@
   },
   {
     "id": 20,
-    "name": "Floral Top",
-    "price": 800.00,
+    "name": "Nike Air Max 270 Women's",
+    "price": 150.00,
     "salePrice": 400.00,
-    "discount": 50,
+    "discount": 5,
     "pictures": [
-      "/assets/images/fashion/product/25.jpg",
+      "/assets/images/fashion/product/nike/womens_airmax/1.jpg",
       "/assets/images/fashion/product/20.jpg",
       "/assets/images/fashion/product/24.jpg",
       "/assets/images/fashion/product/34.jpg"
@@ -775,11 +787,14 @@
       "nike",
       "lifestyle"
     ],
+    "catagories": [
+      "trainers"
+    ],
     "rating": 4,
     "variants": [
       {
         "color": "red",
-        "images": "/assets/images/fashion/product/25.jpg"
+        "images": "/assets/images/fashion/product/nike/womens_airmax/1.jpg"
       },
       {
         "color": "gray",
@@ -793,12 +808,12 @@
   },
   {
     "id": 21,
-    "name": "Fitted Dress",
-    "price": 1050.00,
+    "name": "Jordan Air 1 Mid",
+    "price": 200,
     "salePrice": 2000.00,
     "discount": 50,
     "pictures": [
-      "/assets/images/fashion/product/7.jpg",
+      "/assets/images/fashion/product/nike/airjordon/1.jpg",
       "/assets/images/fashion/product/6.jpg",
       "/assets/images/fashion/product/8.jpg",
       "/assets/images/fashion/product/20.jpg"
@@ -823,11 +838,14 @@
       "lifestyle",
       "nike"
     ],
+    "catagories": [
+      "trainers"
+    ],
     "rating": 5,
     "variants": [
       {
         "color": "orange",
-        "images": "/assets/images/fashion/product/7.jpg"
+        "images": "/assets/images/fashion/product/nike/airjordon/1.jpg"
       },
       {
         "color": "black",
@@ -841,7 +859,7 @@
   },
   {
     "id": 22,
-    "name": "Nike AF1 Goretex",
+    "name": "Nike Air Force 1",
     "price": 190.00,
     "salePrice": 150.00,
     "discount": 15,
@@ -872,7 +890,7 @@
       "nike"
     ],
     "catagories": [
-      "trainers"
+      "todo"
     ],
     "rating": 5,
     "variants": [

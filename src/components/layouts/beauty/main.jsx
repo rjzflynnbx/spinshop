@@ -21,7 +21,7 @@ import FooterOne from "../../common/footers/footer-one"
 import BlogSection from "../common/blogsection";
 import MultiSlider from "./multiple-slider";
 
-class Beauty extends Component {
+class SpinShop extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -47,7 +47,7 @@ class Beauty extends Component {
             <div>
 
                 <Helmet>
-                    <title>SpinShop | A Boxever Demo</title>
+                    <title>SpinShop | Boxever Demo</title>
                 </Helmet>
                 <HeaderOne logoName={'logo/logo2.png'} />
 
@@ -103,6 +103,9 @@ class Beauty extends Component {
                     </div>
                 </section>
 
+                {/*Dynamic Product slider*/}
+                <TopCollection type={'men'} title={'Best Sellers'} subtitle={'Trainers'} />
+                {/*Product slider End*/}
 
                 {/*Trending Products Section*/}
                 <MultiSlider type={'men'} title={'Trending Products'}  />
@@ -132,7 +135,6 @@ class Beauty extends Component {
                         </div>
                     </div>
                 </section>
-   
                 <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} />
 
 
@@ -145,4 +147,4 @@ class Beauty extends Component {
 }
 
 
-export default Beauty;
+export default SpinShop;
