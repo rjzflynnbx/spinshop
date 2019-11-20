@@ -1,3 +1,4 @@
+var uuid = require('uuid');
 
 // Get Unique Brands from Json Data
 export const getBrands = (products) => {
@@ -237,17 +238,17 @@ export const bxAddProductToCart = (product) => {
         "channel": "WEB",
         "type": "ADD",
         "language": "EN",
-        "currency": "EUR",
+        "currency": "USD",
         "page": "",
         "pos": "easyjet.com",
         "browser_id": window.Boxever.getID(),
         "product": {
-            "item_id": product.id,
+            "item_id": JSON.stringify(product.id),
             "type": "product",
             "name": product.name,
             "sku": "",
             "currency": "USD",
-            "price": product.price,
+            "price": parseFloat(Math.round(product.price * 100) / 100).toFixed(2),
             "quantity": 1
         }
     };
@@ -264,7 +265,7 @@ export const bxView = (page) => {
         "channel": "WEB",
         "type": "VIEW",
         "language": "EN",
-        "currency": "EUR",
+        "currency": "USD",
         "page": page,
         "pos": "easyjet.com",
         "session_data": { "uri": page }
@@ -279,7 +280,7 @@ export const bxIdenfify = (email,fname,lname) => {
             "channel": "WEB",
             "type": "IDENTITY",
             "language": "EN",
-            "currency": "EUR",
+            "currency": "USD",
             "page": "CHEKOUT",
             "pos": "easyjet.com",
             "email": email,
@@ -291,4 +292,102 @@ export const bxIdenfify = (email,fname,lname) => {
     });
 }
 
+export const bxCheckout = (cartItems) => {
+    
+    let checkoutProducts = [];
+    cartItems.forEach(function (cartItem) {
+        console.log(cartItem);
+        checkoutProducts.push(
+            {
+                "item_id": JSON.stringify(cartItem.id)
+            }
+        );
+    });
+
+    //confirm
+    window._boxeverq.push(function () {    
+        var confirmEvent = {
+            "browser_id": window.Boxever.getID(),
+            "channel": "WEB",
+            "type": "CONFIRM",
+            "language": "EN",
+            "currency": "USD",
+            "page": "/order-success",
+            "pos": "easyjet.com",
+            "product": checkoutProducts
+            
+        };
+        window.Boxever.eventCreate(confirmEvent, function (data) { }, 'json');
+    });
+
+    //payment
+    window._boxeverq.push(function () {    
+        var payment =    {
+            "channel": "WEB",
+            "type": "PAYMENT",
+            "language": "EN",
+            "currency": "USD",
+            "page": "/order-success",
+            "pos": "easyjet.com",
+            "browser_id": window.Boxever.getID(),
+            "pay_type": "Card"
+        }
+        window.Boxever.eventCreate(payment, function (data) { }, 'json');
+    });
+
+    //checkout
+    window._boxeverq.push(function () {    
+        var checkoutEvent = {
+            "browser_id": window.Boxever.getID(),
+            "channel": "WEB",
+            "type": "CHECKOUT",
+            "language": "EN",
+            "currency": "USD",
+            "page": "/order-success",
+            "pos": "easyjet.com",
+            "reference_id": uuid.v4(),
+        };
+        window.Boxever.eventCreate(checkoutEvent, function (data) { }, 'json');
+    });
+
+
+   
+}
+
+
+
+// get("Add Confirm Event", {
+//     url: "https://{{apiEndpoint}}/v1.2/event/create.json?client_key={{clientKey}}&message={{message}}",
+//     prepare: function (context) {
+//         var event = {
+//             "browser_id": "{{browserId}}",
+//             "channel": "APP",
+//             "type": "CONFIRM",
+//             "language": "{{language}}",
+//             "currency": "{{currencyCode}}",
+//             "page": "/home",
+//             "pos": "mannings.com.hk",
+//             "product": [{ "item_id": "15" }] //need to put
+
+
+//         };
+//         context.sessionVariables.message = JSON.stringify(chainsaw.replaceAllVariables(event, context));
+//     }
+// }).
+// get("Add Checkout Event", {
+//     url: "https://{{apiEndpoint}}/v1.2/event/create.json?client_key={{clientKey}}&message={{message}}",
+//     prepare: function (context) {
+//         var event = {
+//             "browser_id": "{{browserId}}",
+//             "channel": "APP",
+//             "type": "CHECKOUT",
+//             "language": "{{language}}",
+//             "currency": "{{currencyCode}}",
+//             "page": "/home",
+//             "pos": "mannings.com.hk",
+//             "reference_id": "{{$guid}}",
+//         };
+//         context.sessionVariables.message = JSON.stringify(chainsaw.replaceAllVariables(event, context));
+//     }
+// }).
 

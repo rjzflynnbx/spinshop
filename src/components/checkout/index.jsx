@@ -7,7 +7,7 @@ import SimpleReactValidator from 'simple-react-validator';
 
 import Breadcrumb from "../common/breadcrumb";
 import {removeFromWishlist} from '../../actions'
-import {getCartTotal, bxView, bxIdenfify} from "../../services";
+import {getCartTotal, bxView, bxIdenfify, bxCheckout} from "../../services";
 
 class checkOut extends Component {
 
@@ -60,27 +60,42 @@ class checkOut extends Component {
     }
 
     StripeClick = () => {
+        bxCheckout(this.props.cartItems);
+        this.props.history.push({
+            pathname: '/order-success',
+                state: { payment: {}, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
+        })
+       
+       
 
+        
         if (this.validator.allValid()) {
             alert('You submitted the form and stuff!');
 
-            var handler = (window).StripeCheckout.configure({
-                key: 'pk_test_glxk17KhP7poKIawsaSgKtsL',
-                locale: 'auto',
-                token: (token: any) => {
-                    console.log(token)
-                      this.props.history.push({
-                          pathname: '/order-success',
-                              state: { payment: token, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
-                      })
-                }
-              });
-              handler.open({
-                name: 'Multikart',
-                description: 'Online Fashion Store',
-                amount: this.amount * 100
-              })
-        } else {
+            this.props.history.push({
+                pathname: '/order-success',
+                    state: { payment: {}, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
+            })
+            
+
+            // var handler = (window).StripeCheckout.configure({
+            //     key: 'pk_test_glxk17KhP7poKIawsaSgKtsL',
+            //     locale: 'auto',
+            //     token: (token: any) => {
+            //         console.log(token)
+            //           this.props.history.push({
+            //               pathname: '/order-success',
+            //                   state: { payment: token, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
+            //           })
+            //     }
+            //   });
+            //   handler.open({
+            //     name: 'Multikart',
+            //     description: 'Online Fashion Store',
+            //     amount: this.amount * 100
+            //   })
+        } 
+        else {
           this.validator.showMessages();
           // rerender to show messages for the first time
           this.forceUpdate();

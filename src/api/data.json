@@ -557,7 +557,7 @@
     "name": "Nike Air Max 270",
     "price": 100.00,
     "salePrice": 1320.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/nike/airmax/1.jpg",
       "/assets/images/fashion/product/18.jpg",
@@ -709,7 +709,7 @@
     "name": "Nike Air VaporMax Flyknit 3",
     "price": 300.00,
     "salePrice": 278.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/nike/vapormax/1.jpg",
       "/assets/images/fashion/product/10.jpg",
@@ -760,7 +760,7 @@
     "name": "Nike Air Max 270 Women's",
     "price": 150.00,
     "salePrice": 400.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/nike/womens_airmax/1.jpg",
       "/assets/images/fashion/product/20.jpg",
@@ -862,7 +862,7 @@
     "name": "Nike Air Force 1",
     "price": 190.00,
     "salePrice": 150.00,
-    "discount": 15,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/nike/af1/1.jpg",
       "/assets/images/fashion/product/59.jpg",
@@ -1143,9 +1143,9 @@
     "id": 33,
     "name": "GERMANY HOME SHORTS",
     "relatedIds": [42],
-    "price": 33.00,
+    "price": 40.00,
     "salePrice": 1200.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/collection/ufea2020/8.jpg",
       "/assets/images/fashion/product/collection/ufea2020/88.jpg",
@@ -1238,7 +1238,7 @@
     "collectionId": 1,
     "price": 100.00,
     "salePrice": 400.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/collection/ufea2020/6.jpg",
       "/assets/images/fashion/product/77.jpg",
@@ -1282,7 +1282,7 @@
     "collectionId": 1,
     "price": 100.00,
     "salePrice": 200.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/collection/ufea2020/5.jpg",
       "/assets/images/fashion/product/75.jpg",
@@ -1375,7 +1375,7 @@
     "collectionId": 1,
     "price": 100.00,
     "salePrice": 900.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/collection/ufea2020/3.jpg",
       "/assets/images/fashion/product/74.jpg",
@@ -1424,7 +1424,7 @@
     "collectionId": 1,
     "price": 130,
     "salePrice": 240.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/collection/ufea2020/3.jpg",
       "/assets/images/fashion/product/55.jpg",
@@ -1465,7 +1465,7 @@
     "collectionId": 1,
     "price": 130,
     "salePrice": 400.00,
-    "discount": 5,
+    "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/collection/ufea2020/1.jpg", 
       "/assets/images/fashion/product/collection/ufea2020/11.jpg",
