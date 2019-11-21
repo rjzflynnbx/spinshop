@@ -17,6 +17,11 @@ import TopCollection from "../common/collection"
 import NewProduct from "../../common/new-product"
 import Instagram from "../common/instagram"
 import HeaderOne from "../../common/headers/header-one"
+import HeaderTwo from "../../common/headers/header-two"
+import HeaderThree from "../../common/headers/header-three"
+import HeaderFour from "../../common/headers/header-four"
+import HeaderFive from "../../common/headers/header-five"
+
 import FooterOne from "../../common/footers/footer-one"
 import BlogSection from "../common/blogsection";
 import MultiSlider from "./multiple-slider";
@@ -72,7 +77,7 @@ class SpinShop extends Component {
                 <Helmet>
                     <title>SpinShop | Boxever Demo</title>
                 </Helmet>
-                <HeaderOne logoName={'logo/logo2.png'} />
+                <HeaderThree logoName={'logo/logo2.png'} />
 
                 {/*Slider Promo Area 1*/}
                 <section className="p-0">
