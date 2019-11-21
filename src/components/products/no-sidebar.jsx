@@ -32,11 +32,12 @@ class NoSideBar extends Component {
             nav1: this.slider1,
             nav2: this.slider2
         });
+        bxView('' + this.props.item.name + "(" + this.props.item.id + ')')
     }
 
     render() {
         const { symbol, item, addToCart, addToCartUnsafe, addToWishlist } = this.props
-        bxView('' + item.name + "(" + item.id + ')')
+        
         var products = {
             fade: true
         };

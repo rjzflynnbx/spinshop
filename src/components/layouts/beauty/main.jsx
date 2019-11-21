@@ -26,7 +26,10 @@ class SpinShop extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            open: false
+            open: false,
+            error: null,
+            isLoaded: false,
+            items: []
         }
     }
     onOpenModal = () => {
@@ -38,8 +41,27 @@ class SpinShop extends Component {
     };
 
     componentDidMount() {
-        bxView('/');
         document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
+        bxView('/');
+        fetch("https://jsonplaceholder.typicode.com/posts")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded: true,
+                        items: result.items
+                    });
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
     }
 
     render() {
@@ -109,10 +131,10 @@ class SpinShop extends Component {
                 {/*Product slider End*/}
 
                 {/*Trending Products Section*/}
-                <MultiSlider type={'men'} title={'Trending Products'}  />
+                <MultiSlider type={'men'} title={'Trending Products'} />
 
 
-                {/*Promo Aera 2 Section*/}           
+                {/*Promo Aera 2 Section*/}
                 <section className=" ratio2_1">
                     <div className="container">
                         <div className="row partition4">
@@ -132,7 +154,7 @@ class SpinShop extends Component {
                                     </div>
                                 </a>
                             </div>
-                                                                            
+
                         </div>
                     </div>
                 </section>

@@ -230,25 +230,29 @@ export const getProductsWithCatagory = (products, catagory) => {
 // Boxever services ********************************************************************************************************************************
 
 
+const POS = "spinshop.com";
+const CHANNEL = "WEB";
+
+
 export const bxAddProductToCart = (product) => {
     console.log("bxAddProductToCart");
     console.log(product);
     var event =
     {
-        "channel": "WEB",
+        "channel": CHANNEL,
         "type": "ADD",
         "language": "EN",
         "currency": "USD",
         "page": "",
-        "pos": "easyjet.com",
+        "pos": POS,
         "browser_id": window.Boxever.getID(),
         "product": {
             "item_id": JSON.stringify(product.id),
-            "type": "product",
+            "product_id": JSON.stringify(product.id),
+            "type": "OTHER",
             "name": product.name,
-            "sku": "",
             "currency": "USD",
-            "price": parseFloat(Math.round(product.price * 100) / 100).toFixed(2),
+            "price": parseFloat(parseFloat(Math.round(product.price * product.discount) / 100).toFixed(2)),
             "quantity": 1
         }
     };
@@ -262,12 +266,12 @@ export const bxView = (page) => {
     }
     var viewEvent = {
         "browser_id": window.Boxever.getID(),
-        "channel": "WEB",
+        "channel": CHANNEL,
         "type": "VIEW",
         "language": "EN",
         "currency": "USD",
         "page": page,
-        "pos": "easyjet.com",
+        "pos": POS,
         "session_data": { "uri": page }
     };
     window.Boxever.eventCreate(viewEvent, function (data) { }, 'json');
@@ -277,12 +281,12 @@ export const bxIdenfify = (email,fname,lname) => {
     window._boxeverq.push(function () {
         var identifyEvent = {
             "browser_id": window.Boxever.getID(),
-            "channel": "WEB",
+            "channel": CHANNEL,
             "type": "IDENTITY",
             "language": "EN",
             "currency": "USD",
             "page": "CHEKOUT",
-            "pos": "easyjet.com",
+            "pos": POS,
             "email": email,
             "firstname": fname,
             "lastname": lname
@@ -308,12 +312,12 @@ export const bxCheckout = (cartItems) => {
     window._boxeverq.push(function () {    
         var confirmEvent = {
             "browser_id": window.Boxever.getID(),
-            "channel": "WEB",
+            "channel": CHANNEL,
             "type": "CONFIRM",
             "language": "EN",
             "currency": "USD",
             "page": "/order-success",
-            "pos": "easyjet.com",
+            "pos": POS,
             "product": checkoutProducts
             
         };
@@ -323,12 +327,12 @@ export const bxCheckout = (cartItems) => {
     //payment
     window._boxeverq.push(function () {    
         var payment =    {
-            "channel": "WEB",
+            "channel": CHANNEL,
             "type": "PAYMENT",
             "language": "EN",
             "currency": "USD",
             "page": "/order-success",
-            "pos": "easyjet.com",
+            "pos": POS,
             "browser_id": window.Boxever.getID(),
             "pay_type": "Card"
         }
@@ -339,12 +343,12 @@ export const bxCheckout = (cartItems) => {
     window._boxeverq.push(function () {    
         var checkoutEvent = {
             "browser_id": window.Boxever.getID(),
-            "channel": "WEB",
+            "channel": CHANNEL,
             "type": "CHECKOUT",
             "language": "EN",
             "currency": "USD",
             "page": "/order-success",
-            "pos": "easyjet.com",
+            "pos": POS,
             "reference_id": uuid.v4(),
         };
         window.Boxever.eventCreate(checkoutEvent, function (data) { }, 'json');
