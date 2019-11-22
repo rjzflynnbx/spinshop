@@ -27,6 +27,10 @@ import BlogSection from "../common/blogsection";
 import MultiSlider from "./multiple-slider";
 import { bxView } from '../../../services/index';
 
+
+const axios = require('axios');
+
+
 class SpinShop extends Component {
     constructor(props) {
         super(props)
@@ -45,35 +49,42 @@ class SpinShop extends Component {
         this.setState({ open: false });
     };
 
-    componentDidMount() {
+ 
+
+    componentWillMount() {
         document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
         bxView('/');
-        // fetch("https://jsonplaceholder.typicode.com/posts")
-        //     .then(res => res.json())
-        //     .then(
-        //         (result) => {
-        //             this.setState({
-        //                 isLoaded: true,
-        //                 bxResponse: {
-        //                     "showBlock": true
-        //                 }
-        //             });
-        //             console.log(this.state.bxResponse);
-        //         },
-        //         (error) => {
-        //             this.setState({
-        //                 isLoaded: true,
-        //                 error
-        //             });
-        //         }
-        //     )
+
+        var self = this;
+        axios.post('https://api.boxever.com/v2/callFlows/14501789-c24a-4310-885b-cf237acdb3a8', {
+            channel: "WEB",
+            browserId: window.Boxever.getID(),
+            clientKey: "pqsSIOPAxhMC9zJLJSZNFURPNqALIFwd",
+            pointOfSale: "spinshop.com"
+        })
+        .then(function (response) {
+            self.setState({
+                isLoaded: true,
+                bxResponse: {
+                    "showBlock": response.data.showSneakerComponent
+                }
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+            // this.setState({
+            //     isLoaded: true,
+            //     error
+            // });
+        });
+
     }
 
     render() {
 
         const showBlock = this.state.bxResponse.showBlock;
         let dynamicComponent;
-        if(showBlock){
+        if (showBlock) {
             dynamicComponent = <TopCollection type={'men'} title={'Best Sellers'} subtitle={'Trainers'} />
         } else {
             dynamicComponent = null;
@@ -140,7 +151,7 @@ class SpinShop extends Component {
 
                 {/*Dynamic Product slider*/}
                 {dynamicComponent}
-  
+
                 {/*Trending Products Section*/}
                 <MultiSlider type={'men'} title={'Trending Products'} />
 

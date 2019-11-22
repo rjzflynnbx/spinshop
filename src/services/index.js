@@ -249,7 +249,7 @@ export const bxAddProductToCart = (product) => {
         "product": {
             "item_id": JSON.stringify(product.id),
             "product_id": JSON.stringify(product.id),
-            "type": "OTHER",
+            "type": "PRODUCT",
             "name": product.name,
             "currency": "USD",
             "price": parseFloat(parseFloat(Math.round(product.price * product.discount) / 100).toFixed(2)),
@@ -360,6 +360,7 @@ export const bxCheckout = (cartItems) => {
 
 
 export const bxStartAsAnon = () => {
+    window.localStorage.removeItem("state");
     window.Boxever.reset();
     //window.location.reload();
 }
