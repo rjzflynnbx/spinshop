@@ -107,8 +107,12 @@ class SpinShop extends Component {
                                         <div className="col">
                                             <div className="slider-contain">
                                                 <div>
-                                                    <h4>Nike Air Force 1 GORE-TEX</h4>
-                                                    <h1>waterproof technology</h1><a href="#" className="btn btn-solid">shop now</a></div>
+                                                    <h4></h4>                                                 
+                                                    <h1></h1>
+                                                    <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>                                                  
+                                                        <a className="btn btn-solid">shop now</a>
+                                                    </Link>  
+                                                </div>  
                                             </div>
                                         </div>
                                     </div>
