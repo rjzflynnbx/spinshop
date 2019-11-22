@@ -48,25 +48,25 @@ class SpinShop extends Component {
     componentDidMount() {
         document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
         bxView('/');
-        fetch("https://jsonplaceholder.typicode.com/posts")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        bxResponse: {
-                            "showBlock": true
-                        }
-                    });
-                    console.log(this.state.bxResponse);
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
+        // fetch("https://jsonplaceholder.typicode.com/posts")
+        //     .then(res => res.json())
+        //     .then(
+        //         (result) => {
+        //             this.setState({
+        //                 isLoaded: true,
+        //                 bxResponse: {
+        //                     "showBlock": true
+        //                 }
+        //             });
+        //             console.log(this.state.bxResponse);
+        //         },
+        //         (error) => {
+        //             this.setState({
+        //                 isLoaded: true,
+        //                 error
+        //             });
+        //         }
+        //     )
     }
 
     render() {
