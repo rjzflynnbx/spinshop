@@ -26,6 +26,7 @@ import FooterOne from "../../common/footers/footer-one"
 import BlogSection from "../common/blogsection";
 import MultiSlider from "./multiple-slider";
 import { bxView } from '../../../services/index';
+import LogoBlock from '../common/logo-block';
 
 
 const axios = require('axios');
@@ -136,6 +137,10 @@ class SpinShop extends Component {
                         </div>
                     </Slider>
                 </section>
+
+                {/*Logo's*/}
+                <LogoBlock />
+
 
                 {/*Catagories Section*/}
                 <section className="catagories">

@@ -45,7 +45,7 @@ export const getMinMaxPrice = (products) => {
     return { 'min': min, 'max': max };
 }
 
-export const getVisibleproducts = (data, { brand, color, value, sortBy, catagory}) => {
+export const getVisibleproducts = (data, { brand, color, value, sortBy, catagory }) => {
 
     return data.products.filter(product => {
 
@@ -261,7 +261,7 @@ export const bxAddProductToCart = (product) => {
 
 
 export const bxView = (page) => {
-    if(page == null){
+    if (page == null) {
         page = window.location.pathname;
     }
     var viewEvent = {
@@ -277,7 +277,7 @@ export const bxView = (page) => {
     window.Boxever.eventCreate(viewEvent, function (data) { }, 'json');
 }
 
-export const bxIdenfify = (email,fname,lname) => {
+export const bxIdenfify = (email, fname, lname) => {
     window._boxeverq.push(function () {
         var identifyEvent = {
             "browser_id": window.Boxever.getID(),
@@ -297,36 +297,19 @@ export const bxIdenfify = (email,fname,lname) => {
 }
 
 export const bxCheckout = (cartItems) => {
-    
+
     let checkoutProducts = [];
     cartItems.forEach(function (cartItem) {
         console.log(cartItem);
-        checkoutProducts.push(
-            {
-                "item_id": JSON.stringify(cartItem.id)
-            }
+        checkoutProducts.push({
+            "item_id": JSON.stringify(cartItem.id)
+        }
         );
     });
 
-    //confirm
-    window._boxeverq.push(function () {    
-        var confirmEvent = {
-            "browser_id": window.Boxever.getID(),
-            "channel": CHANNEL,
-            "type": "CONFIRM",
-            "language": "EN",
-            "currency": "USD",
-            "page": "/order-success",
-            "pos": POS,
-            "product": checkoutProducts
-            
-        };
-        window.Boxever.eventCreate(confirmEvent, function (data) { }, 'json');
-    });
-
     //payment
-    window._boxeverq.push(function () {    
-        var payment =    {
+    window._boxeverq.push(function () {
+        var payment = {
             "channel": CHANNEL,
             "type": "PAYMENT",
             "language": "EN",
@@ -339,8 +322,26 @@ export const bxCheckout = (cartItems) => {
         window.Boxever.eventCreate(payment, function (data) { }, 'json');
     });
 
+    //confirm
+    window._boxeverq.push(function () {
+        var confirmEvent = {
+            "browser_id": window.Boxever.getID(),
+            "channel": CHANNEL,
+            "type": "CONFIRM",
+            "language": "EN",
+            "currency": "USD",
+            "page": "/order-success",
+            "pos": POS,
+            "product": checkoutProducts
+
+        };
+        window.Boxever.eventCreate(confirmEvent, function (data) { }, 'json');
+    });
+
+
+
     //checkout
-    window._boxeverq.push(function () {    
+    window._boxeverq.push(function () {
         var checkoutEvent = {
             "browser_id": window.Boxever.getID(),
             "channel": CHANNEL,
@@ -355,7 +356,7 @@ export const bxCheckout = (cartItems) => {
     });
 
 
-   
+
 }
 
 
@@ -366,38 +367,5 @@ export const bxStartAsAnon = () => {
 }
 
 
-// get("Add Confirm Event", {
-//     url: "https://{{apiEndpoint}}/v1.2/event/create.json?client_key={{clientKey}}&message={{message}}",
-//     prepare: function (context) {
-//         var event = {
-//             "browser_id": "{{browserId}}",
-//             "channel": "APP",
-//             "type": "CONFIRM",
-//             "language": "{{language}}",
-//             "currency": "{{currencyCode}}",
-//             "page": "/home",
-//             "pos": "mannings.com.hk",
-//             "product": [{ "item_id": "15" }] //need to put
 
-
-//         };
-//         context.sessionVariables.message = JSON.stringify(chainsaw.replaceAllVariables(event, context));
-//     }
-// }).
-// get("Add Checkout Event", {
-//     url: "https://{{apiEndpoint}}/v1.2/event/create.json?client_key={{clientKey}}&message={{message}}",
-//     prepare: function (context) {
-//         var event = {
-//             "browser_id": "{{browserId}}",
-//             "channel": "APP",
-//             "type": "CHECKOUT",
-//             "language": "{{language}}",
-//             "currency": "{{currencyCode}}",
-//             "page": "/home",
-//             "pos": "mannings.com.hk",
-//             "reference_id": "{{$guid}}",
-//         };
-//         context.sessionVariables.message = JSON.stringify(chainsaw.replaceAllVariables(event, context));
-//     }
-// }).
 
