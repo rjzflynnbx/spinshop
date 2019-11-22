@@ -34,7 +34,7 @@ class SpinShop extends Component {
             open: false,
             error: null,
             isLoaded: false,
-            items: []
+            bxResponse: {}
         }
     }
     onOpenModal = () => {
@@ -54,12 +54,12 @@ class SpinShop extends Component {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        items: result.items
+                        bxResponse: {
+                            "showBlock": true
+                        }
                     });
+                    console.log(this.state.bxResponse);
                 },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
                 (error) => {
                     this.setState({
                         isLoaded: true,
@@ -71,9 +71,16 @@ class SpinShop extends Component {
 
     render() {
 
+        const showBlock = this.state.bxResponse.showBlock;
+        let dynamicComponent;
+        if(showBlock){
+            dynamicComponent = <TopCollection type={'men'} title={'Best Sellers'} subtitle={'Trainers'} />
+        } else {
+            dynamicComponent = null;
+        }
+
         return (
             <div>
-
                 <Helmet>
                     <title>SpinShop | Boxever Demo</title>
                 </Helmet>
@@ -132,9 +139,8 @@ class SpinShop extends Component {
                 </section>
 
                 {/*Dynamic Product slider*/}
-                <TopCollection type={'men'} title={'Best Sellers'} subtitle={'Trainers'} />
-                {/*Product slider End*/}
-
+                {dynamicComponent}
+  
                 {/*Trending Products Section*/}
                 <MultiSlider type={'men'} title={'Trending Products'} />
 
@@ -167,8 +173,6 @@ class SpinShop extends Component {
 
 
                 <FooterOne logoName={'logo/logo2.png'} />
-
-
             </div>
         )
     }
