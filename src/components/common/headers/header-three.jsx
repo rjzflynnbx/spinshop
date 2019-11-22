@@ -12,6 +12,8 @@ import TopBarDark from "./common/topbar-dark";
 import {changeCurrency} from '../../../actions'
 import {connect} from "react-redux";
 import LogoImage from "./common/logo";
+import { bxStartAsAnon } from '../../../services';
+import { toast } from 'react-toastify';
 
 class HeaderThree extends Component {
 
@@ -78,6 +80,11 @@ class HeaderThree extends Component {
         })
     };
 
+    boxeverStartAsAnon = ()=>{
+        bxStartAsAnon();
+        toast.success("Started as Anon");
+    }
+
     render() {
 
         return (
@@ -117,17 +124,10 @@ class HeaderThree extends Component {
                                                         <div><img src={`${process.env.PUBLIC_URL}/assets/images/icon/setting.png`} className="img-fluid" alt="" />
                                                             <i className="fa fa-cog"></i></div>
                                                         <div className="show-div setting">
-                                                            <h6>language</h6>
-                                                            <ul>
-                                                                <li><a href={null} onClick={() => this.changeLanguage('en')}>English</a> </li>
-                                                                <li><a href={null} onClick={() => this.changeLanguage('fn')}>Frenchhh</a> </li>
-                                                            </ul>
-                                                            <h6>currency</h6>
+                                                            <h6>Shortcuts</h6>
                                                             <ul className="list-inline">
-                                                                <li><a href={null} onClick={() => this.props.changeCurrency('€')}>euro</a> </li>
-                                                                <li><a href={null} onClick={() => this.props.changeCurrency('₹')}>rupees</a> </li>
-                                                                <li><a href={null} onClick={() => this.props.changeCurrency('£')}>pound</a> </li>
-                                                                <li><a href={null} onClick={() => this.props.changeCurrency('$')}>doller</a> </li>
+                                                            <li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
+                                                            <li><a href="" onClick={this.boxeverStartAsAnon}>Close Session</a> </li>
                                                             </ul>
                                                         </div>
                                                     </li>

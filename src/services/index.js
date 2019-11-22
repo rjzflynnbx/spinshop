@@ -359,6 +359,11 @@ export const bxCheckout = (cartItems) => {
 }
 
 
+export const bxStartAsAnon = () => {
+    window.Boxever.reset();
+    //window.location.reload();
+}
+
 
 // get("Add Confirm Event", {
 //     url: "https://{{apiEndpoint}}/v1.2/event/create.json?client_key={{clientKey}}&message={{message}}",

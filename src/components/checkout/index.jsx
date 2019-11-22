@@ -8,6 +8,9 @@ import SimpleReactValidator from 'simple-react-validator';
 import Breadcrumb from "../common/breadcrumb";
 import { removeFromWishlist } from '../../actions'
 import { getCartTotal, bxView, bxIdenfify, bxCheckout } from "../../services";
+import LoadingBar from 'react-top-loading-bar';
+
+
 
 class checkOut extends Component {
 
@@ -58,6 +61,10 @@ class checkOut extends Component {
         })
     }
 
+    sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
+
 
 
     StripeClick = (email, fname, lname) => {
@@ -65,15 +72,24 @@ class checkOut extends Component {
         const bxIdentifyEvent = (email, fname, lname) => {
             bxIdenfify(email, fname, lname);
         }
-
         bxIdentifyEvent(email, fname, lname);
         bxCheckout(this.props.cartItems);
-        this.props.history.push({
-            pathname: '/order-success',
-            state: { payment: {}, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
+
+
+        this.LoadingBar.continuousStart();
+
+        this.sleep(3000).then(() => {
+            this.LoadingBar.complete();
+            this.props.history.push({
+                pathname: '/order-success',
+                state: { payment: {}, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
+            })
         })
 
 
+      
+
+      
 
 
         if (this.validator.allValid()) {
@@ -139,6 +155,12 @@ class checkOut extends Component {
 
         return (
             <div>
+
+                <LoadingBar
+                    height={3}
+                    color='#f11946'
+                    onRef={ref => (this.LoadingBar = ref)}
+                />
 
                 {/*SEO Support*/}
                 <Helmet>
