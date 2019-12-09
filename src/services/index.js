@@ -363,7 +363,10 @@ export const bxCheckout = (cartItems) => {
 export const bxStartAsAnon = () => {
     window.localStorage.removeItem("state");
     window.Boxever.reset();
-    //window.location.reload();
+}
+
+export const bxStartAsRF = () => {
+    bxIdenfify('richard.flynn@boxever.com', 'Richard', 'Flynn');
 }
 
 

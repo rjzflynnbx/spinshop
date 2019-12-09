@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { IntlActions } from 'react-redux-multilingual'
 import Pace from 'react-pace-progress'
 
@@ -9,11 +9,12 @@ import NavBar from "./common/navbar";
 import SideBar from "./common/sidebar";
 import CartContainer from "./../../../containers/CartContainer";
 import TopBarDark from "./common/topbar-dark";
-import {changeCurrency} from '../../../actions'
-import {connect} from "react-redux";
+import { changeCurrency } from '../../../actions'
+import { connect } from "react-redux";
 import LogoImage from "./common/logo";
 import { bxStartAsAnon } from '../../../services';
 import { toast } from 'react-toastify';
+import { bxStartAsRF } from '../../../services/index';
 
 class HeaderThree extends Component {
 
@@ -21,7 +22,7 @@ class HeaderThree extends Component {
         super(props);
 
         this.state = {
-            isLoading:false
+            isLoading: false
         }
     }
 
@@ -29,12 +30,12 @@ class HeaderThree extends Component {
          Pre loader
          ==========================*/
     componentDidMount() {
-        setTimeout(function() {
+        setTimeout(function () {
             document.querySelector(".loader-wrapper").style = "display: none";
         }, 2000);
     }
 
-    componentWillMount(){
+    componentWillMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
     componentWillUnmount() {
@@ -47,7 +48,7 @@ class HeaderThree extends Component {
         if (number >= 300) {
             if (window.innerWidth < 576) {
                 document.getElementById("sticky").classList.remove('fixed');
-            }else
+            } else
                 document.getElementById("sticky").classList.add('fixed');
         } else {
             document.getElementById("sticky").classList.remove('fixed');
@@ -60,7 +61,7 @@ class HeaderThree extends Component {
 
     openNav() {
         var openmyslide = document.getElementById("mySidenav");
-        if(openmyslide){
+        if (openmyslide) {
             openmyslide.classList.add('open-side')
         }
     }
@@ -72,17 +73,21 @@ class HeaderThree extends Component {
         document.getElementById("search-overlay").style.display = "none";
     }
 
-    load = ()=>{
-        this.setState({isLoading: true});
-        fetch().then(()=>{
+    load = () => {
+        this.setState({ isLoading: true });
+        fetch().then(() => {
             // deal with data fetched
-            this.setState({isLoading: false})
+            this.setState({ isLoading: false })
         })
     };
 
-    boxeverStartAsAnon = ()=>{
+    boxeverStartAsAnon = () => {
         bxStartAsAnon();
         toast.success("Started as Anon");
+    }
+
+    boxeverStartAsRichardFlynn = () => {
+        bxStartAsRF();
     }
 
     render() {
@@ -90,10 +95,10 @@ class HeaderThree extends Component {
         return (
             <div>
                 <header id="sticky" className="sticky header-2 header-6">
-                    {this.state.isLoading ? <Pace color="#27ae60"/> : null}
+                    {this.state.isLoading ? <Pace color="#27ae60" /> : null}
                     <div className="mobile-fix-option"></div>
                     {/*Top Header Component*/}
-                    <TopBarDark/>
+                    <TopBarDark />
 
                     <div className="container">
                         <div className="row">
@@ -105,11 +110,11 @@ class HeaderThree extends Component {
                                     <div>
                                         <form className="form_search" role="form">
                                             <input id="query search-autocomplete" type="search"
-                                                   placeholder="Find the best for your pet..."
-                                                   className="nav-search nav-search-field" aria-expanded="true" />
-                                                <button type="submit" name="nav-submit-button" className="btn-search">
-                                                    <i className="fa fa-search"></i>
-                                                </button>
+                                                placeholder="Find the best for your pet..."
+                                                className="nav-search nav-search-field" aria-expanded="true" />
+                                            <button type="submit" name="nav-submit-button" className="btn-search">
+                                                <i className="fa fa-search"></i>
+                                            </button>
                                         </form>
                                     </div>
                                     <div className="menu-right pull-right">
@@ -126,13 +131,14 @@ class HeaderThree extends Component {
                                                         <div className="show-div setting">
                                                             <h6>Shortcuts</h6>
                                                             <ul className="list-inline">
-                                                            <li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
-                                                            <li><a href="" onClick={this.boxeverStartAsAnon}>Close Session</a> </li>
+                                                                <li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
+                                                                <li><a href="" onClick={this.boxeverStartAsAnon}>Close Session</a> </li>
+                                                                <li><a href="" onClick={this.boxeverStartAsRichardFlynn}>Start as Richard Flynn</a> </li>
                                                             </ul>
                                                         </div>
                                                     </li>
                                                     {/*Header Cart Component */}
-                                                    <CartContainer/>
+                                                    <CartContainer />
                                                 </ul>
                                             </div>
                                         </div>
@@ -145,7 +151,7 @@ class HeaderThree extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="main-nav-center">
-                                    <NavBar/>
+                                    <NavBar />
                                 </div>
                             </div>
                         </div>
