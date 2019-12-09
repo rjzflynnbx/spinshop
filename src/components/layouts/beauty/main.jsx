@@ -67,22 +67,24 @@ class SpinShop extends Component {
             self.setState({
                 isLoaded: true,
                 bxResponse: {
-                    "showBlock": response.data.showSneakerComponent
+                    "showBlock": response.data.showSneakerComponent,
+                    "mainBanner": response.data.mainBanner
                 }
             });
         })
         .catch(function (error) {
             console.log(error);
-            // this.setState({
-            //     isLoaded: true,
-            //     error
-            // });
         });
 
     }
 
     render() {
 
+        console.log(this.state.bxResponse);
+
+        // Figure out display from Boxever response
+
+        //dynamic block
         const showBlock = this.state.bxResponse.showBlock;
         let dynamicComponent;
         if (showBlock) {
@@ -90,6 +92,15 @@ class SpinShop extends Component {
         } else {
             dynamicComponent = null;
         }
+
+        //banner
+        const bxBanner = this.state.bxResponse.mainBanner;
+        let bannerClassName = "home1";
+        if(bxBanner === "WINTER_RUNNING_ESENTIALLS"){
+            bannerClassName = "home2";
+        }
+        
+
 
         return (
             <div>
@@ -102,7 +113,7 @@ class SpinShop extends Component {
                 <section className="p-0">
                     <Slider className="slide-1 home-slider">
                         <div>
-                            <div className="home home1">
+                            <div className={'home ' + bannerClassName}>
                                 <div className="container">
                                     <div className="row">
                                         <div className="col">
