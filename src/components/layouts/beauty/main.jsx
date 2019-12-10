@@ -50,7 +50,7 @@ class SpinShop extends Component {
         this.setState({ open: false });
     };
 
- 
+
 
     componentWillMount() {
         document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
@@ -63,20 +63,23 @@ class SpinShop extends Component {
             clientKey: "pqsSIOPAxhMC9zJLJSZNFURPNqALIFwd",
             pointOfSale: "spinshop.com"
         })
-        .then(function (response) {
-            self.setState({
-                isLoaded: true,
-                bxResponse: {
-                    "showBlock": response.data.showSneakerComponent,
-                    "mainBanner": response.data.mainBanner
-                }
+            .then(function (response) {
+                self.setState({
+                    isLoaded: true,
+                    bxResponse: {
+                        "showBlock": response.data.showSneakerComponent,
+                        "mainBanner": response.data.mainBanner,
+                        "sections": response.data.sections
+                    }
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
             });
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
 
     }
+
+
 
     render() {
 
@@ -96,10 +99,43 @@ class SpinShop extends Component {
         //banner
         const bxBanner = this.state.bxResponse.mainBanner;
         let bannerClassName = "home1";
-        if(bxBanner === "WINTER_RUNNING_ESENTIALLS"){
+        if (bxBanner === "WINTER_RUNNING_ESENTIALLS") {
             bannerClassName = "home2";
         }
-        
+
+
+        //sections
+        const bxSections = this.state.bxResponse.sections;
+        console.log("bxSections", bxSections)
+        let dymanicSections =
+            <section className="catagories">
+                <div className="container category-button">
+                    <section className="section-b-space">
+                        <div className="row partition1">
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Men's footwear</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Women's footwear</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Kids's footwear</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Men's Clothing</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Women's  Clothing</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Kids'sClothing</a></div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        if (bxSections === "WOMENS") {
+            dymanicSections = <section className="catagories">
+                <div className="container category-button">
+                    <section className="section-b-space">
+                        <div className="row partition1">
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Women's footwear</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Women's Clothing</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Women's Accessories</a></div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        }
+
 
 
         return (
@@ -119,12 +155,12 @@ class SpinShop extends Component {
                                         <div className="col">
                                             <div className="slider-contain">
                                                 <div>
-                                                    <h4></h4>                                                 
+                                                    <h4></h4>
                                                     <h1></h1>
-                                                    <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>                                                  
+                                                    <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>
                                                         <a className="btn btn-solid">shop now</a>
-                                                    </Link>  
-                                                </div>  
+                                                    </Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -154,20 +190,7 @@ class SpinShop extends Component {
 
 
                 {/*Catagories Section*/}
-                <section className="catagories">
-                    <div className="container category-button">
-                        <section className="section-b-space">
-                            <div className="row partition1">
-                                <div className="col"><a href="#" className="btn btn-outline btn-block">Men's footwear</a></div>
-                                <div className="col"><a href="#" className="btn btn-outline btn-block">Women's footwear</a></div>
-                                <div className="col"><a href="#" className="btn btn-outline btn-block">Kids's footwear</a></div>
-                                <div className="col"><a href="#" className="btn btn-outline btn-block">Men's Clothing</a></div>
-                                <div className="col"><a href="#" className="btn btn-outline btn-block">Women's  Clothing</a></div>
-                                <div className="col"><a href="#" className="btn btn-outline btn-block">Kids'sClothing</a></div>
-                            </div>
-                        </section>
-                    </div>
-                </section>
+                {dymanicSections}
 
                 {/*Dynamic Product slider*/}
                 {dynamicComponent}
