@@ -248,6 +248,7 @@ export const Slider6 = {
         },
         {
             breakpoint: 480,
+            dots: true,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2

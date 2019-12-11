@@ -7,6 +7,8 @@ import FilterBar from "./common/filter-bar";
 import ProductListing from "./common/product-listing";
 import StickyBox from "react-sticky-box";
 import Modal from 'react-responsive-modal';
+import { toast } from 'react-toastify';
+import { bxIdenfify } from '../../services';
 
 
 class CollectionSneakerSale extends Component {
@@ -15,20 +17,21 @@ class CollectionSneakerSale extends Component {
         super(props);
         this.state = {
             layoutColumns: 3,
-            open: false
+            open: false,
+            value: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
 
 
     componentDidMount() {
         //console.log("pageview here", window.Boxever.getID());
+        // console.log("CONSTRUCTOR", this.state.rejected)
         document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
         setTimeout(() => this.setState({ open: true }), 5000)
     }
-
-
-
 
 
 
@@ -49,11 +52,39 @@ class CollectionSneakerSale extends Component {
     };
 
     onCloseModal = () => {
-        this.setState({ open: false });
+        this.setState(
+            {
+                open: false,
+                rejected: true
+            }
+        );
+        //TODO: remove
+        localStorage.setItem("bxModalDismissed", "true");
     };
 
 
+    handleSubmit(event) {
+        console.log(event);
+        this.onCloseModal();
+        toast.success("We'll keep you up do date on new releases!");
+        localStorage.setItem("bxModalDismissed", false);
+        bxIdenfify(this.state.value, "unknown", "unknown");
+        event.preventDefault();
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
     render() {
+        let modalTitle = "SIGN UP AND GET 15% OFF";
+        let modalSubTitle = "Never Miss Anything From SpinShop By Signing Up To Our Newsletter.";
+
+        if (localStorage.getItem("bxModalDismissed") === "true") {
+            modalTitle = "ALERT ME ABOUT NEW RELEASES";
+            modalSubTitle = "Get alerts about new releases so you don't miss out!";
+        }
+
         return (
             <div >
 
@@ -143,16 +174,16 @@ class CollectionSneakerSale extends Component {
                                                 <div className="col-lg-6">
                                                     <div className="subscribe">
                                                         <div>
-                                                            <h4>SIGN UP AND GET 15% OFF</h4>
-                                                            <p>Never Miss Anything From SpinShop By Signing Up To Our Newsletter. </p>
+                                                            <h4> {modalTitle} </h4>
+                                                            <p> {modalSubTitle} </p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
-                                                    <form className="form-inline subscribe-form center">
+                                                    <form onSubmit={this.handleSubmit} className="form-inline subscribe-form">
                                                         <div className="form-group mx-sm-6">
                                                             <input type="text" className="form-control" id="exampleFormControlInput1"
-                                                                placeholder="Enter your email" />
+                                                                placeholder="Enter your email" value={this.state.value} onChange={this.handleChange} />
                                                         </div>
                                                         <button type="submit" className="btn btn-solid">subscribe</button>
                                                     </form>
@@ -173,3 +204,8 @@ class CollectionSneakerSale extends Component {
 }
 
 export default CollectionSneakerSale;
+
+
+
+
+

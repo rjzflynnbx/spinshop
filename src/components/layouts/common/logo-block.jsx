@@ -11,7 +11,7 @@ class LogoBlock extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <Slider {...Slider6} className="slide-6 no-arrow">
+                            <Slider {...Slider6} className="slide-6 slider-arrow">
                                 <div>
                                     <div className="logo-block">
                                         <a href={null}>
