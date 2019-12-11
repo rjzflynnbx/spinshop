@@ -64,7 +64,6 @@ class CollectionSneakerSale extends Component {
 
 
     handleSubmit(event) {
-        console.log(event);
         this.onCloseModal();
         toast.success("We'll keep you up do date on new releases!");
         localStorage.setItem("bxModalDismissed", false);

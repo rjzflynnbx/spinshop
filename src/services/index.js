@@ -365,6 +365,23 @@ export const bxStartAsAnon = () => {
     window.Boxever.reset();
 }
 
+export const bxCloseSession = () => {
+    console.log("bxCloseSession")
+    window._boxeverq.push(function () {
+        var closeSessionEvent = {
+            browser_id: window.Boxever.getID(),
+            channel: CHANNEL,
+            language: "EN",
+            currency: "EUR",
+            pos: POS,
+            type: "FORCE_CLOSE",
+            _bx_extended_message: "1"
+        };
+
+        window.Boxever.eventCreate(closeSessionEvent, function (data) { }, 'json');
+    });
+}
+
 export const bxStartAsRF = () => {
     bxIdenfify('richard.flynn@boxever.com', 'Richard', 'Flynn');
 }
