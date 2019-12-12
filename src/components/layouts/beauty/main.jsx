@@ -130,6 +130,8 @@ class SpinShop extends Component {
                             <div className="col"><a href="#" className="btn btn-outline btn-block">Women's footwear</a></div>
                             <div className="col"><a href="#" className="btn btn-outline btn-block">Women's Clothing</a></div>
                             <div className="col"><a href="#" className="btn btn-outline btn-block">Women's Accessories</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Men's</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Kid's </a></div>
                         </div>
                     </section>
                 </div>
