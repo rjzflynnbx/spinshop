@@ -136,8 +136,14 @@ class HeaderThree extends Component {
                                                         <div className="show-div setting">
                                                             <h6>Shortcuts</h6>
                                                             <ul className="list-inline">
+                                                                <Link to={`${process.env.PUBLIC_URL}/facebookAd1`}> 
+                                                                    <li><a>Facebook Ad 1</a></li>
+                                                                </Link>
+                                                                <Link to={`${process.env.PUBLIC_URL}/facebookAd2`}> 
+                                                                    <li><a>Facebook Ad 2</a></li>
+                                                                </Link>
                                                                 <li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
-                                                                <li><a  onClick={this.boxeverCloseSession}>Close Session</a> </li>
+                                                                <li><a onClick={this.boxeverCloseSession}>Close Session</a> </li>
                                                                 <li><a href="" onClick={this.boxeverStartAsRichardFlynn}>Start as Richard Flynn</a> </li>
                                                             </ul>
                                                         </div>

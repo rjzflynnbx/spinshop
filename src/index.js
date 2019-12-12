@@ -84,6 +84,8 @@ import ElementProductNoSlider from "./components/features/product/element-produc
 import ElementMultipleSlider from "./components/features/product/element-multiple-slider"
 import ElementProductTab from "./components/features/product/element-product-tab"
 import CollectionSneakerSale from './components/collection/collection-sneakers';
+import FacebookAd from './components/collection/common/facebook-ad';
+import FacebookAd2 from './components/collection/common/facebook-ad-2';
 
 class Root extends React.Component {
 
@@ -116,6 +118,10 @@ class Root extends React.Component {
                                     <Route path={`${process.env.PUBLIC_URL}/full-width/collection`} component={CollectionFullWidth} />
                                     <Route path={`${process.env.PUBLIC_URL}/metro/collection`} component={CollectionMetro} />
                                     <Route path={`${process.env.PUBLIC_URL}/sneaker-sale/collection`} component={CollectionSneakerSale} />
+
+                                    {/*Routes For Facebook Ads */}
+                                    <Route path={`${process.env.PUBLIC_URL}/facebookAd1`} component={FacebookAd} />
+                                    <Route path={`${process.env.PUBLIC_URL}/facebookAd2`} component={FacebookAd2} />
 
                                     {/*Routes For Single Product*/}
                                     <Route path={`${process.env.PUBLIC_URL}/left-sidebar/product/:id`} component={LeftSideBar} />

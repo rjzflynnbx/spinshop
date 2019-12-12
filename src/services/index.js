@@ -335,25 +335,27 @@ export const bxCheckout = (cartItems) => {
             "product": checkoutProducts
 
         };
-        window.Boxever.eventCreate(confirmEvent, function (data) { }, 'json');
+        window.Boxever.eventCreate(confirmEvent, function (data) {
+            //checkout
+            window._boxeverq.push(function () {
+                var checkoutEvent = {
+                    "browser_id": window.Boxever.getID(),
+                    "channel": CHANNEL,
+                    "type": "CHECKOUT",
+                    "language": "EN",
+                    "currency": "USD",
+                    "page": "/order-success",
+                    "pos": POS,
+                    "reference_id": uuid.v4(),
+                };
+                window.Boxever.eventCreate(checkoutEvent, function (data) { }, 'json');
+            });
+        }, 'json');
     });
 
 
 
-    //checkout
-    window._boxeverq.push(function () {
-        var checkoutEvent = {
-            "browser_id": window.Boxever.getID(),
-            "channel": CHANNEL,
-            "type": "CHECKOUT",
-            "language": "EN",
-            "currency": "USD",
-            "page": "/order-success",
-            "pos": POS,
-            "reference_id": uuid.v4(),
-        };
-        window.Boxever.eventCreate(checkoutEvent, function (data) { }, 'json');
-    });
+
 
 
 
