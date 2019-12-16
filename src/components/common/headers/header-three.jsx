@@ -144,7 +144,7 @@ class HeaderThree extends Component {
                                                                 </Link>
                                                                 <li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
                                                                 <li><a onClick={this.boxeverCloseSession}>Close Session</a> </li>
-                                                                <li><a href="" onClick={this.boxeverStartAsRichardFlynn}>Start as Richard Flynn</a> </li>
+                                                                <li><a href="" onClick={this.boxeverStartAsRichardFlynn}>Start as Jane</a> </li>
                                                             </ul>
                                                         </div>
                                                     </li>

@@ -14,7 +14,7 @@ class FacebookAd extends Component {
     render (){
         return (
             <div>
-                <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>  
+                <Link to={`${process.env.PUBLIC_URL}`}>  
                     <img src="https://i.imgur.com/yfp0uYf.png" alt="" className="img-fluid" />
                 </Link>
             </div>

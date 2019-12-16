@@ -385,7 +385,7 @@ export const bxCloseSession = () => {
 }
 
 export const bxStartAsRF = () => {
-    bxIdenfify('richard.flynn@boxever.com', 'Richard', 'Flynn');
+    bxIdenfify('jane.ledger@boxever.com', 'Jane', 'Ledger');
 }
 
 
