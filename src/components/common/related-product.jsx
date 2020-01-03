@@ -42,7 +42,7 @@ function mapStateToProps(state) {
     console.log(state);
     return {
          //items: getCollectionProducts(state.data.products,1),
-        items: getRelatedProducts(state.data.products,42),
+        items: getRelatedProducts(state.data.products,13),
         symbol: state.data.symbol
     }
 }

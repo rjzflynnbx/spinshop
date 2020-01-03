@@ -27,6 +27,7 @@ import BlogSection from "../common/blogsection";
 import MultiSlider from "./multiple-slider";
 import { bxView } from '../../../services/index';
 import LogoBlock from '../common/logo-block';
+import SpecialProducts from '../electronic/special-products';
 
 
 const axios = require('axios');
@@ -91,7 +92,8 @@ class SpinShop extends Component {
         const showBlock = this.state.bxResponse.showBlock;
         let dynamicComponent;
         if (showBlock) {
-            dynamicComponent = <TopCollection type={'men'} title={'Best Sellers'} subtitle={'Trainers'} />
+            dynamicComponent = <TopCollection type={'men'} title={'Best Sellers Near You'} subtitle={'Trainers'} />
+           // dynamicComponent = <SpecialProducts type={'men'} />         
         } else {
             dynamicComponent = null;
         }

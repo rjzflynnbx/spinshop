@@ -82,7 +82,8 @@ class ProductListItem extends Component {
                                 <Link to={`${process.env.PUBLIC_URL}/compare`} title="Compare" onClick={onAddToCompareClicked}>
                                     <i className="fa fa-refresh" aria-hidden="true"></i></Link>
                             </div>
-                            {product.variants?
+                            
+                            {/* {product.variants?
                             <ul className="product-thumb-list">
                                 {product.variants.map((vari, i) =>
                                     <li className={`grid_thumb_img ${(vari.images === this.state.image)?'active':''}`} key={i}>
@@ -91,7 +92,7 @@ class ProductListItem extends Component {
                                         </a>
                                     </li>)
                                 }
-                            </ul>:''}
+                            </ul>:''} */}
 
                         </div>
                         <div className="product-detail">

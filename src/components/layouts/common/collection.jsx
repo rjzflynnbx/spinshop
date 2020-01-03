@@ -32,7 +32,7 @@ class TopCollection extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <Slider {...properties} className="product-4 product-m no-arrow">
+                                <Slider {...properties} className="product-1 product-m no-arrow">
                                     {items.map((product, index) =>
                                         <div key={index}>
                                             <ProductItem product={product} symbol={symbol}
