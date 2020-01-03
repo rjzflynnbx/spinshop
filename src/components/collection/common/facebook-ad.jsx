@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import {getVisibleproducts} from '../../../services';
-import { Link } from 'react-router-dom';
+import {getVisibleproducts, bxStartAsRF} from '../../../services';
+import { Link, Redirect } from 'react-router-dom';
 
 class FacebookAd extends Component {
 
@@ -11,12 +11,18 @@ class FacebookAd extends Component {
         console.log(props)
     }
 
+
     render (){
+
+        var handleClick = () => {
+            bxStartAsRF();
+            this.props.history.push(`/`);
+            // window.location.href = {`${process.env.PUBLIC_URL}`} 
+        }
+
         return (
-            <div>
-                <Link to={`${process.env.PUBLIC_URL}`}>  
-                    <img src="https://i.imgur.com/yfp0uYf.png" alt="" className="img-fluid" />
-                </Link>
+            <div >
+                    <img onClick={handleClick} src="https://i.imgur.com/yfp0uYf.png" alt="" className="img-fluid" />
             </div>
         )
     }
