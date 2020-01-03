@@ -17,6 +17,7 @@ class FacebookAd extends Component {
         var handleClick = () => {
             bxStartAsRF();
             this.props.history.push(`/`);
+            localStorage.setItem("bxModalDismissed", "false")
             // window.location.href = {`${process.env.PUBLIC_URL}`} 
         }
 
