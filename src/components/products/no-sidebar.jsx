@@ -37,7 +37,15 @@ class NoSideBar extends Component {
 
     render() {
         const { symbol, item, addToCart, addToCartUnsafe, addToWishlist } = this.props
-        
+
+        var addToCartExt = (item) => {
+            addToCart(item);
+            // element which needs to be scrolled to
+            var element = document.getElementsByClassName("product-related")[0]; 
+            // scroll to element
+            element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+        }
+
         var products = {
             fade: true
         };
@@ -73,7 +81,7 @@ class NoSideBar extends Component {
                                         </Slider>
                                         <SmallImages item={item} settings={productsnav} navOne={this.state.nav1} />
                                     </div>
-                                    <DetailsWithPrice symbol={symbol} item={item} navOne={this.state.nav1} addToCartClicked={addToCart} BuynowClicked={addToCartUnsafe} addToWishlistClicked={addToWishlist} />
+                                    <DetailsWithPrice symbol={symbol} item={item} navOne={this.state.nav1} addToCartClicked={addToCartExt} BuynowClicked={addToCartUnsafe} addToWishlistClicked={addToWishlist} />
                                 </div>
                             </div>
                         </div>
@@ -90,7 +98,7 @@ class NoSideBar extends Component {
                     </div>
                 </section>
 
-                <RelatedProduct itemId={item.id}/>
+                <RelatedProduct itemId={item.id} />
             </div>
         )
     }
