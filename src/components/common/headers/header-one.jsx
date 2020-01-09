@@ -13,7 +13,7 @@ import LogoImage from "./common/logo";
 import { changeCurrency } from '../../../actions'
 import { connect } from "react-redux";
 import { bxStartAsAnon, bxStartAsRF } from '../../../services';
-import { bxCloseSession } from '../../../services/index';
+import { bxCloseSession, bxView } from '../../../services/index';
 import { toast } from 'react-toastify';
 
 class HeaderOne extends Component {
@@ -82,7 +82,8 @@ class HeaderOne extends Component {
 	};
 
 	boxeverStartAsAnon = () => {
-        bxStartAsAnon();
+		bxStartAsAnon();
+		bxView("/");
 		toast.success("Started as Anon");
     }
 
