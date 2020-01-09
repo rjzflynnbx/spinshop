@@ -19,14 +19,14 @@ class checkOut extends Component {
 
         this.state = {
             payment: 'stripe',
-            first_name: '',
-            last_name: '',
-            phone: '',
-            email: '',
-            country: '',
-            address: '',
-            city: '',
-            state: '',
+            first_name: 'Jane',
+            last_name: 'Ledger',
+            phone: '0891234567',
+            email: 'janeledger2020@gnail.com',
+            country: 'United States',
+            address: '123 Fake Street',
+            city: 'New York',
+            state: 'New York',
             pincode: '',
             create_account: ''
         }
@@ -87,9 +87,9 @@ class checkOut extends Component {
         })
 
 
-      
 
-      
+
+
 
 
         if (this.validator.allValid()) {
@@ -133,7 +133,11 @@ class checkOut extends Component {
             console.log("The payment was succeeded!", payment);
             this.props.history.push({
                 pathname: '/order-success',
-                state: { payment: payment, items: cartItems, orderTotal: total, symbol: symbol }
+                state: {
+                    payment: payment,
+                    items: cartItems,
+                    orderTotal: total,
+                    symbol: symbol                }
             })
             bxIdenfify(this.state.email, this.state.first_name, this.state.last_name)
         }
@@ -208,7 +212,7 @@ class checkOut extends Component {
                                                     >
                                                         <option>India</option>
                                                         <option>South Africa</option>
-                                                        <option>United State</option>
+                                                        <option>United States</option>
                                                         <option>Australia</option>
                                                     </select>
                                                     {this.validator.message('country', this.state.country, 'required')}
@@ -302,56 +306,7 @@ class checkOut extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row section-t-space">
-                                        <div className="col-lg-6">
-                                            <div className="stripe-section">
-                                                <h5>stripe js example</h5>
-                                                <div>
-                                                    <h5 className="checkout_class">dummy test</h5>
-                                                    <table>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>cart number</td>
-                                                                <td>4242424242424242</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>mm/yy</td>
-                                                                <td>2/2020</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>cvc</td>
-                                                                <td>2222</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-6 m-sm-t-2">
-                                            <div className="stripe-section">
-                                                <h5>paypal example</h5>
-                                                <div>
-                                                    <h5 className="checkout_class">dummy test</h5>
-                                                    <table>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>cart number</td>
-                                                                <td>4152521541244</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>mm/yy</td>
-                                                                <td>11/18</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>cvc</td>
-                                                                <td>521</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                
                                 </form>
                             </div>
                         </div>
