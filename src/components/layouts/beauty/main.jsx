@@ -147,7 +147,7 @@ class SpinShop extends Component {
                 <Helmet>
                     <title>SpinShop | Boxever Demo</title>
                 </Helmet>
-                <HeaderOne logoName={'logo/spinshop-spinshop-logo2.png'} />
+                <HeaderOne logoName={'logo/spinshop-logo2.png'} />
 
                 {/*Slider Promo Area 1*/}
                 <section className="p-0">
@@ -230,7 +230,7 @@ class SpinShop extends Component {
                 <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} />
 
 
-                <FooterOne logoName={'logo/spinshop-spinshop-logo2.png'} />
+                <FooterOne logoName={'logo/spinshop-logo2.png'} />
             </div>
         )
     }
