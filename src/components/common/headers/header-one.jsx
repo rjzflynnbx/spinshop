@@ -101,7 +101,7 @@ class HeaderOne extends Component {
 											<SideBar/>
 										</div>
 										<div className="brand-logo">
-											<LogoImage logo={'logo/logo2.png'} />
+											<LogoImage logo={this.props.logoName} />
 										</div>
 									</div>
 									<div className="menu-right pull-right">

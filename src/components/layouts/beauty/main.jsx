@@ -147,7 +147,7 @@ class SpinShop extends Component {
                 <Helmet>
                     <title>SpinShop | Boxever Demo</title>
                 </Helmet>
-                <HeaderThree logoName={'logo/logo2.png'} />
+                <HeaderOne logoName={'logo/spinshop-logo2.png'} />
 
                 {/*Slider Promo Area 1*/}
                 <section className="p-0">
