@@ -15,6 +15,10 @@ class cartComponent extends Component {
         this.state = {};
     }
 
+    componentWillMount() {
+        document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
+    }
+
     componentDidMount() {
         bxView('CART');
 
@@ -23,9 +27,6 @@ class cartComponent extends Component {
                 bxAddProductToCart(item)
             });
         }
-
-
-
     }
 
     render() {
@@ -35,7 +36,7 @@ class cartComponent extends Component {
             <div>
                 {/*SEO Support*/}
                 <Helmet>
-                    <title>MultiKart | Cart List Page</title>
+                    <title>SpinShop | Boxever Demo</title>
                     <meta name="description" content="Multikart – Multipurpose eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites. Multikart Bootstrap 4 Template will help you run multiple businesses." />
                 </Helmet>
                 {/*SEO Support End */}
