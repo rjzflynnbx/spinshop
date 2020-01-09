@@ -12,6 +12,9 @@ import TopBar from "./common/topbar";
 import LogoImage from "./common/logo";
 import { changeCurrency } from '../../../actions'
 import { connect } from "react-redux";
+import { bxStartAsAnon, bxStartAsRF } from '../../../services';
+import { bxCloseSession } from '../../../services/index';
+import { toast } from 'react-toastify';
 
 class HeaderOne extends Component {
 
@@ -77,6 +80,20 @@ class HeaderOne extends Component {
 			this.setState({ isLoading: false })
 		})
 	};
+
+	boxeverStartAsAnon = () => {
+        bxStartAsAnon();
+		toast.success("Started as Anon");
+    }
+
+    boxeverCloseSession = () => {
+        bxCloseSession();
+        toast.success("Closed Session");
+    }
+
+    boxeverStartAsRichardFlynn = () => {
+        bxStartAsRF();
+    }
 
 	render() {
 
