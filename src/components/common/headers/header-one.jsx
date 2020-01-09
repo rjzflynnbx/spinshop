@@ -83,18 +83,22 @@ class HeaderOne extends Component {
 
 	boxeverStartAsAnon = () => {
 		bxStartAsAnon();
-    }
+	}
 
-    boxeverCloseSession = () => {
-        bxCloseSession();
-        toast.success("Closed Session");
-    }
+	boxeverCloseSession = () => {
+		bxCloseSession();
+		toast.success("Closed Session");
+	}
 
-    boxeverStartAsRichardFlynn = () => {
-        bxStartAsRF();
-    }
+	boxeverStartAsRichardFlynn = () => {
+		bxStartAsRF();
+	}
 
 	render() {
+
+		const ulStyle = {
+			fontSize: 170
+		};
 
 		return (
 			<div>
@@ -126,7 +130,7 @@ class HeaderOne extends Component {
 
 										<div>
 											<div className="icon-nav">
-												<ul>
+												<ul style={ulStyle} >
 													<li className="onhover-div mobile-search">
 														<div><img src={`${process.env.PUBLIC_URL}/assets/images/icon/search.png`} onClick={this.openSearch} className="img-fluid" alt="" />
 															<i className="fa fa-search" onClick={this.openSearch}></i></div>

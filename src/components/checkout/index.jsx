@@ -22,7 +22,7 @@ class checkOut extends Component {
             first_name: 'Jane',
             last_name: 'Ledger',
             phone: '0891234567',
-            email: 'janeledger2020@gnail.com',
+            email: 'janeledger2020@gmail.com',
             country: 'United States',
             address: '123 Fake Street',
             city: 'New York',
