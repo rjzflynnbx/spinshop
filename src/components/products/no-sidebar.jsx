@@ -38,8 +38,8 @@ class NoSideBar extends Component {
     render() {
         const { symbol, item, addToCart, addToCartUnsafe, addToWishlist } = this.props
 
-        var addToCartExt = (item) => {
-            addToCart(item);
+        var addToCartExt = (item, quantity) => {
+            addToCart(item, quantity);
             // element which needs to be scrolled to
             var element = document.getElementsByClassName("product-related")[0]; 
             // scroll to element
