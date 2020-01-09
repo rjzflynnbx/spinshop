@@ -83,8 +83,6 @@ class HeaderOne extends Component {
 
 	boxeverStartAsAnon = () => {
 		bxStartAsAnon();
-		bxView("/");
-		toast.success("Started as Anon");
     }
 
     boxeverCloseSession = () => {
