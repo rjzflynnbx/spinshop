@@ -86,6 +86,14 @@ class SpinShop extends Component {
 
         console.log(this.state.bxResponse);
 
+
+        let header;
+        if (window.screen.width > 600) {
+            header = <HeaderThree logoName={'logo/rsz_spinshop-logo2.png'} />
+        } else {
+            header = <HeaderOne logoName={'logo/rsz_spinshop-logo2.png'} />
+        }
+
         // Figure out display from Boxever response
 
         //dynamic block
@@ -93,7 +101,7 @@ class SpinShop extends Component {
         let dynamicComponent;
         if (showBlock) {
             dynamicComponent = <TopCollection type={'men'} title={'Best Sellers Near You'} subtitle={'Trainers'} />
-           // dynamicComponent = <SpecialProducts type={'men'} />         
+            // dynamicComponent = <SpecialProducts type={'men'} />         
         } else {
             dynamicComponent = null;
         }
@@ -142,10 +150,27 @@ class SpinShop extends Component {
 
 
 
-        const btnStyle = {
+        const mobileBtnStyle = {
             marginTop: 260,
             marginLeft: 220
         };
+
+        const tabletBtnStyle = {
+            marginTop: 550,
+            marginLeft: 380,
+            fontSize: 40
+        };
+
+        const getBtnStyle = () => {
+            if (window.screen.width > 600) {
+                return tabletBtnStyle;
+            } else {
+                return mobileBtnStyle;
+            }
+        }
+
+
+
 
 
         return (
@@ -153,7 +178,8 @@ class SpinShop extends Component {
                 <Helmet>
                     <title>SpinShop | Boxever Demo</title>
                 </Helmet>
-                <HeaderOne logoName={'logo/spinshop-logo2.png'} />
+
+                {header}
 
                 {/*Slider Promo Area 1*/}
                 <section className="p-0">
@@ -168,7 +194,7 @@ class SpinShop extends Component {
                                                     <h4></h4>
                                                     <h1></h1>
                                                     <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>
-                                                        <a className="btn btn-solid" style={btnStyle}>shop now</a>
+                                                        <a className="btn btn-solid" style={getBtnStyle()}>shop now</a>
                                                     </Link>
                                                 </div>
                                             </div>
@@ -205,6 +231,8 @@ class SpinShop extends Component {
                 {/*Dynamic Product slider*/}
                 {dynamicComponent}
 
+
+
                 {/*Trending Products Section*/}
                 <MultiSlider type={'men'} title={'Trending Products'} />
 
@@ -236,7 +264,7 @@ class SpinShop extends Component {
                 <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} />
 
 
-                <FooterOne logoName={'logo/spinshop-logo2.png'} />
+                <FooterOne logoName={'logo/rsz_spinshop-logo2.png'} />
             </div>
         )
     }

@@ -21,9 +21,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                <HeaderOne logoName={'logo/spinshop-logo2.png'} />
+                <HeaderOne logoName={'logo/rsz_spinshop-logo2.png'} />
                 {this.props.children}
-                <FooterOne logoName={'logo.png'}/>
+                <FooterOne logoName={'rsz_spinshop-logo2.png'}/>
 
                 <ToastContainer/>
             </div>
