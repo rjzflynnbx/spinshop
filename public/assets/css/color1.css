@@ -13411,7 +13411,7 @@ body.dark {
   }
   .top-header .header-dropdown .mobile-account i, .top-header .header-dropdown .mobile-wishlist i {
     font-size: 22px;
-    font-family: FontAwesome;
+    /* font-family: FontAwesome; */
     color: #999999;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -13429,7 +13429,7 @@ body.dark {
     right: 64%;
   }
   .top-header .header-dropdown .mobile-wishlist i {
-    font-family: FontAwesome;
+    /* font-family: FontAwesome; */
     color: #999999 !important;
   }
 
