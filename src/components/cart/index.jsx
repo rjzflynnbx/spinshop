@@ -32,6 +32,10 @@ class cartComponent extends Component {
     render() {
 
         const { cartItems, symbol, total } = this.props;
+        const imgStle = {
+            maxWidth: 110
+        }
+
         return (
             <div>
                 {/*SEO Support*/}
@@ -65,7 +69,8 @@ class cartComponent extends Component {
                                                     <tr>
                                                         <td>
                                                             <Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${item.id}`}>
-                                                                <img src={item.variants ?
+                                                                <img style={imgStle}
+                                                                        src={item.variants ?
                                                                     item.variants[0].images
                                                                     : item.pictures[0]} alt="" />
                                                             </Link>
@@ -125,7 +130,7 @@ class cartComponent extends Component {
                                         <tfoot>
                                             <tr>
                                                 <td>total price :</td>
-                                                <td><h2>{symbol} {total} </h2></td>
+                                                <td><h2>${total} </h2></td>
                                             </tr>
                                         </tfoot>
                                     </table>
