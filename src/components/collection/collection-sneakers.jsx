@@ -67,7 +67,7 @@ class CollectionSneakerSale extends Component {
         this.onCloseModal();
         toast.success("We'll keep you up do date on new releases!");
         localStorage.setItem("bxModalDismissed", false);
-        bxIdenfify(this.state.value, "unknown", "unknown");
+        bxIdenfify(this.state.value, "Jane", "Ledger");
         event.preventDefault();
     }
 
