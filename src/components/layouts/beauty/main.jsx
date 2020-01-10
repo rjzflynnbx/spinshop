@@ -142,6 +142,12 @@ class SpinShop extends Component {
 
 
 
+        const btnStyle = {
+            marginTop: 260,
+            marginLeft: 220
+        };
+
+
         return (
             <div>
                 <Helmet>
@@ -162,7 +168,7 @@ class SpinShop extends Component {
                                                     <h4></h4>
                                                     <h1></h1>
                                                     <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>
-                                                        <a className="btn btn-solid">shop now</a>
+                                                        <a className="btn btn-solid" style={btnStyle}>shop now</a>
                                                     </Link>
                                                 </div>
                                             </div>
