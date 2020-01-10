@@ -40,7 +40,7 @@ class FacebookAd extends Component {
                     onRef={ref => (this.LoadingBar = ref)}
                 />
 
-                <img onClick={handleClick} src="https://i.imgur.com/yfp0uYf.png" alt="" className="img-fluid" />
+                <img onClick={handleClick} src="https://i.imgur.com/Vf7Zokl.jpg" alt="" className="img-fluid" />
             </div>
         )
     }

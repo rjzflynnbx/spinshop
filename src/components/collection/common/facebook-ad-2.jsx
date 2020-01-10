@@ -16,7 +16,7 @@ class FacebookAd2 extends Component {
         return (
             <div>
                 <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>  
-                    <img src="https://i.imgur.com/k44dKFj.png" alt="" className="img-fluid" />
+                    <img src="https://i.imgur.com/hDJspBE.jpg" alt="" className="img-fluid" />
                 </Link>
             </div>
         )
