@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 import Breadcrumb from "../common/breadcrumb";
-import { getCartTotal, bxView, bxAddProductToCart } from "../../services";
+import { getCartTotal, bxView, bxAddProductToCart, bxIdenfify } from "../../services";
 import { removeFromCart, incrementQty, decrementQty } from '../../actions'
 
 class cartComponent extends Component {
@@ -21,8 +21,10 @@ class cartComponent extends Component {
 
     componentDidMount() {
         bxView('CART');
+        bxIdenfify();
 
         if (window.location.search === "?key=123") {
+            bxIdenfify('janeledger2020@gmail.com', 'Jane', 'Ledger');
             this.props.cartItems.forEach(function (item) {
                 bxAddProductToCart(item)
             });
