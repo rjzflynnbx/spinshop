@@ -21,8 +21,6 @@ class cartComponent extends Component {
 
     componentDidMount() {
         bxView('CART');
-        bxIdenfify();
-
         if (window.location.search === "?key=123") {
             bxIdenfify('janeledger2020@gmail.com', 'Jane', 'Ledger');
             this.props.cartItems.forEach(function (item) {
