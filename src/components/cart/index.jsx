@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 
 
 import Breadcrumb from "../common/breadcrumb";
-import { getCartTotal, bxView, bxAddProductToCart, bxIdenfify } from "../../services";
-import { removeFromCart, incrementQty, decrementQty } from '../../actions'
+import { getCartTotal, bxView, bxAddProductToCart, bxIdenfify, getSingleItem } from "../../services";
+import { removeFromCart, incrementQty, decrementQty, addToCart } from '../../actions'
+import { getAllProducts, addToCompareUnsafe, addToCartUnsafe } from '../../actions/index';
 
 class cartComponent extends Component {
 
@@ -16,22 +17,34 @@ class cartComponent extends Component {
     }
 
     componentWillMount() {
-        document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
-    }
 
-    componentDidMount() {
-        bxView('CART');
+        document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
         if (window.location.search === "?key=123") {
+
+            //if the cart has no items from local storage
+            if(this.props.cartItems.length === 0){
+                var shoes = getSingleItem(this.props.allProducts, 13);
+                shoes.qty = 1;
+                var pants = getSingleItem(this.props.allProducts, 45);
+                pants.qty = 1;
+                this.props.cartItems.push(shoes);
+                this.props.cartItems.push(pants);
+            }
+
             bxIdenfify('janeledger2020@gmail.com', 'Jane', 'Ledger');
             this.props.cartItems.forEach(function (item) {
-                bxAddProductToCart(item)
+                bxAddProductToCart(item);
             });
         }
     }
 
+    componentDidMount() {
+        bxView('CART');
+    }
+
     render() {
 
-        const { cartItems, symbol, total } = this.props;
+        const { cartItems, symbol, total, allProducts } = this.props;
         const imgStle = {
             maxWidth: 110
         }
@@ -70,9 +83,9 @@ class cartComponent extends Component {
                                                         <td>
                                                             <Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${item.id}`}>
                                                                 <img style={imgStle}
-                                                                        src={item.variants ?
-                                                                    item.variants[0].images
-                                                                    : item.pictures[0]} alt="" />
+                                                                    src={item.variants ?
+                                                                        item.variants[0].images
+                                                                        : item.pictures[0]} alt="" />
                                                             </Link>
                                                         </td>
                                                         <td><Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${item.id}`}>{item.name}</Link>
@@ -172,7 +185,8 @@ class cartComponent extends Component {
 const mapStateToProps = (state) => ({
     cartItems: state.cartList.cart,
     symbol: state.data.symbol,
-    total: getCartTotal(state.cartList.cart)
+    total: window.location.search === "?key=123" ? 190 : getCartTotal(state.cartList.cart),
+    allProducts: state.data.products
 })
 
 export default connect(
