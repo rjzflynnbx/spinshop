@@ -76,7 +76,7 @@ GM_addStyle(GM_getResourceText ("icons"));
 
     loadBxLib();
 
-    console.log('Engage 2.5 Library loaded!');
+    //('Engage 2.5 Library loaded!');
 
     var materialCss = `#bx-preview-insert *,#bx-preview-insert *:before,#bx-preview-insert *:after{-webkit-box-sizing:inherit;box-sizing:inherit}@media only screen and (min-width: 0){#bx-preview-insert{font-size:14px}}@media only screen and (min-width: 992px){#bx-preview-insert{font-size:14.5px}}@media only screen and (min-width: 1200px){#bx-preview-insert{font-size:15px}}#bx-preview-insert{-webkit-box-sizing:border-box;box-sizing:border-box;line-height:1.5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-weight:normal;color:rgba(0,0,0,.87);@keyframes indeterminate{0%{left:-35%;right:100%}60%{left:100%;right:-90%}100%{left:100%;right:-90%}}@keyframes indeterminate-short{0%{left:-200%;right:100%}60%{left:107%;right:-8%}100%{left:107%;right:-8%}}/*!
     * Waves v0.6.0
@@ -218,7 +218,7 @@ GM_addStyle(GM_getResourceText ("icons"));
                 Boxever.webFlowDebug.stageError = Boxever.webFlowDebug.debugMessage = Boxever.webFlowDebug.errorMessage = '';
                 var flowAndSelectedVariantObj = Object.assign(flow, { selectedVariant });
                 flowAndSelectedVariantObj.stageError = flowAndSelectedVariantObj.debugMessage = flowAndSelectedVariantObj.errorMessage = '';
-                console.log('POP STATE CHANGED');
+                //console.log('POP STATE CHANGED');
                 if (!selectedVariant) {
                     Boxever.webFlowDebug.errorMessage = `The supplied variant reference wasn't found on this flow.`;
                 } else {

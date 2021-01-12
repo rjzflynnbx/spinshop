@@ -39,7 +39,7 @@ class RelatedProduct extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
+    //console.log(state);
     return {
          //items: getCollectionProducts(state.data.products,1),
         items: getRelatedProducts(state.data.products,13),

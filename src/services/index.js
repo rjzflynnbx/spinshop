@@ -154,6 +154,93 @@ export const getRelatedItems = (products, type) => {
 
 }
 
+const NIKE_AF1 = 600;
+const ADIDAS_ORIGINALS_WOMENS_ZX_2K_BOOST = 601;
+const NIKE_WOMENS_AF1_SHADOW = 602;
+const ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS = 27;
+const NIKE_WOMENS_PADDED_JACKET = 30;
+const ASICS_WOMENS_NOVABLAST = 23
+const ADIDAS_WOMENS_SUPERNOVA_PLUS = 605;
+
+const ADIDAS_KARLIE_KLOSS_HIGHWAIST_LEGGINGS = 603;
+const UNDER_ARMOUR_WOMENS_MERIDIAN_LEGGINGS = 604;
+
+
+const DEFAULT =
+    [NIKE_AF1, ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS, NIKE_WOMENS_PADDED_JACKET,
+        ASICS_WOMENS_NOVABLAST, ADIDAS_WOMENS_SUPERNOVA_PLUS, UNDER_ARMOUR_WOMENS_MERIDIAN_LEGGINGS];
+
+const AF1_PERSONALIZED_ITEMS =
+    [NIKE_AF1, ADIDAS_ORIGINALS_WOMENS_ZX_2K_BOOST, NIKE_WOMENS_AF1_SHADOW,
+        ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS, NIKE_WOMENS_PADDED_JACKET, ASICS_WOMENS_NOVABLAST];
+
+const ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS_PERSONALIZED_ITEMS =
+    [ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS, ADIDAS_KARLIE_KLOSS_HIGHWAIST_LEGGINGS, UNDER_ARMOUR_WOMENS_MERIDIAN_LEGGINGS,
+        NIKE_AF1, ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS, ADIDAS_ORIGINALS_WOMENS_ZX_2K_BOOST, NIKE_WOMENS_AF1_SHADOW];
+
+const NIKE_WOMENS_AF1_SHADOW_PERSONALIZED_ITEMS =
+    [NIKE_WOMENS_AF1_SHADOW, NIKE_AF1, ADIDAS_ORIGINALS_WOMENS_ZX_2K_BOOST,
+        ADIDAS_WOMENS_SUPERNOVA_PLUS, ADIDAS_KARLIE_KLOSS_HIGHWAIST_LEGGINGS, UNDER_ARMOUR_WOMENS_MERIDIAN_LEGGINGS];
+
+
+function compareA(a, b) {
+    if (a.primaryCategory < b.primaryCategory) {
+        return -1;
+    }
+    if (a.primaryCategory > b.primaryCategory) {
+        return 1;
+    }
+    return 0;
+}
+
+function compareB(a, b) {
+    if (a.primaryCategory > b.primaryCategory) {
+        return -1;
+    }
+    if (a.primaryCategory < b.primaryCategory) {
+        return 1;
+    }
+    return 0;
+}
+
+
+export const getPersonalizedProducts = (products, id) => {
+    // console.log("getPersonalizedProducts from id " + id);
+    //await sleep(5000);
+    if (id == 0) {
+        const items = products.filter(product => {
+            return DEFAULT.includes(product.id);
+        })
+        //items.sort(compare);
+        return items.slice(0, 8)
+    }
+
+    if (id == NIKE_AF1) {
+        const items = products.filter(product => {
+            return AF1_PERSONALIZED_ITEMS.includes(product.id);
+        })
+        items.sort((compareB));
+        return items.slice(0, 8)
+    }
+
+    if (id == ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS) {
+        const items = products.filter(product => {
+            return ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS_PERSONALIZED_ITEMS.includes(product.id);
+        })
+        items.sort(compareA);
+        return items.slice(0, 8)
+    }
+    if (id == NIKE_WOMENS_AF1_SHADOW) {
+        const items = products.filter(product => {
+            return NIKE_WOMENS_AF1_SHADOW_PERSONALIZED_ITEMS.includes(product.id);
+        })
+        items.sort(compareB);
+        return items.slice(0, 8)
+    }
+
+    //return items.slice(0, 8)
+}
+
 // Get Best Seller Furniture
 export const getBestSellerProducts = (products, type) => {
     const items = products.filter(product => {
@@ -235,8 +322,8 @@ const CHANNEL = "WEB";
 
 
 export const bxAddProductToCart = (product) => {
-    console.log("bxAddProductToCart");
-    console.log(product);
+    //console.log("bxAddProductToCart");
+    //console.log(product);
     var event =
     {
         "channel": CHANNEL,
@@ -300,7 +387,7 @@ export const bxCheckout = (cartItems) => {
 
     let checkoutProducts = [];
     cartItems.forEach(function (cartItem) {
-        console.log(cartItem);
+        //console.log(cartItem);
         checkoutProducts.push({
             "item_id": JSON.stringify(cartItem.id)
         }
@@ -368,7 +455,7 @@ export const bxStartAsAnon = () => {
 }
 
 export const bxCloseSession = () => {
-    console.log("bxCloseSession")
+    ("bxCloseSession")
     window._boxeverq.push(function () {
         var closeSessionEvent = {
             browser_id: window.Boxever.getID(),

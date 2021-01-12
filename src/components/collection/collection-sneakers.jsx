@@ -47,7 +47,7 @@ class CollectionSneakerSale extends Component {
     }
 
     onOpenModal = () => {
-        console.log("OPEN MODAL");
+        //("OPEN MODAL");
         this.setState({ open: true });
     };
 

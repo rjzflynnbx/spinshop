@@ -883,8 +883,9 @@
     ]
   },
   {
-    "id": 22,
-    "name": "Nike Air Force 1",
+    "id": 600,
+    "name": "Nike Womens Air Force 1",
+    "primaryCategory" : "Womens Sneakers",
     "price": 190.00,
     "salePrice": 150.00,
     "discount": 50,
@@ -935,8 +936,9 @@
   },
   {
     "id": 23,
-    "name": "Nike Foundation Cuffed Fleece Joggers",
-    "price": 130.00,
+    "name": "ASICS WOMENS NOVABLAST",
+    "primaryCategory" : "Womens Sneakers",
+    "price": 140.00,
     "salePrice": 260.00,
     "discount": 50,
     "pictures": [
@@ -969,7 +971,7 @@
     "variants": [
       {
         "color": "gray",
-        "images": "/assets/images/fashion/product/nike/joggers/1.jpg"
+        "images": "https://www.lifestylesports.com/dw/image/v2/BCDN_PRD/on/demandware.static/-/Sites-LSS_eCommerce_Master/default/dw9aae84ba/images/22294513xlarge.jpg?sw=530"
       },
       {
         "color": "green",
@@ -983,7 +985,7 @@
   },
   {
     "id": 26,
-    "name": "Casual Shirt",
+    "name": "NIKEWOMENS AIR FORCE 1 07",
     "price": 420.00,
     "salePrice": 840.00,
     "discount": 50,
@@ -1032,6 +1034,7 @@
   {
     "id": 27,
     "name": "adidas Originals 3-Stripes Trefoil Leggings",
+    "primaryCategory" : "Womens Leggings",
     "price": 360.00,
     "salePrice": 720.00,
     "discount": 50,
@@ -1080,6 +1083,7 @@
   {
     "id": 30,
     "name": "NIKE womens padded jacket",
+    "primaryCategory" : "Womens Jackets",
     "price": 500.00,
     "salePrice": 1000.00,
     "discount": 15,
@@ -1540,7 +1544,7 @@
   {
     "id": 43,
     "name": "NIKE Power Racer Running Tights",
-    "collectionId": 1,
+    "collectionId": 0,
     "price": 130,
     "salePrice": 400.00,
     "discount": 50,
@@ -1594,7 +1598,7 @@
   {
     "id": 44,
     "name": "UNDER ARMOUR Fly Fast Printed Running Tights",
-    "collectionId": 1,
+    "collectionId": 0,
     "price": 130,
     "salePrice": 400.00,
     "discount": 50,
@@ -1648,7 +1652,7 @@
   {
     "id": 45,
     "name": "NIKE Epic Lux Running Tights",
-    "collectionId": 1,
+    "collectionId": 0,
     "price": 180,
     "salePrice": 400.00,
     "discount": 50,
@@ -1698,6 +1702,280 @@
         "images": "/assets/images/fashion/product/nike/women/lux/4.jpg"
       }
     ]
+  },
+  {
+    "id": 601,
+    "name": "ADIDAS ORIGINALS WOMENS ZX 2K BOOST",
+    "primaryCategory" : "Womens Sneakers",
+    "collectionId": 0,
+    "price": 100.00,
+    "salePrice": 100.00,
+    "discount": 50,
+    "pictures": [
+      "/assets/images/fashion/product/601.jpg", 
+      "/assets/images/fashion/product/collection/ufea2020/11.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/111.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/1.jpg"
+    ],
+    "relatedIds": [],
+    "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "stock": 10,
+    "new": false,
+    "sale": true,
+    "category": "men",
+    "colors": [
+      "gray",
+      "black",
+      "white"
+    ],
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "tags": [
+      "lifestyle",
+      "nike"
+    ],
+    "rating": 4,
+    "variants": [
+      {
+        "color": "gray",
+        "images": "https://www.lifestylesports.com/dw/image/v2/BCDN_PRD/on/demandware.static/-/Sites-LSS_eCommerce_Master/default/dw8eb91022/images/21693100xlarge.jpg?sw=530"
+      },
+      {
+        "color": "black",
+        "images": "/assets/images/fashion/product/nike/women/lux/2.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/3.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/4.jpg"
+      }
+    ]
+  },
+  {
+    "id": 602,
+    "name": "NIKE WOMENS AF1 SHADOW",
+    "primaryCategory" : "Womens Sneakers",
+    "collectionId": 0,
+    "price": 100.00,
+    "salePrice": 100.00,
+    "discount": 50,
+    "pictures": [
+      "/assets/images/fashion/product/601.jpg", 
+      "/assets/images/fashion/product/collection/ufea2020/11.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/111.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/1.jpg"
+    ],
+    "relatedIds": [],
+    "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "stock": 10,
+    "new": false,
+    "sale": true,
+    "category": "men",
+    "colors": [
+      "gray",
+      "black",
+      "white"
+    ],
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "tags": [
+      "lifestyle",
+      "nike"
+    ],
+    "rating": 4,
+    "variants": [
+      {
+        "color": "gray",
+        "images": "https://www.lifestylesports.com/dw/image/v2/BCDN_PRD/on/demandware.static/-/Sites-LSS_eCommerce_Master/default/dw2475745a/images/21696600xlarge.jpg?sw=530"
+      },
+      {
+        "color": "black",
+        "images": "/assets/images/fashion/product/nike/women/lux/2.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/3.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/4.jpg"
+      }
+    ]
+  },
+  {
+    "id": 603,
+    "name": "ADIDAS KARLIE KLOSS HIGHWAIST LEGGINGS",
+    "primaryCategory" : "Womens Leggings",
+    "collectionId": 0,
+    "price": 120.00,
+    "salePrice": 100.00,
+    "discount": 50,
+    "pictures": [
+      "/assets/images/fashion/product/601.jpg", 
+      "/assets/images/fashion/product/collection/ufea2020/11.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/111.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/1.jpg"
+    ],
+    "relatedIds": [],
+    "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "stock": 10,
+    "new": false,
+    "sale": true,
+    "category": "men",
+    "colors": [
+      "gray",
+      "black",
+      "white"
+    ],
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "tags": [
+      "lifestyle",
+      "nike"
+    ],
+    "rating": 4,
+    "variants": [
+      {
+        "color": "gray",
+        "images": "https://www.lifestylesports.com/dw/image/v2/BCDN_PRD/on/demandware.static/-/Sites-LSS_eCommerce_Master/default/dwb312fe9a/images/60296122xlarge.jpg?sw=530"
+      },
+      {
+        "color": "black",
+        "images": "/assets/images/fashion/product/nike/women/lux/2.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/3.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/4.jpg"
+      }
+    ]
+  },
+  {
+    "id": 604,
+    "name": "UNDER ARMOUR WOMENS MERIDIAN LEGGINGS",
+    "primaryCategory" : "Womens Leggings",
+    "collectionId": 0,
+    "price": 85.00,
+    "salePrice": 70.00,
+    "discount": 50,
+    "pictures": [
+      "/assets/images/fashion/product/601.jpg", 
+      "/assets/images/fashion/product/collection/ufea2020/11.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/111.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/1.jpg"
+    ],
+    "relatedIds": [],
+    "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "stock": 10,
+    "new": false,
+    "sale": true,
+    "category": "men",
+    "colors": [
+      "gray",
+      "black",
+      "white"
+    ],
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "tags": [
+      "lifestyle",
+      "nike"
+    ],
+    "rating": 4,
+    "variants": [
+      {
+        "color": "gray",
+        "images": "https://www.lifestylesports.com/dw/image/v2/BCDN_PRD/on/demandware.static/-/Sites-LSS_eCommerce_Master/default/dw274d410d/images/60291713xlarge.jpg?sw=530"
+      },
+      {
+        "color": "black",
+        "images": "/assets/images/fashion/product/nike/women/lux/2.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/3.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/4.jpg"
+      }
+    ]
+  },
+  {
+    "id": 605,
+    "name": "ADIDAS WOMENS SUPERNOVA PLUS",
+    "primaryCategory" : "Womens Sneakers",
+    "collectionId": 0,
+    "price": 85.00,
+    "salePrice": 70.00,
+    "discount": 50,
+    "pictures": [
+      "/assets/images/fashion/product/601.jpg", 
+      "/assets/images/fashion/product/collection/ufea2020/11.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/111.jpg",
+      "/assets/images/fashion/product/collection/ufea2020/1.jpg"
+    ],
+    "relatedIds": [],
+    "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "stock": 10,
+    "new": false,
+    "sale": true,
+    "category": "men",
+    "colors": [
+      "gray",
+      "black",
+      "white"
+    ],
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "tags": [
+      "lifestyle",
+      "nike"
+    ],
+    "rating": 4,
+    "variants": [
+      {
+        "color": "gray",
+        "images": "https://www.lifestylesports.com/dw/image/v2/BCDN_PRD/on/demandware.static/-/Sites-LSS_eCommerce_Master/default/dwc16331a2/images/22276040xlarge.jpg?sw=530"
+      },
+      {
+        "color": "black",
+        "images": "/assets/images/fashion/product/nike/women/lux/2.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/3.jpg"
+      },
+      {
+        "color": "white",
+        "images": "/assets/images/fashion/product/nike/women/lux/4.jpg"
+      }
+    ]
   }
-  
 ]

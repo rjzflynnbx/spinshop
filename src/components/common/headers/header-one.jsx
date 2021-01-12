@@ -82,6 +82,7 @@ class HeaderOne extends Component {
 	};
 
 	boxeverStartAsAnon = () => {
+		localStorage.setItem('bxLastProductView', 0)
 		bxStartAsAnon();
 	}
 

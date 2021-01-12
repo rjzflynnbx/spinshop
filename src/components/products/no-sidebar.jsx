@@ -32,7 +32,8 @@ class NoSideBar extends Component {
             nav1: this.slider1,
             nav2: this.slider2
         });
-        bxView('' + this.props.item.name + "(" + this.props.item.id + ')')
+        bxView('' + this.props.item.name + "(" + this.props.item.id + ')');
+        localStorage.setItem('bxLastProductView', this.props.item.id);
     }
 
     render() {
@@ -41,9 +42,9 @@ class NoSideBar extends Component {
         var addToCartExt = (item, quantity) => {
             addToCart(item, quantity);
             // element which needs to be scrolled to
-            var element = document.getElementsByClassName("product-related")[0]; 
+            var element = document.getElementsByClassName("product-related")[0];
             // scroll to element
-            element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         var products = {
@@ -106,9 +107,13 @@ class NoSideBar extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     //bxView('viewed product' + productId);
-    let item = state.data.products.find(el => el.id == productId);
-    console.log('ITEM ', productId)
+    //console.log(productId);
+    // console.log(item);
     let productId = ownProps.match.params.id;
+    let item = state.data.products.find(el => el.id == productId);
+
+    console.log('Item View | ID ' + productId +
+        ' | Catagory ' + item.primaryCategory + ' | Name ' + item.name)
     return {
         item: state.data.products.find(el => el.id == productId),
         symbol: state.data.symbol

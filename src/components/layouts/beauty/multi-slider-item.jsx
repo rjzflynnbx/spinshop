@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom'
 
+const axios = require('axios');
 
 
 class MultiSliderItem extends Component {
 
 
-    componentWillMount() {
-        console.log(this.props.items)
-    }
+    
 
     render() {
         const { items, symbol, NoOfProducts } = this.props;
@@ -33,6 +32,7 @@ class MultiSliderItem extends Component {
         }
 
 
+       
 
         
 

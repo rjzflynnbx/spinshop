@@ -36,11 +36,13 @@ const axios = require('axios');
 class SpinShop extends Component {
     constructor(props) {
         super(props)
+        var lastProductViewId = localStorage.getItem('bxLastProductView');
         this.state = {
             open: false,
             error: null,
             isLoaded: false,
-            bxResponse: {}
+            bxResponse: {},
+            lastProductViewId: lastProductViewId
         }
     }
     onOpenModal = () => {
@@ -55,8 +57,8 @@ class SpinShop extends Component {
 
     componentWillMount() {
         document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/color1.css`);
-        bxView('/');
 
+        bxView('/');
         var self = this;
         axios.post('https://api.boxever.com/v2/callFlows/14501789-c24a-4310-885b-cf237acdb3a8', {
             channel: "WEB",
@@ -75,7 +77,7 @@ class SpinShop extends Component {
                 });
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
             });
 
     }
@@ -84,7 +86,7 @@ class SpinShop extends Component {
 
     render() {
 
-        console.log(this.state.bxResponse);
+        //console.log(this.state.bxResponse);
 
 
         let header;
@@ -93,8 +95,6 @@ class SpinShop extends Component {
         } else {
             header = <HeaderOne logoName={'logo/rsz_spinshop-logo2.png'} />
         }
-
-        // Figure out display from Boxever response
 
         //dynamic block
         const showBlock = this.state.bxResponse.showBlock;
@@ -116,7 +116,7 @@ class SpinShop extends Component {
 
         //sections
         const bxSections = this.state.bxResponse.sections;
-        console.log("bxSections", bxSections)
+        //console.log("bxSections", bxSections)
         let dymanicSections =
             <section className="catagories">
                 <div className="container category-button">
@@ -234,11 +234,11 @@ class SpinShop extends Component {
 
 
                 {/*Trending Products Section*/}
-                <MultiSlider type={'men'} title={'Trending Products'} />
+                <MultiSlider type={'men'} title={'Trending Products'} trendingId={this.state.lastProductViewId}/>
 
 
                 {/*Promo Aera 2 Section*/}
-                <section className=" ratio2_1">
+                {/* <section className=" ratio2_1">
                     <div className="container">
                         <div className="row partition4">
                             <div className="col-lg-3 col-md-6">
@@ -261,7 +261,7 @@ class SpinShop extends Component {
                         </div>
                     </div>
                 </section>
-                <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} />
+                <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} /> */}
 
 
                 <FooterOne logoName={'logo/rsz_spinshop-logo2.png'} />
