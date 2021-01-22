@@ -9,11 +9,10 @@ import { getCartTotal, bxView, bxAddProductToCart, bxIdenfify, getSingleItem } f
 import { removeFromCart, incrementQty, decrementQty, addToCart } from '../../actions'
 import { getAllProducts, addToCompareUnsafe, addToCartUnsafe } from '../../actions/index';
 
-import { aws4Interceptor } from "aws4-axios";
+import { addToDataLayer } from '../../services/index';
 
 
 const axios = require('axios');
-//var AWS = require('aws-sdk');
 
 
 class cartComponent extends Component {
@@ -47,39 +46,7 @@ class cartComponent extends Component {
 
     componentDidMount() {
         bxView('CART');
-
-        const client = axios.create();
-
-        const interceptor = aws4Interceptor({
-            region: "eu-west-1",
-            service: "personalize"
-        }, {
-            accessKeyId: 'AKIAYS67HMJA6PC6XAR2',
-            secretAccessKey: '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'
-        });
-
-        client.interceptors.request.use(interceptor); 
-
-        // Requests made using Axios will now be signed
-        client.post('https://personalize-runtime.eu-west-1.amazonaws.com/recommendations', {
-            "campaignArn": "arn:aws:personalize:eu-west-1:590489281089:campaign/testPopularItems",
-            "context": {
-                "string": ""
-            },
-            "itemId": "string",
-            "numResults": 10,
-            "userId": "13"
-        },{
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }).then(function (response) {
-            //console.log(response);
-            //console.log(response.data);
-        })
-
-        // AWS.config.loadFromPath('./config.json');
-        // var personalizeruntime = new AWS.PersonalizeRuntime();
+       
     }
 
     render() {
@@ -88,6 +55,8 @@ class cartComponent extends Component {
         const imgStle = {
             maxWidth: 110
         }
+
+        localStorage.setItem("bxCartTotal", total);
 
         return (
             <div>

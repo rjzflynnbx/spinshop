@@ -1,5 +1,12 @@
 var uuid = require('uuid');
 
+export const addToDataLayer = (eventData) => {
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push(eventData)
+    }
+  }
+
 // Get Unique Brands from Json Data
 export const getBrands = (products) => {
     var uniqueBrands = [];
@@ -207,7 +214,7 @@ function compareB(a, b) {
 export const getPersonalizedProducts = (products, id) => {
     // console.log("getPersonalizedProducts from id " + id);
     //await sleep(5000);
-    if (id == 0) {
+    if (id == 0 || id == undefined ) {
         const items = products.filter(product => {
             return DEFAULT.includes(product.id);
         })
@@ -447,6 +454,7 @@ export const bxCheckout = (cartItems) => {
 
 
 }
+
 
 
 export const bxStartAsAnon = () => {

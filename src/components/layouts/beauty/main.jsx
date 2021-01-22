@@ -238,7 +238,7 @@ class SpinShop extends Component {
 
 
                 {/*Promo Aera 2 Section*/}
-                 <section className=" ratio2_1">
+                 {/* <section className=" ratio2_1">
                     <div className="container">
                         <div className="row partition4">
                             <div className="col-lg-3 col-md-6">
@@ -261,7 +261,7 @@ class SpinShop extends Component {
                         </div>
                     </div>
                 </section>
-                <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} /> }
+                <MultiSlider type={'men'} title={'Shop The Collection'} collectionId={1} /> } */}
 
 
                 <FooterOne logoName={'logo/rsz_spinshop-logo2.png'} />
