@@ -28,7 +28,6 @@ const printHostingInstructions = require('react-dev-utils/printHostingInstructio
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
 const printBuildError = require('react-dev-utils/printBuildError');
 
-var AWS = require('aws-sdk');
 
 
 const measureFileSizesBeforeBuild =
