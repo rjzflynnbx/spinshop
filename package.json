@@ -4,9 +4,6 @@
   "private": true,
   "homepage": "https://spinshop.herokuapp.com/",
   "basename": "/",
-  "engines": {
-    "node": "12.15.0"
-  },
   "dependencies": {
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
