@@ -56,6 +56,10 @@ class MultipleSlider extends Component {
         } else {
             items = newProducts;
         }
+        
+        if(items == undefined){
+            items = newProducts;
+        }
 
         items.forEach((item) => {
             console.log("Item ID: " + item.id + " | Item Category: " + item.primaryCategory 

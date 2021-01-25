@@ -65,7 +65,7 @@ class checkOut extends Component {
     disableCheckoutButton () {
         console.log("disableCheckoutButton")
         this.setState({
-            disableCheckoutButton: "true"
+            disableCheckoutButton: this.state.disableCheckoutButton ? "false" : "true"
         })
     }
 
@@ -277,7 +277,7 @@ class checkOut extends Component {
                                                         <li>Subtotal <span className="count">{symbol}{total}</span></li>
                                                         <li>Shipping <div className="shipping">
                                                             <div className="shopping-option">
-                                                                <input onClick={() => this.disableCheckoutButton()} type="checkbox" name="free-shipping" id="free-shipping" />
+                                                                <input onChange={() => this.disableCheckoutButton()} type="checkbox" name="free-shipping" id="free-shipping" />
                                                                 <label htmlFor="free-shipping">disable checkout</label>
                                                             </div>
                                                             <div className="shopping-option">
