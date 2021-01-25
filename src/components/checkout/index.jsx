@@ -28,7 +28,8 @@ class checkOut extends Component {
             city: 'New York',
             state: 'New York',
             pincode: '',
-            create_account: ''
+            create_account: '',
+            disableCheckoutButton: 'false'
         }
         this.validator = new SimpleReactValidator();
     }
@@ -58,6 +59,20 @@ class checkOut extends Component {
     checkhandle(value) {
         this.setState({
             payment: value
+        })
+    }
+
+    disableCheckoutButton () {
+        console.log("disableCheckoutButton")
+        this.setState({
+            disableCheckoutButton: "true"
+        })
+    }
+
+    enableCheckoutButton () {
+        console.log("enableCheckoutButton")
+        this.setState({
+            disableCheckoutButton: "false"
         })
     }
 
@@ -155,6 +170,8 @@ class checkOut extends Component {
             production: 'AZ4S98zFa01vym7NVeo_qthZyOnBhtNvQDsjhaZSMH-2_Y9IAJFbSD3HPueErYqN8Sa8WYRbjP7wWtd_',
         }
 
+       
+        
 
 
         return (
@@ -260,12 +277,12 @@ class checkOut extends Component {
                                                         <li>Subtotal <span className="count">{symbol}{total}</span></li>
                                                         <li>Shipping <div className="shipping">
                                                             <div className="shopping-option">
-                                                                <input type="checkbox" name="free-shipping" id="free-shipping" />
-                                                                <label htmlFor="free-shipping">Free Shipping</label>
+                                                                <input onClick={() => this.disableCheckoutButton()} type="checkbox" name="free-shipping" id="free-shipping" />
+                                                                <label htmlFor="free-shipping">disable checkout</label>
                                                             </div>
                                                             <div className="shopping-option">
-                                                                <input type="checkbox" name="local-pickup" id="local-pickup" />
-                                                                <label htmlFor="local-pickup">Local Pickup</label>
+                                                                <input onClick={() => this.enableCheckoutButton()} type="checkbox" name="local-pickup" id="local-pickup" />
+                                                                <label htmlFor="local-pickup">enable</label>
                                                             </div>
                                                         </div>
                                                         </li>
@@ -298,6 +315,7 @@ class checkOut extends Component {
                                                     {(total !== 0) ?
                                                         <div className="text-right">
                                                             {(this.state.payment === 'stripe') ? <button type="button" className="btn-solid btn"
+                                                                disabled={this.state.disableCheckoutButton === "true"} 
                                                                 onClick={() => this.StripeClick(this.state.email, this.state.first_name, this.state.last_name)} >Place Order</button> :
                                                                 <PaypalExpressBtn env={'sandbox'} client={client} currency={'USD'} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />}
                                                         </div>
