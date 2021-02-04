@@ -62,17 +62,10 @@ class checkOut extends Component {
         })
     }
 
-    disableCheckoutButton () {
-        console.log("disableCheckoutButton")
+    disableCheckoutButton (event) {
+        console.log("disableCheckoutButton " + event.target.checked)
         this.setState({
-            disableCheckoutButton: this.state.disableCheckoutButton ? "false" : "true"
-        })
-    }
-
-    enableCheckoutButton () {
-        console.log("enableCheckoutButton")
-        this.setState({
-            disableCheckoutButton: "false"
+            disableCheckoutButton: event.target.checked ? "true" : "false"
         })
     }
 
@@ -277,13 +270,13 @@ class checkOut extends Component {
                                                         <li>Subtotal <span className="count">{symbol}{total}</span></li>
                                                         <li>Shipping <div className="shipping">
                                                             <div className="shopping-option">
-                                                                <input onChange={() => this.disableCheckoutButton()} type="checkbox" name="free-shipping" id="free-shipping" />
+                                                                <input onChange={(event) => this.disableCheckoutButton(event)} type="checkbox" name="free-shipping" id="free-shipping" />
                                                                 <label htmlFor="free-shipping">disable checkout</label>
                                                             </div>
-                                                            <div className="shopping-option">
+                                                            {/* <div className="shopping-option">
                                                                 <input onClick={() => this.enableCheckoutButton()} type="checkbox" name="local-pickup" id="local-pickup" />
                                                                 <label htmlFor="local-pickup">enable</label>
-                                                            </div>
+                                                            </div> */}
                                                         </div>
                                                         </li>
                                                     </ul>
