@@ -24,14 +24,19 @@ class checkOut extends Component {
             phone: '0891234567',
             email: 'janeledger2020@gmail.com',
             country: 'United States',
-            address: '123 Fake Street',
-            city: 'New York',
-            state: 'New York',
-            pincode: '',
+            address: '123 Rivermount Street',
+            city: 'NewYork',
+            state: 'NewYork',
+            promocode: '',
             create_account: '',
-            disableCheckoutButton: 'false'
+            disableCheckoutButton: 'false',
+            discountActive: false
         }
-        this.validator = new SimpleReactValidator();
+        this.validator = new SimpleReactValidator({
+            messages: {
+                alpha: 'Invalid Promo Code'
+            },
+          })
     }
 
     componentDidMount() {
@@ -39,11 +44,16 @@ class checkOut extends Component {
     }
 
     setStateFromInput = (event) => {
-        console.log('event');
+        //console.log(event);
         var obj = {};
         obj[event.target.name] = event.target.value;
+        console.log(event.target.value)
+        if(event.target.name === 'promocode' && event.target.value ==='PPYJ'){
+            this.setState({
+                discountActive: true
+            })
+        }  
         this.setState(obj);
-
     }
 
     setStateFromCheckbox = (event) => {
@@ -62,7 +72,7 @@ class checkOut extends Component {
         })
     }
 
-    disableCheckoutButton (event) {
+    disableCheckoutButton(event) {
         console.log("disableCheckoutButton " + event.target.checked)
         this.setState({
             disableCheckoutButton: event.target.checked ? "true" : "false"
@@ -136,6 +146,8 @@ class checkOut extends Component {
     render() {
         const { cartItems, symbol, total } = this.props;
 
+        const twentyPercentOfTotal = (20 / 100) * total;
+
         // Paypal Integration
         const onSuccess = (payment) => {
             console.log("The payment was succeeded!", payment);
@@ -145,7 +157,8 @@ class checkOut extends Component {
                     payment: payment,
                     items: cartItems,
                     orderTotal: total,
-                    symbol: symbol                }
+                    symbol: symbol
+                }
             })
             bxIdenfify(this.state.email, this.state.first_name, this.state.last_name)
         }
@@ -163,8 +176,14 @@ class checkOut extends Component {
             production: 'AZ4S98zFa01vym7NVeo_qthZyOnBhtNvQDsjhaZSMH-2_Y9IAJFbSD3HPueErYqN8Sa8WYRbjP7wWtd_',
         }
 
-       
-        
+
+        //dynamic block
+        const discountActive = this.state.discountActive;
+        let discountBlock = null;
+        if (discountActive) {
+            discountBlock = <li>Discount <span className="count">20%</span></li>
+        } 
+
 
 
         return (
@@ -243,13 +262,13 @@ class checkOut extends Component {
                                                     {this.validator.message('state', this.state.state, 'required|alpha')}
                                                 </div>
                                                 <div className="form-group col-md-12 col-sm-6 col-xs-12">
-                                                    <div className="field-label">Postal Code</div>
-                                                    <input type="text" name="pincode" value={this.state.spincode} onChange={this.setStateFromInput} />
-                                                    {this.validator.message('pincode', this.state.pincode, 'required|integer')}
+                                                    <div className="field-label">Promo Code</div>
+                                                    <input type="text" name="promocode" value={this.state.promocode} onChange={this.setStateFromInput} />
+                                                    {this.validator.message('promocode', this.state.promocode, 'alpha')}
                                                 </div>
                                                 <div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <input type="checkbox" name="create_account" id="account-option" checked={this.state.create_account} onChange={this.setStateFromCheckbox} />
-                                                    &ensp; <label htmlFor="account-option">Create An Account?</label>
+                                                    &ensp; <label htmlFor="account-option">Apply Promocode?</label>
                                                     {this.validator.message('checkbox', this.state.create_account, 'create_account')}
                                                 </div>
                                             </div>
@@ -268,21 +287,21 @@ class checkOut extends Component {
                                                     </ul>
                                                     <ul className="sub-total">
                                                         <li>Subtotal <span className="count">{symbol}{total}</span></li>
-                                                        <li>Shipping <div className="shipping">
+
+                                                        {discountBlock}
+                                                            
+
+                                                        <li> <div className="shipping">
                                                             <div className="shopping-option">
                                                                 <input onChange={(event) => this.disableCheckoutButton(event)} type="checkbox" name="free-shipping" id="free-shipping" />
                                                                 <label htmlFor="free-shipping">disable checkout</label>
                                                             </div>
-                                                            {/* <div className="shopping-option">
-                                                                <input onClick={() => this.enableCheckoutButton()} type="checkbox" name="local-pickup" id="local-pickup" />
-                                                                <label htmlFor="local-pickup">enable</label>
-                                                            </div> */}
                                                         </div>
                                                         </li>
                                                     </ul>
 
                                                     <ul className="total">
-                                                        <li>Total <span className="count">{symbol}{total}</span></li>
+                                                        <li>Total <span className="count">{symbol}  {this.state.discountActive ? total - twentyPercentOfTotal : total }  </span></li>
                                                     </ul>
                                                 </div>
 
@@ -308,7 +327,7 @@ class checkOut extends Component {
                                                     {(total !== 0) ?
                                                         <div className="text-right">
                                                             {(this.state.payment === 'stripe') ? <button type="button" className="btn-solid btn"
-                                                                disabled={this.state.disableCheckoutButton === "true"} 
+                                                                disabled={this.state.disableCheckoutButton === "true"}
                                                                 onClick={() => this.StripeClick(this.state.email, this.state.first_name, this.state.last_name)} >Place Order</button> :
                                                                 <PaypalExpressBtn env={'sandbox'} client={client} currency={'USD'} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />}
                                                         </div>
@@ -317,7 +336,7 @@ class checkOut extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                
+
                                 </form>
                             </div>
                         </div>
