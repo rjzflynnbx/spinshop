@@ -47,7 +47,7 @@ class checkOut extends Component {
         //console.log(event);
         var obj = {};
         obj[event.target.name] = event.target.value;
-        console.log(event.target.value)
+       // console.log(event.target.value)
         if(event.target.name === 'promocode' && event.target.value ==='PPYJ'){
             this.setState({
                 discountActive: true
@@ -111,7 +111,7 @@ class checkOut extends Component {
 
 
         if (this.validator.allValid()) {
-            alert('You submitted the form and stuff!');
+           // alert('You submitted the form and stuff!');
 
             this.props.history.push({
                 pathname: '/order-success',

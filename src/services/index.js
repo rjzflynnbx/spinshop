@@ -386,7 +386,18 @@ export const bxIdenfify = (email, fname, lname) => {
             "lastname": lname
         };
 
-        window.Boxever.eventCreate(identifyEvent, function (data) { }, 'json');
+        window.Boxever.eventCreate(identifyEvent, function (data) { 
+            var qmLinkSessionEvent = {
+                "browser_id": window.Boxever.getID(),
+                "channel": CHANNEL,
+                "type": "QM_SESSION_LINK",
+                "language": "EN",
+                "currency": "USD",
+                "pos": POS,
+                "Link": "https://boxever.quantummetric.com/#/users/search?qmusercookie=" + window.QuantumMetricAPI.getUserID()
+            };
+            window.Boxever.eventCreate(qmLinkSessionEvent, function (data) { }, 'json');
+        }, 'json');
     });
 }
 
