@@ -44,7 +44,6 @@ class cartComponent extends Component {
                 janeLedgerEmail = userJaneLedgerEmail;
             }
             bxIdenfify(janeLedgerEmail, 'Jane', 'Ledger');
-           // bxIdenfify('janeledger2020@gmail.com', 'Jane', 'Ledger');
             this.props.cartItems.forEach(function (item) {
                 bxAddProductToCart(item);
             });
@@ -119,7 +118,7 @@ class cartComponent extends Component {
                                                                 </div>
                                                                 <div className="col-xs-3">
                                                                     <h2 className="td-color">
-                                                                        <a href="#" className="icon" onClick={() => this.props.removeFromCart(item)}>
+                                                                        <a className="icon" onClick={() => this.props.removeFromCart(item)}>
                                                                             <i className="icon-close"></i>
                                                                         </a>
                                                                     </h2>
@@ -146,7 +145,7 @@ class cartComponent extends Component {
                                                             </div>{(item.qty >= item.stock) ? 'out of Stock' : ''}
                                                         </td>
                                                         <td>
-                                                            <a href="#" className="icon" onClick={() => this.props.removeFromCart(item)}>
+                                                            <a  className="icon" onClick={() => this.props.removeFromCart(item)}>
                                                                 <i className="fa fa-times"></i>
                                                             </a>
                                                         </td>
