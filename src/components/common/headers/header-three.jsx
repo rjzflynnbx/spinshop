@@ -14,7 +14,7 @@ import { connect } from "react-redux";
 import LogoImage from "./common/logo";
 import { bxStartAsAnon } from '../../../services';
 import { toast } from 'react-toastify';
-import { bxStartAsRF, bxCloseSession } from '../../../services/index';
+import { bxStartAsJaneLedger, bxCloseSession } from '../../../services/index';
 
 class HeaderThree extends Component {
 
@@ -91,8 +91,8 @@ class HeaderThree extends Component {
         toast.success("Closed Session");
     }
 
-    boxeverStartAsRichardFlynn = () => {
-        bxStartAsRF();
+    boxeverStartAsJaneLedger = () => {
+        bxStartAsJaneLedger();
     }
 
     render() {
@@ -144,7 +144,7 @@ class HeaderThree extends Component {
                                                                 </Link>
                                                                 <li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
                                                                 <li><a onClick={this.boxeverCloseSession}>Close Session</a> </li>
-                                                                <li><a href="" onClick={this.boxeverStartAsRichardFlynn}>Start as Jane</a> </li>
+                                                                <li><a href="" onClick={this.boxeverStartAsJaneLedger}>Start as Jane</a> </li>
                                                             </ul>
                                                         </div>
                                                     </li>
