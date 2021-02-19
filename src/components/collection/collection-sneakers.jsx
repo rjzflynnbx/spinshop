@@ -22,6 +22,7 @@ class CollectionSneakerSale extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.onModalInputClick = this.onModalInputClick.bind(this);
     }
 
 
@@ -47,7 +48,6 @@ class CollectionSneakerSale extends Component {
     }
 
     onOpenModal = () => {
-        //("OPEN MODAL");
         this.setState({ open: true });
     };
 
@@ -75,10 +75,20 @@ class CollectionSneakerSale extends Component {
         this.setState({ value: event.target.value });
     }
 
+    onModalInputClick(event) {
+        var janeLedgerEmail = "janeledger2020@gmail.com";
+        var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
+        var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
+        if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined
+            && userJaneLedgerEmail != 'undefined') {
+            janeLedgerEmail = userJaneLedgerEmail;
+        }
+        this.setState({ value: janeLedgerEmail });
+    }
+
     render() {
         let modalTitle = "SIGN UP AND GET 15% OFF";
         let modalSubTitle = "Never Miss Anything From SpinShop By Signing Up To Our Newsletter.";
-
         if (localStorage.getItem("bxModalDismissed") === "true") {
             modalTitle = "ALERT ME ABOUT NEW RELEASES";
             modalSubTitle = "Get alerts about new releases so you don't miss out!";
@@ -182,7 +192,7 @@ class CollectionSneakerSale extends Component {
                                                     <form onSubmit={this.handleSubmit} className="form-inline subscribe-form">
                                                         <div className="form-group mx-sm-6">
                                                             <input type="text" className="form-control" id="exampleFormControlInput1"
-                                                                placeholder="Enter your email" value={this.state.value} onChange={this.handleChange} />
+                                                                placeholder="Enter your email" onClick={this.onModalInputClick} value={this.state.value} onChange={this.handleChange} />
                                                         </div>
                                                         <button type="submit" className="btn btn-solid">subscribe</button>
                                                     </form>

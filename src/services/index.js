@@ -2,10 +2,10 @@ var uuid = require('uuid');
 
 export const addToDataLayer = (eventData) => {
     if (typeof window !== 'undefined') {
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push(eventData)
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push(eventData)
     }
-  }
+}
 
 // Get Unique Brands from Json Data
 export const getBrands = (products) => {
@@ -214,7 +214,7 @@ function compareB(a, b) {
 export const getPersonalizedProducts = (products, id) => {
     // console.log("getPersonalizedProducts from id " + id);
     //await sleep(5000);
-    if (id == 0 || id == undefined ) {
+    if (id == 0 || id == undefined) {
         const items = products.filter(product => {
             return DEFAULT.includes(product.id);
         })
@@ -324,7 +324,7 @@ export const getProductsWithCatagory = (products, catagory) => {
 // Boxever services ********************************************************************************************************************************
 
 
-const POS = "spinshop.com";
+const POS = window._boxever_settings.pointOfSale;
 const CHANNEL = "WEB";
 
 
@@ -386,7 +386,7 @@ export const bxIdenfify = (email, fname, lname) => {
             "lastname": lname
         };
 
-        window.Boxever.eventCreate(identifyEvent, function (data) { 
+        window.Boxever.eventCreate(identifyEvent, function (data) {
             var qmLinkSessionEvent = {
                 "browser_id": window.Boxever.getID(),
                 "channel": CHANNEL,
@@ -490,8 +490,15 @@ export const bxCloseSession = () => {
     });
 }
 
-export const bxStartAsRF = () => {
-    bxIdenfify('janeledger2020@gmail.com', 'Jane', 'Ledger');
+export const bxStartAsJaneLedger = () => {
+    var janeLedgerEmail = "janeledger2020@gmail.com";
+    var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
+    var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
+    if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined
+        && userJaneLedgerEmail != 'undefined') {
+        janeLedgerEmail = userJaneLedgerEmail;
+    }
+    bxIdenfify(janeLedgerEmail, 'Jane', 'Ledger');
 }
 
 

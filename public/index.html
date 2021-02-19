@@ -18,12 +18,51 @@
       target: `https://api.boxever.com/v1.2`,
       cookie_domain: ".spinshop.herokuapp.com/",
       web_flow_target: "https://d35vb5cccm4xzp.cloudfront.net",
-      pointOfSale: "spinshop.com	"
+      pointOfSale: "spinshop.com"
+    };
+    var _demo_settings = {
+      baseURL: "https://spinshop.herokuapp.com/",
+      demoUsers: {
+        "cormac.hampson@boxever.com" : "jane_ledger_cormac.hampson@boxever.com"
+      }
+      
     };
   </script>
   <script type="text/javascript" src="https://d1mj578wat5n4o.cloudfront.net/boxever-1.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+<!-- Demo Shortcuts -->
+<script type='text/javascript'>
+  async function KeyPress(e) {
+      var evtobj = window.event ? event : e
+
+      if (evtobj.keyCode == 88 && evtobj.ctrlKey) {
+              var currentlySelected = localStorage.getItem('BX_DEMO_USER_EMAIL');
+              const { value: demoUser } = await Swal.fire({
+              title: 'Viewing as - ' + currentlySelected ,
+              input: 'select',
+              inputOptions: {
+                  Default: 'default',
+                  'cormac.hampson@boxever.com': 'Cormac'
+              },
+              inputPlaceholder: 'Select a demo user',
+              showCancelButton: true
+          })
+
+          if (demoUser) {
+              Swal.fire(`You selected: ${demoUser}`);
+              localStorage.setItem('BX_DEMO_USER_EMAIL',demoUser)
+          }
+      }
+
+     
+
+    
+          
+  }
+
+  document.onkeydown = KeyPress;
+</script>
 
 
   <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json">-->

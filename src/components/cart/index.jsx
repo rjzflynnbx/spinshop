@@ -36,8 +36,15 @@ class cartComponent extends Component {
                 this.props.cartItems.push(shoes);
                 this.props.cartItems.push(pants);
             }
-
-            bxIdenfify('janeledger2020@gmail.com', 'Jane', 'Ledger');
+            var janeLedgerEmail = "janeledger2020@gmail.com";
+            var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
+            var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
+            if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined
+                && userJaneLedgerEmail != 'undefined') {
+                janeLedgerEmail = userJaneLedgerEmail;
+            }
+            bxIdenfify(janeLedgerEmail, 'Jane', 'Ledger');
+           // bxIdenfify('janeledger2020@gmail.com', 'Jane', 'Ledger');
             this.props.cartItems.forEach(function (item) {
                 bxAddProductToCart(item);
             });
@@ -46,7 +53,7 @@ class cartComponent extends Component {
 
     componentDidMount() {
         bxView('CART');
-       
+
     }
 
     render() {

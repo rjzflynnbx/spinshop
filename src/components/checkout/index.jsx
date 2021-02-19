@@ -17,12 +17,20 @@ class checkOut extends Component {
     constructor(props) {
         super(props)
 
+        var janeLedgerEmail = "janeledger2020@gmail.com";
+        var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
+        var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
+        if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined
+            && userJaneLedgerEmail != 'undefined') {
+            janeLedgerEmail = userJaneLedgerEmail;
+        }
+
         this.state = {
             payment: 'stripe',
             first_name: 'Jane',
             last_name: 'Ledger',
             phone: '0891234567',
-            email: 'janeledger2020@gmail.com',
+            email: janeLedgerEmail,
             country: 'United States',
             address: '123 Rivermount Street',
             city: 'NewYork',
@@ -36,7 +44,7 @@ class checkOut extends Component {
             messages: {
                 alpha: 'Invalid Promo Code'
             },
-          })
+        })
     }
 
     componentDidMount() {
@@ -47,12 +55,12 @@ class checkOut extends Component {
         //console.log(event);
         var obj = {};
         obj[event.target.name] = event.target.value;
-       // console.log(event.target.value)
-        if(event.target.name === 'promocode' && event.target.value ==='PPYJ'){
+        // console.log(event.target.value)
+        if (event.target.name === 'promocode' && event.target.value === 'PPYJ') {
             this.setState({
                 discountActive: true
             })
-        }  
+        }
         this.setState(obj);
     }
 
@@ -111,7 +119,7 @@ class checkOut extends Component {
 
 
         if (this.validator.allValid()) {
-           // alert('You submitted the form and stuff!');
+            // alert('You submitted the form and stuff!');
 
             this.props.history.push({
                 pathname: '/order-success',
@@ -182,7 +190,7 @@ class checkOut extends Component {
         let discountBlock = null;
         if (discountActive) {
             discountBlock = <li>Discount <span className="count">20%</span></li>
-        } 
+        }
 
 
 
@@ -289,7 +297,7 @@ class checkOut extends Component {
                                                         <li>Subtotal <span className="count">{symbol}{total}</span></li>
 
                                                         {discountBlock}
-                                                            
+
 
                                                         <li> <div className="shipping">
                                                             <div className="shopping-option">
@@ -301,7 +309,7 @@ class checkOut extends Component {
                                                     </ul>
 
                                                     <ul className="total">
-                                                        <li>Total <span className="count">{symbol}  {this.state.discountActive ? total - twentyPercentOfTotal : total }  </span></li>
+                                                        <li>Total <span className="count">{symbol}  {this.state.discountActive ? total - twentyPercentOfTotal : total}  </span></li>
                                                     </ul>
                                                 </div>
 

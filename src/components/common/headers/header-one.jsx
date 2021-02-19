@@ -12,7 +12,7 @@ import TopBar from "./common/topbar";
 import LogoImage from "./common/logo";
 import { changeCurrency } from '../../../actions'
 import { connect } from "react-redux";
-import { bxStartAsAnon, bxStartAsRF } from '../../../services';
+import { bxStartAsAnon, bxStartAsJaneLedger } from '../../../services';
 import { bxCloseSession, bxView } from '../../../services/index';
 import { toast } from 'react-toastify';
 
@@ -20,7 +20,6 @@ class HeaderOne extends Component {
 
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			isLoading: false
 		}
@@ -91,8 +90,8 @@ class HeaderOne extends Component {
 		toast.success("Closed Session");
 	}
 
-	boxeverStartAsRichardFlynn = () => {
-		bxStartAsRF();
+	boxeverStartAsJaneLedger = () => {
+		bxStartAsJaneLedger();
 	}
 
 	render() {
@@ -150,7 +149,7 @@ class HeaderOne extends Component {
 																</Link>
 																<li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
 																<li><a onClick={this.boxeverCloseSession}>Close Session</a> </li>
-																{/* <li><a href="" onClick={this.boxeverStartAsRichardFlynn}>Start as Jane</a> </li> */}
+																{/* <li><a href="" onClick={this.boxeverStartAsJaneLedger}>Start as Jane</a> </li> */}
 															</ul>
 														</div>
 													</li>

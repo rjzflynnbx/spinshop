@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getVisibleproducts, bxStartAsRF } from '../../../services';
+import { getVisibleproducts, bxStartAsJaneLedger } from '../../../services';
 import { Link, Redirect } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
 
@@ -22,7 +22,7 @@ class FacebookAd extends Component {
 
 
         var handleClick = () => {
-            bxStartAsRF();
+            bxStartAsJaneLedger();
             this.LoadingBar.continuousStart();
             this.sleep(3000).then(() => {
                 this.LoadingBar.complete();
