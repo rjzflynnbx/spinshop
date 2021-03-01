@@ -15,7 +15,7 @@ import LoadingBar from 'react-top-loading-bar';
 class checkOut extends Component {
 
     constructor(props) {
-        super(props)
+        super(props)//testing
 
         var janeLedgerEmail = "janeledger2020@gmail.com";
         var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
