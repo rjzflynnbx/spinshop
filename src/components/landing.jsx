@@ -403,11 +403,11 @@ class Landing extends Component {
                                             <h3>vegetables <span className="badge badge-danger">New</span></h3>
                                         </div>
                                         <div className="col-xl-3 col-sm-6 col-12 demo-box">
-                                            <Link to={`${process.env.PUBLIC_URL}/beauty`} target="_blank">
+                                            <Link to={`${process.env.PUBLIC_URL}/spinshop`} target="_blank">
                                                 <img src={`${process.env.PUBLIC_URL}/assets/images/landing-page/special features/20.jpg`}
                                                     className="img-fluid lazyload" />
                                             </Link>
-                                            <h3>beauty <span className="badge badge-danger">New</span></h3>
+                                            <h3>spinshop <span className="badge badge-danger">New</span></h3>
                                         </div>
                                         <div className="col-xl-3 col-sm-6 col-12 demo-box">
                                             <Link to={`${process.env.PUBLIC_URL}/electronic`} target="_blank">

@@ -75,7 +75,7 @@ var module = {
             phone_cases: 'Coque de téléphone',
             my_account: 'Mon compte',
             fashion: 'Mode',
-            beauty: 'Beauté',
+            spinshop: 'Spinshop',
             electronic: 'Électronique',
             furniture: 'Meubles',
             kids: 'des gamins',

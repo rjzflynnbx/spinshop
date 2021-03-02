@@ -20,7 +20,7 @@ import Kids from './components/layouts/kids/main';
 import Pets from './components/layouts/pets/main';
 import Furniture from './components/layouts/furniture/main';
 import Watch from './components/layouts/watch/main';
-import SpinShop from './components/layouts/beauty/main';
+import SpinShop from './components/layouts/spinshop/main';
 import Electronic from './components/layouts/electronic/main';
 
 
@@ -105,7 +105,7 @@ class Root extends React.Component {
                                 <Route path={`${process.env.PUBLIC_URL}/pets`} component={Pets} />
                                 <Route path={`${process.env.PUBLIC_URL}/watch`} component={Watch} />
                                 <Route path={`${process.env.PUBLIC_URL}/kids`} component={Kids} />
-                                <Route path={`${process.env.PUBLIC_URL}/beauty`} component={SpinShop} />
+                                <Route path={`${process.env.PUBLIC_URL}/spinshop`} component={SpinShop} />
                                 <Layout>
 
                                     {/*Routes For Layouts*/}

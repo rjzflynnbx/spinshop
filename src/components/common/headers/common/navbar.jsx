@@ -86,7 +86,7 @@ class NavBar extends Component {
                                 </Link>
                                 <ul className="nav-submenu" >
                                     <li><Link to={`${process.env.PUBLIC_URL}/fashion`} >{translate('fashion')}</Link></li>
-                                    <li><Link to={`${process.env.PUBLIC_URL}/beauty`} >{translate('beauty')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/spinshop`} >{translate('spinshop')}</Link></li>
                                     <li><Link to={`${process.env.PUBLIC_URL}/electronic`} >{translate('electronic')}</Link></li>
                                     <li><Link to={`${process.env.PUBLIC_URL}/furniture`} >{translate('furniture')}</Link></li>
                                     <li><Link to={`${process.env.PUBLIC_URL}/kids`} >{translate('kids')}</Link></li>
