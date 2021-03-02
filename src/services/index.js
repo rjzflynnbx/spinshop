@@ -329,10 +329,8 @@ const CHANNEL = "WEB";
 
 
 export const bxAddProductToCart = (product) => {
-    //console.log("bxAddProductToCart");
-    //console.log(product);
-    var event =
-    {
+
+    var event = {
         "channel": CHANNEL,
         "type": "ADD",
         "language": "EN",
@@ -405,7 +403,6 @@ export const bxCheckout = (cartItems) => {
 
     let checkoutProducts = [];
     cartItems.forEach(function (cartItem) {
-        //console.log(cartItem);
         checkoutProducts.push({
             "item_id": JSON.stringify(cartItem.id)
         }
@@ -457,13 +454,6 @@ export const bxCheckout = (cartItems) => {
             });
         }, 'json');
     });
-
-
-
-
-
-
-
 }
 
 
@@ -485,7 +475,6 @@ export const bxCloseSession = () => {
             type: "FORCE_CLOSE",
             _bx_extended_message: "1"
         };
-
         window.Boxever.eventCreate(closeSessionEvent, function (data) { }, 'json');
     });
 }
