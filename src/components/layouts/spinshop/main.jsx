@@ -225,7 +225,7 @@ class SpinShop extends Component {
 
 
 
-                {/*Trending Products Section*/}
+                {/*Trending Products Section*/} 
                 <MultiSlider type={'men'} title={'Trending Products'} trendingId={this.state.lastProductViewId}/>
 
 

@@ -14,32 +14,8 @@ import {
 
 const axios = require('axios');
 
-
+// This Component is used for a scripted Amazon Pesonalize Demo Story
 class MultipleSlider extends Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         axiosDone: false
-    //     }
-    // }
-
-
-    // componentWillMount() {
-    //     var self = this;
-    //     axios.get('https://jsonplaceholder.typicode.com/todos/1',)
-    //         .then(function (response) {
-    //             console.log('componentWillMount');
-    //             self.state = {
-    //                 axiosDone: true,
-    //             };
-    //         })
-    //         .catch(function (error) {
-    //             //console.log(error);
-    //         });
-    // }
-
-
 
     render() {
 
@@ -56,14 +32,14 @@ class MultipleSlider extends Component {
         } else {
             items = newProducts;
         }
-        
-        if(items == undefined){
+
+        if (items == undefined) {
             items = newProducts;
         }
 
         items.forEach((item) => {
-            console.log("Item ID: " + item.id + " | Item Category: " + item.primaryCategory 
-            + "| Item Name: " + item.name );
+            console.log("Item ID: " + item.id + " | Item Category: " + item.primaryCategory
+                + "| Item Name: " + item.name);
         });
 
 
@@ -89,7 +65,6 @@ class MultipleSlider extends Component {
 
 
 function mapStateToProps(state, ownProps) {
-    console.log();
     return {
         collectionProducts: getCollectionProducts(state.data.products, 1),
         personalizedProducts: getPersonalizedProducts(state.data.products, ownProps.trendingId),
@@ -102,16 +77,6 @@ function mapStateToProps(state, ownProps) {
     };
 }
 
-// const mapStateToProps = (state, ownProps) => (
-//     {
-//     collectionProducts: getCollectionProducts(state.data.products, 1),
-//     personalizedProducts: getPersonalizedProducts(state.data.products, ownProps.trendingId),
-//     newProducts: getNewProducts(state.data.products, ownProps.type),
-//     featureProducts: getNewProducts(state.data.products, ownProps.type).reverse(),
-//     bestSeller: getBestSellerProducts(state.data.products, ownProps.type),
-//     onSell: getBestSellerProducts(state.data.products, ownProps.type).reverse(),
-//     symbol: state.data.symbol,
-// })
 
 export default connect(
     mapStateToProps
