@@ -397,16 +397,16 @@ export const bxIdenfify = (email, fname, lname) => {
             window.Boxever.eventCreate(qmLinkSessionEvent, function (data) { }, 'json');
         }, 'json');
 
-        var acxiom_data_enrichment = {
-            clientKey: window._boxever_settings.clientKey,
+        var myRequestObject = {
+            clientKey: window.Boxever.client_key,
             language: "EN",
             currencyCode: "EUR",
-            channel: CHANNEL,
+            channel: "WEB",
             browserId: window.Boxever.getID(),
             pointOfSale: window._boxever_settings.pointOfSale,
             friendlyId: "acxiom_data_enrichment"
         }
-        window.callFlows(acxiom_data_enrichment, function (response) {
+        window.Boxever.callFlows(myRequestObject, function (response) {
             console.log(response)
         });
 
