@@ -396,6 +396,20 @@ export const bxIdenfify = (email, fname, lname) => {
             };
             window.Boxever.eventCreate(qmLinkSessionEvent, function (data) { }, 'json');
         }, 'json');
+
+        var acxiom_data_enrichment = {
+            clientKey: window._boxever_settings.clientKey,
+            language: "EN",
+            currencyCode: "EUR",
+            channel: CHANNEL,
+            browserId: window.Boxever.getID(),
+            pointOfSale: _boxever_settings.pointOfSale,
+            friendlyId: "acxiom_data_enrichment"
+        }
+        Boxever.callFlows(acxiom_data_enrichment, function (response) {
+            console.log(response)
+        });
+
     });
 }
 
@@ -489,7 +503,5 @@ export const bxStartAsJaneLedger = () => {
     }
     bxIdenfify(janeLedgerEmail, 'Jane', 'Ledger');
 }
-
-
 
 

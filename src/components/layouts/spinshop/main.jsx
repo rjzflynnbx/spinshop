@@ -196,14 +196,18 @@ class SpinShop extends Component {
                             </div>
                         </div>
                         <div>
-                            <div className="home home2">
+                            <div className="home home8">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col">
                                             <div className="slider-contain">
                                                 <div>
-                                                    <h4>Project Rock 2</h4>
-                                                    <h1>Built to break through</h1><a href="#" className="btn btn-solid">shop now</a></div>
+                                                    {/* <h4>Project Rock 2</h4>
+                                                    <h1>Built to break through</h1> */}
+                                                    <Link to={`${process.env.PUBLIC_URL}/sneaker-sale/collection`}>
+                                                        <a className="btn btn-solid" style={getBtnStyle()}>shop now</a>
+                                                    </Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
