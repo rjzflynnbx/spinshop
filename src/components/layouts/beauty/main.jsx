@@ -86,9 +86,6 @@ class SpinShop extends Component {
 
     render() {
 
-        //console.log(this.state.bxResponse);
-
-
         let header;
         if (window.screen.width > 600) {
             header = <HeaderThree logoName={'logo/rsz_spinshop-logo2.png'} />
@@ -100,13 +97,12 @@ class SpinShop extends Component {
         const showBlock = this.state.bxResponse.showBlock;
         let dynamicComponent;
         if (showBlock) {
-            dynamicComponent = <TopCollection type={'men'} title={'Best Sellers Near You'} subtitle={'Trainers'} />
-            // dynamicComponent = <SpecialProducts type={'men'} />         
+            dynamicComponent = <TopCollection type={'men'} title={'Best Sellers Near You'} subtitle={'Trainers'} />       
         } else {
             dynamicComponent = null;
         }
 
-        //banner
+        //hero banner
         const bxBanner = this.state.bxResponse.mainBanner;
         let bannerClassName = "home1";
         if (bxBanner === "WINTER_RUNNING_ESENTIALLS") {
@@ -116,7 +112,6 @@ class SpinShop extends Component {
 
         //sections
         const bxSections = this.state.bxResponse.sections;
-        //console.log("bxSections", bxSections)
         let dymanicSections =
             <section className="catagories">
                 <div className="container category-button">
@@ -168,9 +163,6 @@ class SpinShop extends Component {
                 return mobileBtnStyle;
             }
         }
-
-
-
 
 
         return (

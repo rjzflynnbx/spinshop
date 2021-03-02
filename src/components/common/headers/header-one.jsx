@@ -24,9 +24,9 @@ class HeaderOne extends Component {
 			isLoading: false
 		}
 	}
-    /*=====================
-         Pre loader
-         ==========================*/
+	/*=====================
+		 Pre loader
+		 ==========================*/
 	componentDidMount() {
 		setTimeout(function () {
 			document.querySelector(".loader-wrapper").style = "display: none";
@@ -126,7 +126,7 @@ class HeaderOne extends Component {
 									</div>
 									<div className="menu-right pull-right">
 										{/*Top Navigation Bar Component*/}
-										<NavBar />
+										{/* <NavBar /> */}
 
 										<div>
 											<div className="icon-nav">
