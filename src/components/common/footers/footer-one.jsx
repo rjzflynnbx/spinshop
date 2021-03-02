@@ -36,8 +36,7 @@ class FooterOne extends Component {
                                     <div className="footer-logo">
                                         <LogoImage logo={this.props.logoName} />
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                                    <p>SpinShop is Boxever's Retail (Industry) and React (Technelogy) Demo </p>
                                     <div className="footer-social">
                                         <ul>
                                             <li>
@@ -115,7 +114,7 @@ class FooterOne extends Component {
                         <div className="row">
                             <div className="col-xl-6 col-md-6 col-sm-12">
                                 <div className="footer-end">
-                                    <p><i className="fa fa-copyright" aria-hidden="true"></i> 2019 Boxever</p>
+                                    <p><i className="fa fa-copyright" aria-hidden="true"></i> 2021 Boxever</p>
                                 </div>
                             </div>
                         </div>
