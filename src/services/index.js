@@ -403,7 +403,7 @@ export const bxIdenfify = (email, fname, lname) => {
             currencyCode: "EUR",
             channel: "WEB",
             browserId: window.Boxever.getID(),
-            pointOfSale: window._boxever_settings.pointOfSale,
+            pointOfSale: POS,
             friendlyId: "acxiom_data_enrichment"
         }
         window.Boxever.callFlows(myRequestObject, function (response) {
