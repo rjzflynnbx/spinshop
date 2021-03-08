@@ -33,7 +33,7 @@ Replace the `baseURL` field of the `_demo_settings` object with the domain you'v
 
 Styled for mobile web only, not styled for Desktop
 
-  
+The main demo layout code is at `src/components/layouts/spinshop`
 
 Demo scripts/decks/videos [here](https://sites.google.com/boxever.com/saleshub/demos/spinshop)
 
