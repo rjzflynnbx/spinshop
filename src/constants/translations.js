@@ -174,7 +174,7 @@ var module = {
             phone_cases: 'phone cases',
             my_account: 'My Account',
             fashion: 'Fashion',
-            beauty: 'Beauty',
+            spinshop: 'spinshop',
             electronic: 'Electronic',
             furniture: 'Furniture',
             kids: 'Kids',

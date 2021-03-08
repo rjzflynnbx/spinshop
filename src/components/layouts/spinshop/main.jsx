@@ -63,8 +63,8 @@ class SpinShop extends Component {
         axios.post('https://api.boxever.com/v2/callFlows/14501789-c24a-4310-885b-cf237acdb3a8', {
             channel: "WEB",
             browserId: window.Boxever.getID(),
-            clientKey: "pqsSIOPAxhMC9zJLJSZNFURPNqALIFwd",
-            pointOfSale: "spinshop.com"
+            clientKey: window.Boxever.client_key,
+            pointOfSale: window._boxever_settings.pointOfSale
         })
             .then(function (response) {
                 self.setState({
