@@ -31,7 +31,7 @@ class cartComponent extends Component {
             if (this.props.cartItems.length === 0) {
                 var shoes = getSingleItem(this.props.allProducts, 13);
                 shoes.qty = 1;
-                var pants = getSingleItem(this.prsops.allProducts, 45);
+                var pants = getSingleItem(this.props.allProducts, 45);
                 pants.qty = 1;
                 this.props.cartItems.push(shoes);
                 this.props.cartItems.push(pants);
