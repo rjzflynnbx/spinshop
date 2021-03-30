@@ -1,0 +1,16 @@
+{
+    "key": "RkeVXoh0NB5K8nGUH-Ew7w",
+    "message": {
+      "html": "<p> Hello from Boxever </p>",
+      "subject": "Hello from Boxever ",
+      "from_email": "support@boxever.com",
+      "from_name": "Pre-Sales",
+      "to": [
+        {
+          "email": "richard.flynn@boxever.com",
+          "name": "You",
+          "type": "to"
+        }
+      ]
+    }
+  }
