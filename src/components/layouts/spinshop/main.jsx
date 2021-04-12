@@ -60,26 +60,27 @@ class SpinShop extends Component {
 
         bxView('/');
         var self = this;
-        axios.post('https://api.boxever.com/v2/callFlows/14501789-c24a-4310-885b-cf237acdb3a8', {
-            channel: "WEB",
-            browserId: window.Boxever.getID(),
-            clientKey: window.Boxever.client_key,
-            pointOfSale: window._boxever_settings.pointOfSale
-        })
-            .then(function (response) {
-                self.setState({
-                    isLoaded: true,
-                    bxResponse: {
-                        "showBlock": response.data.showSneakerComponent,
-                        "mainBanner": response.data.mainBanner,
-                        "sections": response.data.sections
-                    }
-                });
-            })
-            .catch(function (error) {
-                //console.log(error);
-            });
 
+        var rq = {
+            "channel": "WEB",
+            "language": "en",
+            "currencyCode": "EUR",
+            "pointOfSale": "spin.com",
+            "browserId": window.Boxever.getID(),
+            "clientKey": window._boxever_settings.client_key,
+            "friendlyId": "home_page"
+        };
+
+        window.Boxever.callFlows(rq, function (response) {
+            self.setState({
+                isLoaded: true,
+                bxResponse: {
+                    "showBlock": response.showSneakerComponent,
+                    "mainBanner": response.mainBanner,
+                    "sections": response.sections
+                }
+            });
+        }, 'json');
     }
 
 
@@ -97,7 +98,7 @@ class SpinShop extends Component {
         const showBlock = this.state.bxResponse.showBlock;
         let dynamicComponent;
         if (showBlock) {
-            dynamicComponent = <TopCollection type={'men'} title={'Best Sellers Near You'} subtitle={'Trainers'} />       
+            dynamicComponent = <TopCollection type={'men'} title={'Best Sellers Near You'} subtitle={'Trainers'} />
         } else {
             dynamicComponent = null;
         }
@@ -229,12 +230,12 @@ class SpinShop extends Component {
 
 
 
-                {/*Trending Products Section*/} 
-                <MultiSlider type={'men'} title={'Trending Products'} trendingId={this.state.lastProductViewId}/>
+                {/*Trending Products Section*/}
+                <MultiSlider type={'men'} title={'Trending Products'} trendingId={this.state.lastProductViewId} />
 
 
                 {/*Promo Aera 2 Section*/}
-                 {/* <section className=" ratio2_1">
+                {/* <section className=" ratio2_1">
                     <div className="container">
                         <div className="row partition4">
                             <div className="col-lg-3 col-md-6">
