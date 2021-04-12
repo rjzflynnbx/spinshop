@@ -65,7 +65,7 @@ class SpinShop extends Component {
             "channel": "WEB",
             "language": "en",
             "currencyCode": "EUR",
-            "pointOfSale": "spin.com",
+            "pointOfSale": "spinshop.com",
             "browserId": window.Boxever.getID(),
             "clientKey": window._boxever_settings.client_key,
             "friendlyId": "home_page"
