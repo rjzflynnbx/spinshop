@@ -103,7 +103,6 @@ class checkOut extends Component {
 
 
         this.LoadingBar.continuousStart();
-
         this.sleep(3000).then(() => {
             this.LoadingBar.complete();
             this.props.history.push({
@@ -111,22 +110,16 @@ class checkOut extends Component {
                 state: { payment: {}, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
             })
         })
-
-
-
-
+        
 
 
 
         if (this.validator.allValid()) {
-            // alert('You submitted the form and stuff!');
 
-            this.props.history.push({
-                pathname: '/order-success',
-                state: { payment: {}, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
-            })
-
-
+            // this.props.history.push({
+            //     pathname: '/order-success',
+            //     state: { payment: {}, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
+            // })
             // var handler = (window).StripeCheckout.configure({
             //     key: 'pk_test_glxk17KhP7poKIawsaSgKtsL',
             //     locale: 'auto',
