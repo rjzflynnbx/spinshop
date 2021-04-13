@@ -9,14 +9,17 @@ import {
     getBestSellerProducts,
     getNewProducts,
     getCollectionProducts,
+    bxIsClientKeyOurSpinShop,
     getPersonalizedProducts
 } from "../../../services";
 
+ 
 const axios = require('axios');
 
 // This Component is used for a scripted Amazon Pesonalize Demo Story
 class MultipleSlider extends Component {
 
+    
     render() {
 
         const { newProducts, featureProducts, collectionProducts, personalizedProducts,
@@ -24,7 +27,9 @@ class MultipleSlider extends Component {
 
         let items = [];
         if (trendingId !== undefined || trendingId == '0') {
-            console.log('Fetched Personalize Recommendations...')
+            if(bxIsClientKeyOurSpinShop()){
+                console.log('Fetched Personalize Recommendations...')
+            }
             items = personalizedProducts;
         }
         else if (collectionId !== undefined) {
@@ -37,11 +42,12 @@ class MultipleSlider extends Component {
             items = newProducts;
         }
 
-        items.forEach((item) => {
-            console.log("Item ID: " + item.id + " | Item Category: " + item.primaryCategory
-                + "| Item Name: " + item.name);
-        });
-
+        if(bxIsClientKeyOurSpinShop()){
+            items.forEach((item) => {
+                console.log("Item ID: " + item.id + " | Item Category: " + item.primaryCategory
+                    + "| Item Name: " + item.name);
+            });
+        }
 
         return (
             <div>

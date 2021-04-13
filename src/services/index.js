@@ -326,6 +326,7 @@ export const getProductsWithCatagory = (products, catagory) => {
 
 const POS = window._boxever_settings.pointOfSale;
 const CHANNEL = "WEB";
+const BX_SPINSHOP_BASEURL = "https://spinshop.herokuapp.com/";
 
 
 export const bxAddProductToCart = (product) => {
@@ -385,16 +386,18 @@ export const bxIdenfify = (email, fname, lname) => {
         };
 
         window.Boxever.eventCreate(identifyEvent, function (data) {
-            var qmLinkSessionEvent = {
-                "browser_id": window.Boxever.getID(),
-                "channel": CHANNEL,
-                "type": "QM_SESSION_LINK",
-                "language": "EN",
-                "currency": "USD",
-                "pos": POS,
-                "Link": "https://boxever.quantummetric.com/#/users/search?qmusercookie=" + window.QuantumMetricAPI.getUserID()
-            };
-            window.Boxever.eventCreate(qmLinkSessionEvent, function (data) { }, 'json');
+            if(bxIsClientKeyOurSpinShop()){
+                var qmLinkSessionEvent = {
+                    "browser_id": window.Boxever.getID(),
+                    "channel": CHANNEL,
+                    "type": "QM_SESSION_LINK",
+                    "language": "EN",
+                    "currency": "USD",
+                    "pos": POS,
+                    "Link": "https://boxever.quantummetric.com/#/users/search?qmusercookie=" + window.QuantumMetricAPI.getUserID()
+                };
+                window.Boxever.eventCreate(qmLinkSessionEvent, function (data) { }, 'json');
+            }
         }, 'json');
 
         var myRequestObject = {
@@ -473,6 +476,10 @@ export const bxCheckout = (cartItems) => {
 
 const sleep = (milliseconds) => {
      return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+export const bxIsClientKeyOurSpinShop = () => {
+    return window._demo_settings.baseURL === BX_SPINSHOP_BASEURL;
 }
 
 
