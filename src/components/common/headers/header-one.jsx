@@ -80,9 +80,18 @@ class HeaderOne extends Component {
 		})
 	};
 
+	sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
+
 	boxeverStartAsAnon = () => {
 		localStorage.setItem('bxLastProductView', 0)
 		bxStartAsAnon();
+		toast.success("Started as Anon");
+		alert('Hit OK and the page with be automatically reloaded in 3 seconds after that');
+		this.sleep(3000).then(() => {
+			window.location.reload(false); 
+        })
 	}
 
 	boxeverCloseSession = () => {
@@ -147,7 +156,7 @@ class HeaderOne extends Component {
 																<Link to={`${process.env.PUBLIC_URL}/facebookAd2`}>
 																	<li><a>Facebook Ad 2</a></li>
 																</Link>
-																<li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
+																<li><a onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
 																<li><a onClick={this.boxeverCloseSession}>Close Session</a> </li>
 																{/* <li><a href="" onClick={this.boxeverStartAsJaneLedger}>Start as Jane</a> </li> */}
 															</ul>

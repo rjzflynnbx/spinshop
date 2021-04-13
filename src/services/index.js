@@ -369,7 +369,7 @@ export const bxView = (page) => {
     window.Boxever.eventCreate(viewEvent, function (data) { }, 'json');
 }
 
-export const bxIdenfify = (email, fname, lname) => {
+export const bxIdenfify = (email, fname, lname) => {    
     window._boxeverq.push(function () {
         var identifyEvent = {
             "browser_id": window.Boxever.getID(),
@@ -470,6 +470,10 @@ export const bxCheckout = (cartItems) => {
     });
 }
 
+
+const sleep = (milliseconds) => {
+     return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
 
 
 export const bxStartAsAnon = () => {
