@@ -7,7 +7,7 @@ import SimpleReactValidator from 'simple-react-validator';
 
 import Breadcrumb from "../common/breadcrumb";
 import { removeFromWishlist } from '../../actions'
-import { getCartTotal, bxView, bxIdenfify, bxCheckout } from "../../services";
+import { getCartTotal, bxView, bxIdenfify, bxCheckout, bxGetJaneLedgerEmail } from "../../services";
 import LoadingBar from 'react-top-loading-bar';
 
 
@@ -17,7 +17,7 @@ class checkOut extends Component {
     constructor(props) {
         super(props)//testing
 
-        var janeLedgerEmail = "janeledger2020@gmail.com";
+        var janeLedgerEmail = bxGetJaneLedgerEmail();
         var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
         var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
         if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined

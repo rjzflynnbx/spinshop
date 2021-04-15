@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 import Breadcrumb from "../common/breadcrumb";
-import { getCartTotal, bxView, bxAddProductToCart, bxIdenfify, getSingleItem } from "../../services";
+import { getCartTotal, bxView, bxAddProductToCart, bxIdenfify, getSingleItem, bxGetJaneLedgerEmail } from "../../services";
 import { removeFromCart, incrementQty, decrementQty, addToCart } from '../../actions'
 import { getAllProducts, addToCompareUnsafe, addToCartUnsafe } from '../../actions/index';
 
@@ -36,7 +36,7 @@ class cartComponent extends Component {
                 this.props.cartItems.push(shoes);
                 this.props.cartItems.push(pants);
             }
-            var janeLedgerEmail = "janeledger2020@gmail.com";
+            var janeLedgerEmail = bxGetJaneLedgerEmail();
             var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
             var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
             if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined

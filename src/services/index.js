@@ -505,7 +505,7 @@ export const bxCloseSession = () => {
 }
 
 export const bxStartAsJaneLedger = () => {
-    var janeLedgerEmail = "janeledger2020@gmail.com";
+    var janeLedgerEmail = bxGetJaneLedgerEmail();
     var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
     var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
     if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined
@@ -513,6 +513,16 @@ export const bxStartAsJaneLedger = () => {
         janeLedgerEmail = userJaneLedgerEmail;
     }
     bxIdenfify(janeLedgerEmail, 'Jane', 'Ledger');
+}
+
+export const bxGetJaneLedgerEmail = () => {
+    let janeLedgerEmail = ""
+    if (bxIsClientKeyOurSpinShop()){
+        janeLedgerEmail = "janeledger2020@gmail.com";
+    } else {
+        janeLedgerEmail = "janeledger@acxiom.com";
+    }
+    return janeLedgerEmail;
 }
 
 

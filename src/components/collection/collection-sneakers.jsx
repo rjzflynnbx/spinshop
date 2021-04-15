@@ -8,7 +8,7 @@ import ProductListing from "./common/product-listing";
 import StickyBox from "react-sticky-box";
 import Modal from 'react-responsive-modal';
 import { toast } from 'react-toastify';
-import { bxIdenfify } from '../../services';
+import { bxGetJaneLedgerEmail, bxIdenfify, bxIsClientKeyOurSpinShop } from '../../services';
 
 
 class CollectionSneakerSale extends Component {
@@ -76,7 +76,7 @@ class CollectionSneakerSale extends Component {
     }
 
     onModalInputClick(event) {
-        var janeLedgerEmail = "janeledger2020@gmail.com";
+        var janeLedgerEmail = bxGetJaneLedgerEmail();        
         var currentlySelectedUser = localStorage.getItem('BX_DEMO_USER_EMAIL');
         var userJaneLedgerEmail = window._demo_settings.demoUsers[currentlySelectedUser];
         if (userJaneLedgerEmail != null & userJaneLedgerEmail != undefined

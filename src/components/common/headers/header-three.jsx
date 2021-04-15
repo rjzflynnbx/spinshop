@@ -142,7 +142,7 @@ class HeaderThree extends Component {
                                                                 <Link to={`${process.env.PUBLIC_URL}/facebookAd2`}>
                                                                     <li><a>Facebook Ad 2</a></li>
                                                                 </Link>
-                                                                <li><a href="" onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
+                                                                <li><a onClick={this.boxeverStartAsAnon}>Start as anon</a></li>
                                                                 <li><a onClick={this.boxeverCloseSession}>Close Session</a> </li>
                                                                 <li><a href="" onClick={this.boxeverStartAsJaneLedger}>Start as Jane</a> </li>
                                                             </ul>
