@@ -15,42 +15,42 @@ class LogoBlock extends Component {
                                 <div>
                                     <div className="logo-block">
                                         <a href={null}>
-                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/adidas.png`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/logo-dececco.png`} alt="" />
                                         </a>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="logo-block">
                                         <a href={null}>
-                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/nike.png`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/barilla.png`} alt="" />
                                         </a>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="logo-block">
                                         <a href={null}>
-                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/champion.png`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/cirio.png`} alt="" />
                                         </a>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="logo-block">
                                         <a href={null}>
-                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/underarmour.png`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/bianco.png`} alt="" />
                                         </a>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="logo-block">
                                         <a href={null}>
-                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/asics.png`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/rana.jpg`} alt="" />
                                         </a>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="logo-block">
                                         <a href={null}>
-                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/converse.png`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/assets/images/logos/esthe.png`} alt="" />
                                         </a>
                                     </div>
                                 </div>

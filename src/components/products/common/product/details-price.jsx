@@ -69,18 +69,17 @@ class DetailsWithPrice extends Component {
                     <h3>{symbol}{item.price - (item.price * item.discount / 100)} </h3>
                     {item.variants ?
                         <ul >
-                            <Slider {...colorsnav} asNavFor={this.props.navOne} ref={slider => (this.slider1 = slider)} className="color-variant">
+                            {/* <Slider {...colorsnav} asNavFor={this.props.navOne} ref={slider => (this.slider1 = slider)} className="color-variant">
                                 {item.variants.map((vari, i) => {
                                     return <li className={vari.color} key={i} title={vari.color}></li>
                                 })}
-                            </Slider>
+                            </Slider> */}
                         </ul> : ''}
                     <div className="product-description border-product">
                         {item.size ?
                             <div>
                                 <h6 className="product-title size-text">select size
-                                    <span><a data-toggle="modal"
-                                        data-target="#sizemodal" onClick={this.onOpenModal} >size chart</a></span></h6>
+                                    </h6>
 
 
                                 <div className="modal fade" id="sizemodal" tabIndex="-1"
@@ -139,7 +138,11 @@ class DetailsWithPrice extends Component {
                     <div className="border-product">
                         <h6 className="product-title">product details</h6>
                         <p>{item.shortDetails}</p>
+                        <br/>
+                        <h6 className="product-title">Ingredients</h6>
+                        <p>{item.ingredients}</p>
                     </div>
+                   
 
 
 

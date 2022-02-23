@@ -118,12 +118,12 @@ class SpinShop extends Component {
                 <div className="container category-button">
                     <section className="section-b-space">
                         <div className="row partition1">
-                            <div className="col"><a href="/sneaker-sale/collection" className="btn btn-outline btn-block">Men's footwear</a></div>
-                            <div className="col"><a href="#" className="btn btn-outline btn-block">Women's footwear</a></div>
-                            <div className="col"><a href="#" className="btn btn-outline btn-block">Kids's footwear</a></div>
-                            <div className="col"><a href="#" className="btn btn-outline btn-block">Men's Clothing</a></div>
-                            <div className="col"><a href="#" className="btn btn-outline btn-block">Women's  Clothing</a></div>
-                            <div className="col"><a href="#" className="btn btn-outline btn-block">Kids'sClothing</a></div>
+                            <div className="col"><a href="/sneaker-sale/collection" className="btn btn-outline btn-block">Pasta</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Cold Beverage</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Packaged food</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Backed food</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Freshners</a></div>
+                            <div className="col"><a href="#" className="btn btn-outline btn-block">Energy boost</a></div>
                         </div>
                     </section>
                 </div>

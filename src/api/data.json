@@ -1,31 +1,41 @@
 [
   {
     "id": 1,
-    "name": "Flare Dress",
-    "price": 120,
+    "name": "Wholemeal Penne",
+    "price": 1.78,
     "salePrice": 200,
     "discount": 50,
     "pictures": [
-      "/assets/images/fashion/product/1.jpg",
-      "/assets/images/fashion/product/21.jpg",
-      "/assets/images/fashion/product/36.jpg",
-      "/assets/images/fashion/product/12.jpg"
+      "/assets/images/poc/whole-meal-pasta-1.jpeg",
+      "/assets/images/poc/whole-meal-pasta-2.jpeg",
+      "/assets/images/poc/whole-meal-pasta-3.jpeg",
+      "/assets/images/poc/whole-meal-pasta-4.jpg"
     ],
-    "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "shortDetails": "Dried penne pasta made from durum wholewheat semolina.",
+    "description": "2 Tbsp. extra-virgin olive oil 4 oz. thinly sliced guanciale, pancetta, or chopped unsmoked bacon 1/2 tsp. crushed red pepper flakes 1/2 tsp. freshly ground black pepper 3/4 cup minced onion 2 cloves garlic, minced 1 28-oz. can peeled tomatoes with juices, crushed by hand t Kosher salt 12 oz. dried bucatini or spaghetti 1/4 cup finely grated Pecorino (about 1 oz.)",
+    "ingredients": "2 Tbsp. extra-virgin olive oil 4 oz. thinly sliced guanciale, pancetta, or chopped unsmoked bacon 1/2 tsp. crushed red pepper flakes 1/2 tsp. freshly ground black pepper 3/4 cup minced onion 2 cloves garlic, minced 1 28-oz. can peeled tomatoes with juices, crushed by hand t Kosher salt 12 oz. dried bucatini or spaghetti 1/4 cup finely grated Pecorino (about 1 oz.)",
+    "preparation": "1. Heat oil in a large heavy skillet over medium heat. \n 2. Add guanciale and sauté until crisp and golden, about 4 minutes. \n 3. Add pepper flakes and black pepper; stir for 10 seconds. Add onion and garlic; cook, stirring often, until soft, about 8 minutes. \n 4. Add tomatoes, reduce heat to low, and cook, stirring occasionally, until sauce thickens, 15-20 minutes. \n 5. Meanwhile, bring a large pot of water to a boil. Season with salt; add the pasta and cook, stirring occasionally, until 2 minutes before al dente. \n 6. Drain, reserving 1 cup of pasta cooking water. Add drained pasta to sauce in skillet and toss vigorously with tongs to coat. \n 7. Add 1/2 cup of the reserved pasta water and cook until sauce coats pasta and pasta is al dente, about 2 minutes. (Add a little pasta water if sauce is too dry.) \n 8. Stir in cheese and transfer pasta to warmed bowls.",
+    "Energy" :"1466kJ / 347kcal",
+    "Fat" :"2.5g",
+    "Saturates" :"0.5g",
+    "Carbohydrate"  :"60.5g",
+    "Sugars" :"3.1g",
+    "Fibre" :"8g",
+    "Protein" :"13.4g",
+    "Salt" :"0.13g",
     "stock": 16,
     "new": true,
     "sale": true,
-    "category": "women",
+    "category": "Pasta",
     "colors": [
       "yellow",
       "gray",
       "green"
     ],
     "size": [
-      "M",
-      "L",
-      "XL"
+      "200g ",
+      "500g",
+      "1kg"
     ],
     "tags": [
       "nike",
@@ -35,23 +45,23 @@
     "variants": [
       {
         "color": "yellow",
-        "images": "/assets/images/fashion/product/1.jpg"
+        "images": "/assets/images/poc/whole-meal-pasta-1.jpeg"
       },
       {
         "color": "gray",
-        "images": "/assets/images/fashion/product/21.jpg"
+        "images": "/assets/images/poc/whole-meal-pasta-2.jpeg"
       },
       {
         "color": "green",
-        "images": "/assets/images/fashion/product/36.jpg"
+        "images": "/assets/images/poc/whole-meal-pasta-3.jpeg"
       }
     ]
   },
   {
     "id": 2,
-    "name": "Wrap Dress",
-    "price": 330.00,
-    "salePrice": 165.00,
+    "name": "Wholemeal Butterflies",
+    "price": 1.78,
+    "salePrice": 200,
     "discount": 50,
     "pictures": [
       "/assets/images/fashion/product/15.jpg",
@@ -61,6 +71,16 @@
     ],
     "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "ingredients": "180 gr of GreenLeaf Wholemeal Butterflies 350 gr of cherry tomatoes Canned tuna 260 gr Q.b. Taggiasca olives Q.b. capers 60 gr of basil A tablespoon of extra virgin olive oil 1 sprig of fresh basil 50 g salted ricotta Salt Dad",
+    "preparation": "1. Wholemeal pasta salad with fresh tomatoes cut into quarters and flavored with extra virgin olive oil, capers, Taggiasca olives, tuna fillets in oil, salt and pepper. \n 2. Let it rest for half an hour, then season the butterflies, sprinkling with salted ricotta and fresh basil. \n You can replace fresh cherry tomatoes with confit tomatoes or any vegetables you like",
+    "Energy" :"1466kJ / 347kcal",
+    "Fat" :"2.5g",
+    "Saturates" :"0.5g",
+    "Carbohydrate"  :"60.5g",
+    "Sugars" :"3.1g",
+    "Fibre" :"8g",
+    "Protein" :"13.4g",
+    "Salt" :"0.13g",
     "stock": 6,
     "new": true,
     "sale": false,
@@ -70,9 +90,9 @@
       "orange"
     ],
     "size": [
-      "M",
-      "L",
-      "XL"
+      "200g ",
+      "500g",
+      "1kg"
     ],
     "tags": [
       "caprese",
@@ -884,7 +904,7 @@
   },
   {
     "id": 600,
-    "name": "Nike Womens Air Force 1",
+    "name": "product bla bla",
     "primaryCategory" : "Womens Sneakers",
     "price": 190.00,
     "salePrice": 150.00,

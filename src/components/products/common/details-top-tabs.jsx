@@ -4,8 +4,27 @@ import 'react-tabs/style/react-tabs.scss';
 import {Link} from 'react-router-dom'
 
 class DetailsTopTabs extends Component {
-    render (){
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            open: false,
+            quantity: 1,
+            stock: 'InStock',
+            nav3: null
+        }
+    }
+
+    render() {
+        const { symbol, item, addToCartClicked, BuynowClicked, addToWishlistClicked } = this.props
+
+        var colorsnav = {
+            slidesToShow: 6,
+            swipeToSlide: true,
+            arrows: false,
+            dots: false,
+            focusOnSelect: true
+        };
         return (
             <section className="tab-product m-0">
                 <div className="row">
@@ -14,16 +33,16 @@ class DetailsTopTabs extends Component {
                             <TabList className="nav nav-tabs nav-material">
                                 <Tab className="nav-item">
                                     <span className="nav-link active">
-                                        <i className="icofont icofont-ui-home"></i>Description</span>
+                                        <i className="icofont icofont-ui-home"></i>Nutritional Value</span>
                                     <div className="material-border"></div>
                                 </Tab>
                                 <Tab className="nav-item">
-                                    <span className="nav-link" ><i className="icofont icofont-man-in-glasses"></i>Details</span>
+                                    <span className="nav-link" ><i className="icofont icofont-man-in-glasses"></i>Preparation</span>
                                     <div className="material-border"></div>
                                 </Tab>
                                 <Tab className="nav-item">
                                     <span className="nav-link" >
-                                        <i className="icofont icofont-contacts"></i>Video</span>
+                                        <i className="icofont icofont-contacts"></i>Product Payout</span>
                                     <div className="material-border"></div>
                                 </Tab>
                                 <Tab className="nav-item">
@@ -36,48 +55,48 @@ class DetailsTopTabs extends Component {
                                 <table className="table table-striped mb-0">
                                     <tbody>
                                     <tr>
-                                        <th>Ideal For :</th>
-                                        <td>Women's</td>
+                                        <th>Typical Values 	Per 100g</th>
+                                        <td></td>
+
                                     </tr>
                                     <tr>
-                                        <th>Pattern :</th>
-                                        <td>Embroidered</td>
+                                        <th>Energy :</th>
+                                        <td>{item.Energy}</td>
                                     </tr>
                                     <tr>
-                                        <th>Dress Fabric :</th>
-                                        <td>Silk</td>
+                                        <th>Fat :</th>
+                                        <td>{item.Fat}</td>
                                     </tr>
                                     <tr>
-                                        <th>Type :</th>
-                                        <td>Ghagra, Choli, Dupatta Set</td>
+                                        <th>Saturates :</th>
+                                        <td>{item.Saturates}</td>
                                     </tr>
                                     <tr>
-                                        <th>Neck :</th>
-                                        <td>Round Neck</td>
+                                        <th>Carbohydrate :</th>
+                                        <td>{item.Carbohydrate}</td>
                                     </tr>
                                     <tr>
-                                        <th>Sleeve :</th>
-                                        <td>3/4 Sleeve</td>
+                                        <th>Sugars :</th>
+                                        <td>{item.Sugars}</td>
                                     </tr>
                                     <tr>
-                                        <th>Work :</th>
-                                        <td>N/A</td>
+                                        <th>Fibre :</th>
+                                        <td>{item.Fibre}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Protein :</th>
+                                        <td>{item.Protein}</td>
+                                    </tr> 
+                                     <tr>
+                                        <th>Salt :</th>
+                                        <td>{item.Salt}</td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </TabPanel>
                             <TabPanel>
                                 <p className="mt-4 p-0">
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry. Lorem Ipsum has been the industry's
-                                    standard dummy text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled it to make a
-                                    type specimen book. It has survived not only five centuries,
-                                    but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. It was popularised in the 1960s with
-                                    the release of Letraset sheets containing Lorem Ipsum
-                                    passages, and more recently with desktop publishing software
-                                    like Aldus PageMaker including versions of Lorem Ipsum.
+                                {item.preparation}
                                 </p>
                             </TabPanel>
                             <TabPanel>

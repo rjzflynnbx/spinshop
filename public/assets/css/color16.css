@@ -8346,6 +8346,8 @@ footer p {
   margin-bottom: -8px;
   line-height: 2;
   letter-spacing: 0.05em;
+  white-space: pre-line;  
+vertical-align: bottom;
 }
 .tab-product .tab-content.nav-material .media, .product-full-tab .tab-content.nav-material .media {
   margin-top: 20px;
