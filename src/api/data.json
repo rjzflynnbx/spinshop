@@ -102,11 +102,11 @@
     "variants": [
       {
         "color": "gray",
-        "images": "/assets/images/fashion/product/15.jpg"
+        "images": "/assets/images/poc/buterflies_pasta1.jpg"
       },
       {
         "color": "orange",
-        "images": "/assets/images/fashion/product/7.jpg"
+        "images": "/assets/images/poc/buterflies_pasta2.jpg"
       }
     ]
   },
@@ -904,7 +904,7 @@
   },
   {
     "id": 600,
-    "name": "product bla bla",
+    "name": "Nike Womens Air Force 1",
     "primaryCategory" : "Womens Sneakers",
     "price": 190.00,
     "salePrice": 150.00,

@@ -161,8 +161,8 @@ export const getRelatedItems = (products, type) => {
 
 }
 
-const NIKE_AF1 = 600;
-const ADIDAS_ORIGINALS_WOMENS_ZX_2K_BOOST = 601;
+const NIKE_AF1 = 1;
+const ADIDAS_ORIGINALS_WOMENS_ZX_2K_BOOST = 2;
 const NIKE_WOMENS_AF1_SHADOW = 602;
 const ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS = 27;
 const NIKE_WOMENS_PADDED_JACKET = 30;
@@ -222,7 +222,7 @@ export const getPersonalizedProducts = (products, id) => {
         return items.slice(0, 8)
     }
 
-    if (id == NIKE_AF1) {
+    if ("1" == NIKE_AF1) {
         const items = products.filter(product => {
             return AF1_PERSONALIZED_ITEMS.includes(product.id);
         })
@@ -230,7 +230,7 @@ export const getPersonalizedProducts = (products, id) => {
         return items.slice(0, 8)
     }
 
-    if (id == ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS) {
+    if ("2" == ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS) {
         const items = products.filter(product => {
             return ADIDAS_ORIGINALS_3_STRIPES_TREFOIL_LEGGINGS_PERSONALIZED_ITEMS.includes(product.id);
         })
